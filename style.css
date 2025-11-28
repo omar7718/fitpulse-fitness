@@ -1502,7 +1502,6 @@ footer {
 .copyright {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
 }
@@ -5419,10 +5418,19 @@ img {
 }
 
 /* Specific icon adjustments */
-.icon[title="facebook"] { font-family: Arial, sans-serif; }
-.icon[title="instagram"] { font-size: 1.2rem; }
-.icon[title="twitter"] { font-size: 1.1rem; }
-.icon[title="linkedin"] { 
+.icon[title="facebook"] {
+    font-family: Arial, sans-serif;
+}
+
+.icon[title="instagram"] {
+    font-size: 1.2rem;
+}
+
+.icon[title="twitter"] {
+    font-size: 1.1rem;
+}
+
+.icon[title="linkedin"] {
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 0.9rem;
@@ -5430,8 +5438,13 @@ img {
 
 /* Loading spinner animation */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .icon.spinner {
@@ -5494,7 +5507,7 @@ img {
     max-width: 500px;
     width: 100%;
     position: relative;
-    box-shadow: 
+    box-shadow:
         0 25px 50px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -5539,9 +5552,9 @@ img {
 .trainer-modal .modal-header {
     padding: 40px 40px 20px;
     text-align: center;
-    background: linear-gradient(135deg, 
-        rgba(229, 57, 53, 0.9) 0%, 
-        rgba(229, 57, 53, 0.7) 100%);
+    background: linear-gradient(135deg,
+            rgba(229, 57, 53, 0.9) 0%,
+            rgba(229, 57, 53, 0.7) 100%);
     position: relative;
     overflow: hidden;
 }
@@ -5575,8 +5588,10 @@ img {
 
 .trainer-modal .modal-body {
     padding: 30px;
-    max-height: none; /* Remove max-height to eliminate scrollbar */
-    overflow: visible; /* Change from auto to visible */
+    max-height: none;
+    /* Remove max-height to eliminate scrollbar */
+    overflow: visible;
+    /* Change from auto to visible */
 }
 
 /* Modern Stats Grid */
@@ -5817,24 +5832,24 @@ img {
         margin: 10px;
         max-width: calc(100% - 20px);
     }
-    
+
     .trainer-modal .modal-header {
         padding: 30px 25px 15px;
     }
-    
+
     .trainer-modal .modal-body {
         padding: 20px;
     }
-    
+
     .trainer-modal .modal-stats {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    
+
     .trainer-modal .modal-actions {
         flex-direction: column;
     }
-    
+
     .trainer-modal .modal-btn {
         padding: 12px 15px;
     }
@@ -5844,16 +5859,43 @@ img {
     .trainer-modal .modal-header {
         padding: 25px 20px 15px;
     }
-    
+
     .trainer-modal .modal-body {
         padding: 15px;
     }
-    
+
     .trainer-modal .modal-header h3 {
         font-size: 1.5rem;
     }
-    
+
     .trainer-modal .expertise-tags {
         justify-content: center;
     }
 }
+
+/* Fix trainer modal sizing and button visibility */
+.trainer-modal .modal-content {
+    max-height: 85vh;
+    /* Limit height to ensure buttons are visible */
+    display: flex;
+    flex-direction: column;
+}
+
+.trainer-modal .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    /* Allow scrolling if content is too long */
+    padding-bottom: 20px;
+    /* Add space at bottom */
+}
+
+.trainer-modal .modal-actions {
+    position: sticky;
+    bottom: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+    /* Push to bottom */
+}
+
