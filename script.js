@@ -178,7 +178,6 @@ const translations = {
     },
 
     ar: {
-        // Navigation
         home: "الرئيسية",
         membership: "العضويات",
         schedule: "الحصص",
@@ -186,7 +185,6 @@ const translations = {
         contact: "اتصل بنا",
         login: "تسجيل الدخول",
 
-        // Hero Section
         heroTitle: "حول جسدك، حول حياتك",
         heroText: "انضم إلى فيتبلس اليوم واختبر مرافق حديثة، ومدربين خبراء، ومجتمع يدعم رحلتك الرياضية.",
         viewMemberships: "عرض العضويات",
@@ -542,14 +540,10 @@ function initializeLanguage() {
 function switchLanguage(lang) {
     currentLanguage = lang;
     localStorage.setItem('preferredLanguage', lang);
-
-    // Update HTML direction
     $('html').attr({
         dir: lang === 'ar' ? 'rtl' : 'ltr',
         lang: lang
     });
-
-    // Update all translatable elements
     updateTextContent(lang);
     updateLanguageButton(lang);
     showNotification(lang === 'ar' ? 'تم التبديل إلى اللغة العربية' : 'Switched to English', 'success');
@@ -557,12 +551,9 @@ function switchLanguage(lang) {
 
 function updateTextContent(lang) {
     const translation = translations[lang];
-
-    // Update elements with data-i18n attribute
     $('[data-i18n]').each(function () {
         const key = $(this).data('i18n');
         if (translation[key]) {
-            // Special handling for login/logout button
             if ($(this).hasClass('nav-link-text')) {
                 const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
                 if (isLoggedIn && key === 'login') {
@@ -575,8 +566,6 @@ function updateTextContent(lang) {
             }
         }
     });
-
-    // Update placeholder texts
     $('[data-i18n-placeholder]').each(function () {
         const key = $(this).data('i18n-placeholder');
         if (translation[key]) {
@@ -632,7 +621,6 @@ function updateUIBasedOnAuth() {
 // Update class booking UI based on authentication
 function updateClassBookingUI() {
     const canRegister = canRegisterForClasses();
-
     $('.class-type').each(function () {
         const $this = $(this);
         if (canRegister) {
@@ -692,32 +680,32 @@ function setupClassBooking() {
 
         registeredClasses.forEach((classItem, index) => {
             const classCard = $(`
-                <div class="registered-class-card">
-                    <div class="class-header">
-                        <h4>${classItem.name}</h4>
-                        <span class="class-type-badge ${classItem.type}">${classItem.type}</span>
+            <div class="registered-class-card">
+                <div class="class-header">
+                    <h4>${classItem.name}</h4>
+                    <span class="class-type-badge ${classItem.type}">${classItem.type}</span>
+                </div>
+                <div class="class-details">
+                    <div class="class-detail-item">
+                        <span class="icon">📅</span>
+                        <span>Day: ${classItem.day}</span>
                     </div>
-                    <div class="class-details">
-                        <div class="class-detail-item">
-                            <i class="fas fa-calendar-day"></i>
-                            <span>Day: ${classItem.day}</span>
-                        </div>
-                        <div class="class-detail-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Time: ${classItem.time}</span>
-                        </div>
-                        <div class="class-detail-item">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Intensity: ${getClassIntensity(classItem.type)}</span>
-                        </div>
+                    <div class="class-detail-item">
+                        <span class="icon">🕒</span>
+                        <span>Time: ${classItem.time}</span>
                     </div>
-                    <div class="class-actions">
-                        <button class="cancel-btn" data-index="${index}">
-                            <i class="fas fa-times"></i> Cancel
-                        </button>
+                    <div class="class-detail-item">
+                        <span class="icon">🏋️</span>
+                        <span>Intensity: ${getClassIntensity(classItem.type)}</span>
                     </div>
                 </div>
-            `);
+                <div class="class-actions">
+                    <button class="cancel-btn" data-index="${index}">
+                        <span class="icon">✕</span> Cancel
+                    </button>
+                </div>
+            </div>
+        `);
             registeredContainer.append(classCard);
         });
 
@@ -743,7 +731,6 @@ function setupClassBooking() {
 
     // Function to register a class
     function registerClass(className, classType, day, time) {
-        // STRICT CHECK: User must be logged in AND have active plan
         if (!canRegisterForClasses()) {
             if (!isUserLoggedIn()) {
                 showNotification('Please login to register for classes', 'warning');
@@ -754,22 +741,16 @@ function setupClassBooking() {
             }
             return false;
         }
-
-        // CONSTRAINT 1: Check if user has reached maximum classes
         if (hasReachedMaxClasses()) {
             showNotification(
                 currentLanguage === 'ar' ? translations.ar.maximumClasses : translations.en.maximumClasses,
-                'warning'
-            );
+                'warning');
             return false;
         }
-
-        // CONSTRAINT 2: Check if class is already registered at the same time
         if (isClassAlreadyRegistered(className, day, time)) {
             showNotification(`You have already registered for ${className} on ${day} at ${time}`, 'warning');
             return false;
         }
-
         const classItem = {
             name: className,
             type: classType,
@@ -777,7 +758,6 @@ function setupClassBooking() {
             time: time,
             id: Date.now()
         };
-
         registeredClasses.push(classItem);
         updateRegisteredClassesDisplay();
         showNotification(`Successfully registered for ${className} on ${day} at ${time}`, 'success');
@@ -785,7 +765,6 @@ function setupClassBooking() {
         return true;
     }
 
-    // Function to cancel a class
     function cancelClass(index) {
         const classItem = registeredClasses[index];
         registeredClasses.splice(index, 1);
@@ -794,7 +773,6 @@ function setupClassBooking() {
         updateClassCountDisplay();
     }
 
-    // Handle class type clicks
     function setupClassClickHandlers() {
         $('.class-type').off('click').on('click', function (e) {
             e.preventDefault();
@@ -905,19 +883,19 @@ function setupClassBooking() {
             : translations.en.cancelAllClasses;
 
         countDisplay.html(`
-            <div class="count-info">
-                <i class="fas fa-chart-bar"></i>
-                <span class="count-text">${countText}</span>
-                ${registeredClasses.length > 0 ? `
-                    <button class="cancel-all-btn">
-                        <i class="fas fa-trash-alt"></i> ${cancelText}
-                    </button>
-                ` : ''}
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: ${(registeredClasses.length / MAX_CLASSES) * 100}%"></div>
-            </div>
-        `);
+        <div class="count-info">
+            <span class="icon">📊</span>
+            <span class="count-text">${countText}</span>
+            ${registeredClasses.length > 0 ? `
+                <button class="cancel-all-btn">
+                    <span class="icon">🗑️</span> ${cancelText}
+                </button>
+            ` : ''}
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: ${(registeredClasses.length / MAX_CLASSES) * 100}%"></div>
+        </div>
+    `);
 
         // Add event listener to cancel all button
         countDisplay.find('.cancel-all-btn').on('click', cancelAllClasses);
@@ -935,11 +913,9 @@ function setupClassBooking() {
             );
             return;
         }
-
         const confirmMessage = currentLanguage === 'ar'
             ? translations.ar.cancelAllConfirm
             : translations.en.cancelAllConfirm;
-
         if (confirm(confirmMessage)) {
             registeredClasses = [];
             updateRegisteredClassesDisplay();
@@ -978,25 +954,25 @@ function setupPlanSelection() {
     // Plan features data
     const planFeatures = {
         basic: [
-            { icon: 'fas fa-check', text: 'Gym Access', included: true },
-            { icon: 'fas fa-check', text: 'Locker Room', included: true },
-            { icon: 'fas fa-times', text: 'Group Classes', included: false },
-            { icon: 'fas fa-times', text: 'Personal Training', included: false },
-            { icon: 'fas fa-times', text: 'Nutrition Planning', included: false }
+            { icon: '✓', text: 'Gym Access', included: true },
+            { icon: '✓', text: 'Locker Room', included: true },
+            { icon: '✕', text: 'Group Classes', included: false },
+            { icon: '✕', text: 'Personal Training', included: false },
+            { icon: '✕', text: 'Nutrition Planning', included: false }
         ],
         premium: [
-            { icon: 'fas fa-check', text: 'Gym Access', included: true },
-            { icon: 'fas fa-check', text: 'Locker Room', included: true },
-            { icon: 'fas fa-check', text: 'All Group Classes', included: true },
-            { icon: 'fas fa-check', text: '2 Personal Sessions', included: true },
-            { icon: 'fas fa-times', text: 'Nutrition Planning', included: false }
+            { icon: '✓', text: 'Gym Access', included: true },
+            { icon: '✓', text: 'Locker Room', included: true },
+            { icon: '✓', text: 'All Group Classes', included: true },
+            { icon: '✓', text: '2 Personal Sessions', included: true },
+            { icon: '✕', text: 'Nutrition Planning', included: false }
         ],
         elite: [
-            { icon: 'fas fa-check', text: 'Gym Access', included: true },
-            { icon: 'fas fa-check', text: 'Locker Room', included: true },
-            { icon: 'fas fa-check', text: 'All Group Classes', included: true },
-            { icon: 'fas fa-check', text: '5 Personal Sessions', included: true },
-            { icon: 'fas fa-check', text: 'Nutrition Planning', included: true }
+            { icon: '✓', text: 'Gym Access', included: true },
+            { icon: '✓', text: 'Locker Room', included: true },
+            { icon: '✓', text: 'All Group Classes', included: true },
+            { icon: '✓', text: '5 Personal Sessions', included: true },
+            { icon: '✓', text: 'Nutrition Planning', included: true }
         ]
     };
 
@@ -1049,11 +1025,11 @@ function setupPlanSelection() {
         $('#modalPlanPrice').text(`$${planPrice}/month`);
 
         const featuresHtml = features.map(feature => `
-            <li>
-                <i class="${feature.icon} ${feature.included ? 'included' : 'excluded'}"></i>
-                <span>${feature.text}</span>
-            </li>
-        `).join('');
+    <li>
+        <span class="icon ${feature.included ? 'included' : 'excluded'}">${feature.icon}</span>
+        <span>${feature.text}</span>
+        </li>
+    `).join('');
 
         $('#modalPlanFeatures').html(`<ul>${featuresHtml}</ul>`);
 
@@ -1115,9 +1091,7 @@ $('#loginForm').on('submit', function (e) {
     e.preventDefault();
     const btn = $(this).find('.btn');
     const originalText = btn.text();
-
     btn.text('Logging in...').prop('disabled', true);
-
     setTimeout(() => {
         localStorage.setItem('userLoggedIn', 'true');
         showNotification('Login successful!', 'success');
@@ -1125,7 +1099,6 @@ $('#loginForm').on('submit', function (e) {
         $(this).trigger('reset');
         btn.text(originalText).prop('disabled', false);
         updateUIBasedOnAuth();
-
         const hasActivePlan = localStorage.getItem('userPlanActive') === 'true';
         if (hasActivePlan) {
             showPage('schedule');
@@ -1134,7 +1107,6 @@ $('#loginForm').on('submit', function (e) {
             showPage('membership');
             showNotification('Please select a membership plan to continue', 'info');
         }
-
         if (window.classBookingSystem) {
             window.classBookingSystem.updateLoginRequiredMessage();
             window.classBookingSystem.setupClassClickHandlers();
@@ -1288,30 +1260,30 @@ function setupTrainers() {
 
         // Populate achievements
         const achievementsHtml = trainer.achievements.map(achievement => `
-            <div class="achievement-item">
-                <i class="fas fa-award"></i>
-                <span>${achievement}</span>
-            </div>
-        `).join('');
+        <div class="achievement-item">
+            <span class="icon">🎖️</span>
+            <span>${achievement}</span>
+        </div>
+    `).join('');
         $('#modalAchievements').html(`
-            <div class="achievements-title">
-                <i class="fas fa-trophy"></i>
-                <span>Key Achievements</span>
-            </div>
-            <div class="achievements-list">${achievementsHtml}</div>
-        `);
+        <div class="achievements-title">
+            <span class="icon">🏆</span>
+            <span>Key Achievements</span>
+        </div>
+        <div class="achievements-list">${achievementsHtml}</div>
+    `);
 
         // Populate expertise
         const expertiseHtml = trainer.expertise.map(skill => `
-            <span class="expertise-tag">${skill}</span>
-        `).join('');
+    <span class="expertise-tag">${skill}</span>
+`).join('');
         $('#modalExpertise').html(`
-            <div class="expertise-title">
-                <i class="fas fa-dumbbell"></i>
-                <span>Areas of Expertise</span>
-            </div>
-            <div class="expertise-tags">${expertiseHtml}</div>
-        `);
+    <div class="expertise-title">
+        <span class="icon">🏋️</span>
+        <span>Areas of Expertise</span>
+    </div>
+    <div class="expertise-tags">${expertiseHtml}</div>
+`);
 
         // Show modal
         trainerModal.addClass('active');
@@ -1335,8 +1307,6 @@ function setupTrainers() {
 function setupDarkMode() {
     const darkModeToggle = $('#darkModeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-    // Check for saved theme or prefer OS setting
     const currentTheme = localStorage.getItem('theme') ||
         (prefersDarkScheme.matches ? 'dark' : 'light');
 
@@ -1344,7 +1314,6 @@ function setupDarkMode() {
         $('html').attr('data-theme', 'dark');
         darkModeToggle.prop('checked', true);
     }
-
     darkModeToggle.on('change', function () {
         if (this.checked) {
             $('html').attr('data-theme', 'dark');
@@ -1457,16 +1426,13 @@ function setupSupplementCart() {
     const checkoutBtn = $('#checkoutBtn');
     const emptyCart = $('.empty-cart');
 
-    // Add to cart functionality
     $('.add-to-cart-btn').on('click', function () {
         const product = $(this).data('product');
         const price = parseFloat($(this).data('price'));
         const productName = $(this).closest('.supplement-info').find('h3').text();
-
         addToCart(product, productName, price);
     });
 
-    // Checkout functionality
     checkoutBtn.on('click', function () {
         if (cart.length > 0) {
             processCheckout();
@@ -1498,65 +1464,47 @@ function setupSupplementCart() {
     }
 
     function updateCartDisplay() {
-        // Update empty cart message
         if (cart.length === 0) {
             emptyCart.show();
             cartItems.html('<div class="empty-cart" data-i18n="emptyCart">Your cart is empty</div>');
         } else {
             emptyCart.hide();
-
-            // Update cart items
             const cartHtml = cart.map(item => `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">$${item.price} x ${item.quantity}</div>
-                    </div>
-                    <button class="cart-item-remove" data-product="${item.product}">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            `).join('');
+    <div class="cart-item">
+        <div class="cart-item-info">
+            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-price">$${item.price} x ${item.quantity}</div>
+        </div>
+        <button class="cart-item-remove" data-product="${item.product}">
+            <span class="icon">🗑️</span>
+        </button>
+    </div>
+`).join('');
             cartItems.html(cartHtml);
 
-            // Add event listeners to remove buttons
             $('.cart-item-remove').on('click', function () {
                 const product = $(this).data('product');
                 removeFromCart(product);
             });
         }
-
-        // Update total
         const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
         cartTotal.text(`$${total.toFixed(2)}`);
-
-        // Update checkout button
         checkoutBtn.prop('disabled', cart.length === 0);
     }
 
     function processCheckout() {
         const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-        // STRICT CHECK: User must be logged in to checkout
         if (!isUserLoggedIn()) {
             showNotification('Please login to complete your purchase', 'warning');
             showPage('login');
             return;
         }
-
-        // Show processing message
-        checkoutBtn.html('<i class="fas fa-spinner fa-spin"></i> Processing...').prop('disabled', true);
-
-        // Simulate payment processing
+        checkoutBtn.html('<span class="icon spinner">🔄</span> Processing...').prop('disabled', true);
         setTimeout(() => {
             showNotification(`Order placed successfully! Total: $${total.toFixed(2)}`, 'success');
-
-            // Clear cart
             cart = [];
             updateCartDisplay();
-
-            // Reset checkout button
-            checkoutBtn.html('<i class="fas fa-credit-card"></i> Proceed to Checkout').prop('disabled', true);
+            checkoutBtn.html('<span class="icon">💳</span> Proceed to Checkout').prop('disabled', true);
         }, 2000);
     }
 
