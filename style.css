@@ -5857,3 +5857,12 @@ img {
         justify-content: center;
     }
 }
+
+.plan-modal .icon.included {
+    color: var(--success);
+}
+
+.plan-modal .icon.excluded {
+    color: var(--gray);
+    opacity: 0.5;
+}
