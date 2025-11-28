@@ -352,53 +352,37 @@ const translations = {
     }
 };
 
-// Add logout translations
 translations.en.logout = "Logout";
 translations.ar.logout = "تسجيل الخروج";
 
-// ========== CORE FUNCTIONALITY ==========
 
 // Mobile Menu Toggle
 $('#mobile-menu').on('click', function () {
     $('#main-nav').toggleClass('show');
 });
 
-// Simple Page Navigation
 function showPage(pageId) {
-    // Hide all pages
     $('.page-section').removeClass('active');
-
-    // Show selected page
     $('#' + pageId).addClass('active');
-
-    // Update active nav link
     $('.nav-link').removeClass('active');
     $(`.nav-link[href="#${pageId}"]`).addClass('active');
-
-    // Close mobile menu
     $('#main-nav').removeClass('show');
-
-    // Scroll to top of page
     $('html, body').animate({ scrollTop: 0 }, 400);
 }
 
-// Handle all navigation clicks
 $(document).on('click', 'a[href^="#"]', function (e) {
     e.preventDefault();
     const pageId = $(this).attr('href').substring(1);
 
-    // Handle logout
     if (pageId === 'logout') {
         logout();
         return;
     }
 
-    // Only show page if it's a valid page section
     if ($('#' + pageId).length) {
         showPage(pageId);
     }
 });
-// Testimonial Slider
 let currentSlide = 0;
 const testimonials = $('.testimonial');
 const dots = $('.slider-dot');
@@ -406,7 +390,6 @@ const dots = $('.slider-dot');
 function showTestimonial(n) {
     testimonials.removeClass('active');
     dots.removeClass('active');
-
     currentSlide = n;
     testimonials.eq(currentSlide).addClass('active');
     dots.eq(currentSlide).addClass('active');
@@ -422,17 +405,11 @@ setInterval(() => {
 
 // Class Schedule Filter
 $('.filter-btn').on('click', function () {
-    // Update active button
     $('.filter-btn').removeClass('active');
     $(this).addClass('active');
-
     const filter = $(this).data('filter');
     const classTypes = $('.class-type');
-
-    // Always show all table cells and rows
     $('.schedule-table td, .schedule-table tr').show();
-
-    // Only hide the class type spans, not the table cells
     if (filter === 'all') {
         classTypes.show();
     } else {
@@ -469,7 +446,6 @@ $('#contactForm').on('submit', function (e) {
 
 // Global showNotification function 
 function showNotification(message, type) {
-    // Create notification element
     const notification = $(`<div class="notification ${type}">${message}</div>`).css({
         position: 'fixed',
         top: '100px',
@@ -485,15 +461,10 @@ function showNotification(message, type) {
         maxWidth: '300px',
         wordWrap: 'break-word'
     });
-
     $('body').append(notification);
-
-    // Animate in
     setTimeout(() => {
         notification.css('transform', 'translateX(0)');
     }, 100);
-
-    // Remove after 3 seconds
     setTimeout(() => {
         notification.css('transform', 'translateX(400px)');
         setTimeout(() => {
@@ -502,7 +473,7 @@ function showNotification(message, type) {
     }, 3000);
 }
 
-// ========== AUTHENTICATION CHECK FUNCTIONS ==========
+//  AUTHENTICATION CHECK FUNCTIONS 
 
 // Check if user is logged in
 function isUserLoggedIn() {
@@ -988,7 +959,7 @@ function setupPlanSelection() {
         const planType = $(this).data('plan');
         const planPrice = $(this).data('price');
 
-        // STRICT CHECK: User must be logged in to activate a plan
+        //User must be logged in to activate a plan
         if (!isUserLoggedIn()) {
             showPage('login');
             showNotification('Please login to select a membership plan', 'info');
@@ -1073,7 +1044,7 @@ function setupPlanSelection() {
     });
 }
 
-// ========== LOGIN/SIGNUP HANDLING ==========
+// LOGIN/SIGNUP HANDLING
 
 // Login Form Submission
 $('#loginForm').on('submit', function (e) {
@@ -1129,7 +1100,7 @@ $('#signupForm').on('submit', function (e) {
     }, 1500);
 });
 
-// ========== OTHER SYSTEMS ==========
+// OTHER SYSTEMS 
 
 // Enhanced Trainers Functionality
 function setupTrainers() {
@@ -1210,7 +1181,6 @@ function setupTrainers() {
     // Modal button actions
     modalBookBtn.on('click', function () {
         const trainerName = $('#modalTrainerName').text();
-
         if (!canRegisterForClasses()) {
             if (!isUserLoggedIn()) {
                 showNotification('Please login to book training sessions', 'warning');
@@ -1221,7 +1191,6 @@ function setupTrainers() {
             }
             return;
         }
-
         showNotification(`Redirecting to book a session with ${trainerName}`, 'success');
         closeTrainerModal();
         showPage('schedule');
@@ -1302,7 +1271,6 @@ function setupDarkMode() {
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
     const currentTheme = localStorage.getItem('theme') ||
         (prefersDarkScheme.matches ? 'dark' : 'light');
-
     if (currentTheme === 'dark') {
         $('html').attr('data-theme', 'dark');
         darkModeToggle.prop('checked', true);
@@ -1386,12 +1354,10 @@ function setupSocialLogin() {
         e.preventDefault();
         handleSocialLogin('google');
     });
-
     $('.social-btn.facebook').on('click', function (e) {
         e.preventDefault();
         handleSocialLogin('facebook');
     });
-
     $('.social-btn.apple').on('click', function (e) {
         e.preventDefault();
         handleSocialLogin('apple');
@@ -1433,7 +1399,6 @@ function setupSupplementCart() {
     });
 
     function addToCart(product, name, price) {
-        // Check if product already in cart
         const existingItem = cart.find(item => item.product === product);
 
         if (existingItem) {
@@ -1446,7 +1411,6 @@ function setupSupplementCart() {
                 quantity: 1
             });
         }
-
         updateCartDisplay();
         showNotification(`Added ${name} to cart`, 'success');
     }
@@ -1501,19 +1465,15 @@ function setupSupplementCart() {
         }, 2000);
     }
 
-    // Initialize cart display
     updateCartDisplay();
 }
 
-// Enhanced glow effects with JavaScript
 function setupEnhancedGlowEffects() {
     const trainerCards = $('.trainer-card');
 
     trainerCards.each((index, card) => {
-        // Add data attribute for easier targeting
         $(card).attr('data-trainer-glow', index + 1);
 
-        // Enhanced mouse move effect for more dynamic glow
         $(card).on('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -1524,7 +1484,6 @@ function setupEnhancedGlowEffects() {
 
             const angle = Math.atan2(y - centerY, x - centerX) * 180 / Math.PI;
 
-            // You can use this angle to create more dynamic glow effects if needed
         });
     });
 }
@@ -1535,68 +1494,49 @@ function setupForgotPassword() {
     const forgotPasswordForm = $('#forgotPasswordForm');
     const backToLoginLinks = $('.back-to-login');
     const forgotPasswordLinks = $('.forgot-password');
-
-    // Open modal when forgot password is clicked
     forgotPasswordLinks.on('click', function (e) {
         e.preventDefault();
         openForgotPasswordModal();
     });
-
-    // Close modal
     $('#forgotPasswordModalClose, #forgotPasswordModal').on('click', function (e) {
         if (e.target === this || $(e.target).is('#forgotPasswordModalClose')) {
             closeForgotPasswordModal();
         }
     });
-
-    // Back to login
     backToLoginLinks.on('click', function (e) {
         e.preventDefault();
         closeForgotPasswordModal();
-        // Switch to login tab if in auth section
         const authTabs = $('.auth-tab');
         if (authTabs.length > 0) {
             authTabs.first().trigger('click');
         }
     });
-
-    // Form submission
     forgotPasswordForm.on('submit', function (e) {
         e.preventDefault();
         const submitBtn = $(this).find('.auth-submit-btn');
         const email = $('#reset-email').val();
-
         submitBtn.addClass('loading');
-
-        // Simulate API call
         setTimeout(() => {
             submitBtn.removeClass('loading');
-
-            // Show success message
             showNotification(
                 currentLanguage === 'en'
                     ? `Password reset instructions sent to ${email}`
                     : `تم إرسال تعليمات إعادة تعيين كلمة المرور إلى ${email}`,
                 'success'
             );
-
             closeForgotPasswordModal();
             $(this).trigger('reset');
         }, 2000);
     });
-
-    // Close with Escape key
     $(document).on('keydown', function (e) {
         if (e.key === 'Escape' && forgotPasswordModal.hasClass('active')) {
             closeForgotPasswordModal();
         }
     });
-
     function openForgotPasswordModal() {
         forgotPasswordModal.addClass('active');
         $('body').css('overflow', 'hidden');
 
-        // Focus on email input
         setTimeout(() => {
             $('#reset-email').focus();
         }, 300);
@@ -1611,29 +1551,23 @@ function setupForgotPassword() {
 
 // Manual Logout Function
 function logout() {
-    // Clear all authentication data
     localStorage.removeItem('userLoggedIn');
     localStorage.removeItem('userPlanActive');
     localStorage.removeItem('userPlan');
     localStorage.removeItem('userPlanPrice');
 
-    // Update UI
     updateUIBasedOnAuth();
 
-    // Show notification
     showNotification('Logged out successfully', 'info');
 
-    // Redirect to home page
     showPage('home');
 }
 
 // ========== INITIALIZATION ==========
 
-// Initialize everything when the page loads
 $(document).ready(function () {
     showPage('home');
 
-    // Initialize all systems
     setupDarkMode();
     initializeLanguage();
     window.classBookingSystem = setupClassBooking();
@@ -1645,29 +1579,23 @@ $(document).ready(function () {
     setupSupplementCart();
     setupEnhancedGlowEffects();
 
-    // Update UI based on current authentication status
     updateUIBasedOnAuth(); // Add this line
 
-    // Set initial filter
     $('.filter-btn[data-filter="all"]').trigger('click');
 });
 // ========== PAGE LOAD - AUTO LOGOUT ==========
 
 $(window).on('load', function () {
-    // Clear all authentication-related data from localStorage
     localStorage.removeItem('userLoggedIn');
     localStorage.removeItem('userPlanActive');
     localStorage.removeItem('userPlan');
     localStorage.removeItem('userPlanPrice');
     localStorage.removeItem('registeredClasses');
 
-    // Update UI to reflect logged out state
     updateUIBasedOnAuth();
 
-    // Reset any login forms
     $('#loginForm, #signupForm').trigger('reset');
 
-    // Clear the registered classes display
     if (window.classBookingSystem) {
         window.classBookingSystem.updateRegisteredClassesDisplay();
     }
@@ -1693,8 +1621,7 @@ $(document).on('click', '.book-class-btn', function (e) {
 
 // ========== PAGE LOAD - AUTO LOGOUT ==========
 $(window).on('load', function () {
-    // Comment out or remove the auto-logout if you want to persist login state
-    // Or keep it if you want users to always start logged out
+   
 
     // Clear all authentication-related data from localStorage
     localStorage.removeItem('userLoggedIn');
