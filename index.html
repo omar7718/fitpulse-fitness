@@ -1,4 +1,1024 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitpulse Fitness | Modern Gym Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-dumbbell"></i>
+                <h1>Fitpulse Fitness</h1>
+            </div>
+            <nav>
+                <ul id="main-nav">
+                    <li><a href="#home" class="nav-link active" data-page="home" data-i18n="home">Home</a></li>
+                    <li><a href="#membership" class="nav-link" data-page="membership"
+                            data-i18n="membership">Membership</a></li>
+                    <li><a href="#schedule" class="nav-link" data-page="schedule" data-i18n="schedule">Classes</a></li>
+                    <li><a href="#trainers" class="nav-link" data-page="trainers" data-i18n="trainers">Trainers</a></li>
+                    <li><a href="#contact" class="nav-link" data-page="contact" data-i18n="contact">Contact</a></li>
+                    <li><a href="#login" class="nav-link" data-page="login" data-i18n="login">Login</a></li>
+                </ul>
+                <div class="mobile-menu" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+
+            <div class="theme-toggle">
+                <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
+                <label for="darkModeToggle" class="toggle-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+
+            <!-- Add Language Toggle -->
+            <div class="language-toggle">
+                <button id="languageSwitch" class="lang-btn">
+                    <i class="fas fa-language"></i>
+                    <span class="lang-text">العربية</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 data-i18n="heroTitle">Transform Your Body, Transform Your Life</h1>
+                    <p data-i18n="heroText">Join Fitpulse Fitness today and experience state-of-the-art facilities,
+                        expert trainers, and a community that supports your fitness journey.</p>
+                    <div class="hero-btns">
+                        <a href="#membership" class="btn" data-page="membership" data-i18n="viewMemberships">View
+                            Memberships</a>
+                        <a href="#schedule" class="btn btn-secondary" data-page="schedule" data-i18n="bookClass">Book a
+                            Class</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="whyChoose">Why Choose Fitpulse?</h2>
+                    <p data-i18n="featuresDesc">We offer everything you need to achieve your fitness goals in a
+                        supportive and motivating environment.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3 data-i18n="modernEquipment">Modern Equipment</h3>
+                        <p data-i18n="equipmentDesc">Access to the latest fitness technology and equipment for all your
+                            workout needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 data-i18n="expertTrainers">Expert Trainers</h3>
+                        <p data-i18n="trainersDesc">Certified professionals to guide and motivate you through your
+                            fitness journey.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 data-i18n="flexibleSchedule">Flexible Schedule</h3>
+                        <p data-i18n="scheduleDesc">Classes and training sessions available throughout the day to fit
+                            your busy lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="testimonialsTitle">What Our Members Say</h2>
+                    <p data-i18n="testimonialsDesc">Hear from our satisfied members who have transformed their lives
+                        with Fitpulse Fitness.</p>
+                </div>
+                <div class="testimonials-slider">
+                    <div class="testimonial active">
+                        <div class="client-img">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                        </div>
+                        <p>"I've been a member at Fitpulse for 6 months and have never felt better! The trainers are
+                            knowledgeable and the community is so supportive. I've lost 20 pounds and gained so much
+                            confidence!"</p>
+                        <div class="client-name">- Sarah Johnson</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="client-img">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                        </div>
+                        <p>"The class variety at Fitpulse is incredible. From yoga to HIIT, there's something for
+                            everyone. The booking system is so easy to use, and I love being able to track my progress."
+                        </p>
+                        <div class="client-name">- Michael Torres</div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="client-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                        </div>
+                        <p>"As a busy professional, I appreciate the flexible hours and the ability to book classes on
+                            my phone. The trainers really know how to push you to be your best. Highly recommend!"</p>
+                        <div class="client-name">- Jennifer Lee</div>
+                    </div>
+                    <div class="slider-controls">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Membership Page -->
+    <section id="membership" class="page-section">
+        <div class="section plans">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="membershipTitle">Membership Plans</h2>
+                    <p data-i18n="membershipDesc">Choose the plan that fits your fitness goals and budget. All plans
+                        include access to our state-of-the-art facilities.</p>
+                </div>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 data-i18n="basic">Basic</h3>
+                            <div class="plan-price">$29<span data-i18n="month">/month</span></div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-times"></i> <span data-i18n="groupClasses">Group Classes</span>
+                                </li>
+                                <li><i class="fas fa-times"></i> <span data-i18n="personalTraining">Personal
+                                        Training</span></li>
+                                <li><i class="fas fa-times"></i> <span data-i18n="nutritionPlanning">Nutrition
+                                        Planning</span></li>
+                            </ul>
+                        </div>
+                        <div class="plan-footer">
+                            <button class="btn get-started-btn" data-plan="basic" data-price="29"
+                                data-i18n="getStarted">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="plan-card popular">
+                        <div class="plan-ribbon" data-i18n="mostPopular">Most Popular</div>
+                        <div class="plan-header">
+                            <h3 data-i18n="premium">Premium</h3>
+                            <div class="plan-price">$49<span data-i18n="month">/month</span></div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="allGroupClasses">All Group
+                                        Classes</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="personalSessions">2 Personal
+                                        Sessions</span></li>
+                                <li><i class="fas fa-times"></i> <span data-i18n="nutritionPlanning">Nutrition
+                                        Planning</span></li>
+                            </ul>
+                        </div>
+                        <div class="plan-footer">
+                            <button class="btn get-started-btn" data-plan="premium" data-price="49"
+                                data-i18n="getStarted">Get Started</button>
+                        </div>
+                    </div>
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3 data-i18n="elite">Elite</h3>
+                            <div class="plan-price">$79<span data-i18n="month">/month</span></div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="allGroupClasses">All Group
+                                        Classes</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="personalSessions">5 Personal
+                                        Sessions</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="nutritionPlanning">Nutrition
+                                        Planning</span></li>
+                            </ul>
+                        </div>
+                        <div class="plan-footer">
+                            <button class="btn get-started-btn" data-plan="elite" data-price="79"
+                                data-i18n="getStarted">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Schedule Page -->
+    <section id="schedule" class="page-section">
+        <div class="section schedule">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="scheduleTitle">Class Schedule</h2>
+                    <p data-i18n="scheduleDesc">Book your favorite classes with our easy-to-use scheduling system.
+                        Filter by class type to find what you're looking for.</p>
+                </div>
+                <div class="schedule-filter">
+                    <div class="filter-btn active" data-filter="all" data-i18n="allClasses">All Classes</div>
+                    <div class="filter-btn" data-filter="yoga" data-i18n="yoga">Yoga</div>
+                    <div class="filter-btn" data-filter="cardio" data-i18n="cardio">Cardio</div>
+                    <div class="filter-btn" data-filter="strength" data-i18n="strength">Strength</div>
+                    <div class="filter-btn" data-filter="hiit" data-i18n="hiit">HIIT</div>
+                </div>
+                <div class="schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-i18n="time">Time</th>
+                                <th data-i18n="monday">Monday</th>
+                                <th data-i18n="tuesday">Tuesday</th>
+                                <th data-i18n="wednesday">Wednesday</th>
+                                <th data-i18n="thursday">Thursday</th>
+                                <th data-i18n="friday">Friday</th>
+                                <th data-i18n="saturday">Saturday</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>6:00 AM</td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type cardio" data-i18n="cardio">Cardio</span></td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type hiit" data-i18n="hiit">HIIT</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                            </tr>
+                            <tr>
+                                <td>8:00 AM</td>
+                                <td><span class="class-type pilates">Pilates</span></td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                                <td><span class="class-type cardio" data-i18n="cardio">Cardio</span></td>
+                                <td><span class="class-type pilates">Pilates</span></td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                                <td><span class="class-type cycling">Cycling</span></td>
+                            </tr>
+                            <tr>
+                                <td>12:00 PM</td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type hiit" data-i18n="hiit">HIIT</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type hiit" data-i18n="hiit">HIIT</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                            </tr>
+                            <tr>
+                                <td>5:00 PM</td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                                <td><span class="class-type cycling">Cycling</span></td>
+                                <td><span class="class-type hiit" data-i18n="hiit">HIIT</span></td>
+                                <td><span class="class-type strength" data-i18n="strength">Strength</span></td>
+                                <td><span class="class-type cycling">Cycling</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>7:00 PM</td>
+                                <td><span class="class-type cardio" data-i18n="cardio">Cardio</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td><span class="class-type pilates">Pilates</span></td>
+                                <td><span class="class-type cardio" data-i18n="cardio">Cardio</span></td>
+                                <td><span class="class-type yoga" data-i18n="yoga">Yoga</span></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#login" class="btn" data-page="login" data-i18n="bookClassNow">Book a Class Now</a>
+                </div>
+                <div class="registered-classes">
+                    <h3 data-i18n="yourRegisteredClasses">Your Registered Classes</h3>
+                    <div class="registered-classes-grid">
+                        <div class="empty-state" style="display: block;">
+                            <i class="fas fa-calendar-plus"></i>
+                            <p data-i18n="noClassesRegistered">No classes registered yet</p>
+                            <p data-i18n="clickToRegister">Click on any class above to register!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Page -->
+    <section id="trainers" class="page-section">
+        <div class="section trainers">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="trainersTitle">Meet Our Expert Trainers</h2>
+                    <p data-i18n="trainersDesc">Our certified personal trainers bring years of experience and proven
+                        results to help you achieve your fitness goals.</p>
+                </div>
+                <div class="trainers-grid">
+                    <!-- Marcus Johnson -->
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Marcus Johnson">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Marcus Johnson</h3>
+                            <div class="trainer-specialty">Strength & Conditioning Specialist</div>
+                            <div class="trainer-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="rating-value">4.8</span>
+                                <span class="rating-count">(247 reviews)</span>
+                            </div>
+                            <div class="trainer-stats">
+                                <div class="trainer-stat">
+                                    <span class="stat-value">12+</span>
+                                    <span class="stat-label" data-i18n="years">Years</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">500+</span>
+                                    <span class="stat-label" data-i18n="clients">Clients</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">95%</span>
+                                    <span class="stat-label" data-i18n="successRate">Success Rate</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">NASM</span>
+                                    <span class="stat-label" data-i18n="certified">Certified</span>
+                                </div>
+                            </div>
+                            <div class="trainer-achievements">
+                                <div class="achievements-title">
+                                    <i class="fas fa-trophy"></i>
+                                    <span data-i18n="keyAchievements">Key Achievements</span>
+                                </div>
+                                <div class="achievements-list">
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>2022 National Powerlifting Champion</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Certified Strength Coach (CSCS)</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Precision Nutrition Level 2 Certified</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trainer-expertise">
+                                <div class="expertise-title">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span data-i18n="specializations">Specializations</span>
+                                </div>
+                                <div class="expertise-tags">
+                                    <span class="expertise-tag">Powerlifting</span>
+                                    <span class="expertise-tag">Bodybuilding</span>
+                                    <span class="expertise-tag">Athletic Performance</span>
+                                    <span class="expertise-tag">Injury Prevention</span>
+                                </div>
+                            </div>
+                            <div class="trainer-cta">
+                                <button class="book-session-btn" data-trainer="marcus">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span data-i18n="bookSession">Book Session</span> with Marcus
+                                </button>
+                            </div>
+                            <div class="trainer-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sophia Martinez -->
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2120&q=80"
+                                alt="Sophia Martinez">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Sophia Martinez</h3>
+                            <div class="trainer-specialty">Yoga & Mindfulness Expert</div>
+                            <div class="trainer-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">5.0</span>
+                                <span class="rating-count">(189 reviews)</span>
+                            </div>
+                            <div class="trainer-stats">
+                                <div class="trainer-stat">
+                                    <span class="stat-value">8+</span>
+                                    <span class="stat-label" data-i18n="years">Years</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">300+</span>
+                                    <span class="stat-label" data-i18n="clients">Clients</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">98%</span>
+                                    <span class="stat-label" data-i18n="satisfaction">Satisfaction</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">RYT-500</span>
+                                    <span class="stat-label" data-i18n="certified">Certified</span>
+                                </div>
+                            </div>
+                            <div class="trainer-achievements">
+                                <div class="achievements-title">
+                                    <i class="fas fa-trophy"></i>
+                                    <span data-i18n="keyAchievements">Key Achievements</span>
+                                </div>
+                                <div class="achievements-list">
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>International Yoga Alliance Certified</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Mindfulness Meditation Teacher</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Published Author: "Mindful Movement"</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trainer-expertise">
+                                <div class="expertise-title">
+                                    <i class="fas fa-spa"></i>
+                                    <span data-i18n="specializations">Specializations</span>
+                                </div>
+                                <div class="expertise-tags">
+                                    <span class="expertise-tag">Vinyasa Flow</span>
+                                    <span class="expertise-tag">Yin Yoga</span>
+                                    <span class="expertise-tag">Meditation</span>
+                                    <span class="expertise-tag">Stress Relief</span>
+                                    <span class="expertise-tag">Flexibility</span>
+                                </div>
+                            </div>
+                            <div class="trainer-cta">
+                                <button class="book-session-btn" data-trainer="sophia">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span data-i18n="bookSession">Book Session</span> with Sophia
+                                </button>
+                            </div>
+                            <div class="trainer-social">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Omar Murra -->
+                    <div class="trainer-card">
+                        <div class="trainer-img">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Omar Murra">
+                        </div>
+                        <div class="trainer-info">
+                            <h3>Omar Murra</h3>
+                            <div class="trainer-specialty">HIIT & Cardio Specialist</div>
+                            <div class="trainer-rating">
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-value">4.9</span>
+                                <span class="rating-count">(312 reviews)</span>
+                            </div>
+                            <div class="trainer-stats">
+                                <div class="trainer-stat">
+                                    <span class="stat-value">6+</span>
+                                    <span class="stat-label" data-i18n="years">Years</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">650+</span>
+                                    <span class="stat-label" data-i18n="clients">Clients</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">12k+</span>
+                                    <span class="stat-label" data-i18n="lbsLost">Lbs Lost</span>
+                                </div>
+                                <div class="trainer-stat">
+                                    <span class="stat-value">ACE</span>
+                                    <span class="stat-label" data-i18n="certified">Certified</span>
+                                </div>
+                            </div>
+                            <div class="trainer-achievements">
+                                <div class="achievements-title">
+                                    <i class="fas fa-trophy"></i>
+                                    <span data-i18n="keyAchievements">Key Achievements</span>
+                                </div>
+                                <div class="achievements-list">
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Transformation Specialist of the Year 2023</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Functional Training Certified</span>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <i class="fas fa-award"></i>
+                                        <span>Group Fitness Instructor Expert</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trainer-expertise">
+                                <div class="expertise-title">
+                                    <i class="fas fa-bolt"></i>
+                                    <span data-i18n="specializations">Specializations</span>
+                                </div>
+                                <div class="expertise-tags">
+                                    <span class="expertise-tag">HIIT</span>
+                                    <span class="expertise-tag">Fat Loss</span>
+                                    <span class="expertise-tag">Metabolic Conditioning</span>
+                                    <span class="expertise-tag">Endurance Training</span>
+                                    <span class="expertise-tag">Circuit Training</span>
+                                </div>
+                            </div>
+                            <div class="trainer-cta">
+                                <button class="book-session-btn" data-trainer="omar">
+                                    <i class="fas fa-calendar-check"></i>
+                                    <span data-i18n="bookSession">Book Session</span> with Omar
+                                </button>
+                            </div>
+                            <div class="trainer-social">
+                                <a href="https://www.instagram.com/omarrr.murra?igsh=NWpodzFteWdyYThn"
+                                    target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://x.com/OmarMurra133920?t=zyjTUVzClO9_X4UC7O7KUQ&s=09" target="_blank"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trainer Modal -->
+        <div class="trainer-modal" id="trainerModal">
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <h3 id="modalTrainerName">Trainer Name</h3>
+                    <div class="modal-specialty" id="modalTrainerSpecialty">Specialty</div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-stats" id="modalStats"></div>
+                    <div class="modal-bio" id="modalBio"></div>
+                    <div class="modal-achievements" id="modalAchievements"></div>
+                    <div class="modal-expertise" id="modalExpertise"></div>
+                    <div class="modal-actions">
+                        <button class="modal-btn primary" id="modalBookBtn">
+                            <i class="fas fa-calendar-check"></i>
+                            <span data-i18n="bookSession">Book Session</span>
+                        </button>
+                        <button class="modal-btn secondary" id="modalScheduleBtn">
+                            <i class="fas fa-clock"></i>
+                            <span data-i18n="viewSchedule">View Schedule</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact" class="page-section">
+        <div class="section contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="contactTitle">Get In Touch</h2>
+                    <p data-i18n="contactDesc">Have questions or ready to start your fitness journey? Contact us today!
+                    </p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="ourLocation">Our Location</h3>
+                                <p>123 Fitness Street, Health City, HC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="phoneNumber">Phone Number</h3>
+                                <p>(555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="emailAddress">Email Address</h3>
+                                <p>info@fitpulsefitness.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3 data-i18n="openingHours">Opening Hours</h3>
+                                <p data-i18n="hoursWeekdays">Monday - Friday: 5:00 AM - 11:00 PM</p>
+                                <p data-i18n="hoursWeekend">Saturday - Sunday: 7:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name" data-i18n="yourName">Your Name</label>
+                                <input type="text" id="name" class="form-control" data-i18n-placeholder="yourName"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="yourEmail">Your Email</label>
+                                <input type="email" id="email" class="form-control" data-i18n-placeholder="yourEmail"
+                                    placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-i18n="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" data-i18n-placeholder="subject"
+                                    placeholder="Enter subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-i18n="yourMessage">Your Message</label>
+                                <textarea id="message" class="form-control" data-i18n-placeholder="yourMessage"
+                                    placeholder="Enter your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;" data-i18n="sendMessage">Send
+                                Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9983454237638!3d40.719143171389815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANARY%20Gym!5e0!3m2!1sen!2sus!4v1690830000000!5m2!1sen!2sus"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Signup Page -->
+    <!-- Login/Signup Page -->
+    <section id="login" class="page-section">
+        <div class="auth-section">
+            <!-- Background Elements -->
+            <div class="auth-bg-elements">
+                <div class="bg-circle circle-1"></div>
+                <div class="bg-circle circle-2"></div>
+                <div class="bg-circle circle-3"></div>
+                <div class="bg-dumbbell">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <div class="bg-heart">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+            </div>
+
+            <div class="auth-container">
+                <div class="auth-header">
+                    <div class="auth-logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <h2>Fitpulse Fitness</h2>
+                    </div>
+                    <p class="auth-tagline">Transform Your Fitness Journey</p>
+                </div>
+
+                <div class="auth-tabs">
+                    <div class="auth-tab active" data-tab="login" data-i18n="login">Login</div>
+                    <div class="auth-tab" data-tab="signup" data-i18n="signup">Sign Up</div>
+                </div>
+
+                <div class="auth-form active" id="login-form">
+                    <h2 data-i18n="welcomeBack">Welcome Back</h2>
+                    <p class="form-subtitle">Sign in to continue your fitness journey</p>
+
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" class="form-control" data-i18n-placeholder="email"
+                                    placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" class="form-control"
+                                    data-i18n-placeholder="password" placeholder="Enter your password" required>
+                                <button type="button" class="password-toggle">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-options">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember">
+                                <label for="remember" data-i18n="rememberMe">Remember me</label>
+                            </div>
+                            <a href="#" class="forgot-password" data-i18n="forgotPassword">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn auth-submit-btn" data-i18n="login">
+                            <span class="btn-text">Login</span>
+                            <div class="btn-loader">
+                                <div class="loader-spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <div class="social-btns">
+                            <a href="#" class="social-btn google">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </a>
+                            <a href="#" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-btn apple">
+                                <i class="fab fa-apple"></i>
+                                <span>Apple</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-form" id="signup-form">
+                    <h2 data-i18n="createAccount">Create Account</h2>
+                    <p class="form-subtitle">Join our fitness community today</p>
+
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="signup-name" class="form-control"
+                                    data-i18n-placeholder="fullName" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="signup-email" class="form-control" data-i18n-placeholder="email"
+                                    placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-password" class="form-control"
+                                    data-i18n-placeholder="password" placeholder="Create a password" required>
+                                <button type="button" class="password-toggle">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill" data-strength="0"></div>
+                                </div>
+                                <span class="strength-text">Password strength</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signup-confirm" class="form-control"
+                                    data-i18n-placeholder="confirmPassword" placeholder="Confirm your password"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms" data-i18n="agreeTerms">I agree to the <a href="#">Terms & Conditions</a>
+                                and <a href="#">Privacy Policy</a></label>
+                        </div>
+                        <button type="submit" class="btn auth-submit-btn" data-i18n="signup">
+                            <span class="btn-text">Create Account</span>
+                            <div class="btn-loader">
+                                <div class="loader-spinner"></div>
+                            </div>
+                        </button>
+                    </form>
+
+                    <div class="divider">
+                        <span>or sign up with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <div class="social-btns">
+                            <a href="#" class="social-btn google">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </a>
+                            <a href="#" class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-btn apple">
+                                <i class="fab fa-apple"></i>
+                                <span>Apple</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-footer">
+                    <p>By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy
+                            Policy</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Confirmation Modal -->
+    <div class="plan-modal" id="planModal">
+        <div class="modal-content">
+            <button class="modal-close" id="planModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 id="modalPlanName">Plan Name</h3>
+                <div class="modal-price" id="modalPlanPrice">$0/month</div>
+            </div>
+            <div class="modal-body">
+                <div class="plan-features" id="modalPlanFeatures">
+                    <!-- Features will be populated dynamically -->
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn secondary" id="modalBackBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-i18n="back">Back</span>
+                    </button>
+                    <button class="modal-btn primary" id="modalConfirmBtn">
+                        <i class="fas fa-check"></i>
+                        <span data-i18n="confirmPlan">Confirm Plan</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 data-i18n="services">Services</h3>
+                    <ul>
+                        <li><a href="#trainers" data-page="trainers" data-i18n="personalTraining">Personal Training</a>
+                        </li>
+                        <li><a href="#schedule" data-page="schedule" data-i18n="viewClasses">View Classes</a></li>
+                        <li><a href="#membership" data-page="membership" data-i18n="choosePlan">Choose a plan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="quickLinks">Quick Links</h3>
+                    <ul>
+                        <li><a href="#home" data-page="home" data-i18n="home">Home</a></li>
+                        <li><a href="#membership" data-page="membership" data-i18n="membership">Membership</a></li>
+                        <li><a href="#schedule" data-page="schedule" data-i18n="schedule">Class Schedule</a></li>
+                        <li><a href="#trainers" data-page="trainers" data-i18n="trainers">Our Trainers</a></li>
+                        <li><a href="#contact" data-page="contact" data-i18n="contactUs">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="contactInfo">Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Health City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitpulsefitness.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 data-i18n="followUs">Follow Us</h3>
+                    <p data-i18n="stayConnected">Stay connected and get the latest updates, fitness tips, and exclusive
+                        offers.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Fitpulse Fitness. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Forgot Password Modal -->
+    <div class="forgot-password-modal" id="forgotPasswordModal">
+        <div class="modal-content">
+            <button class="modal-close" id="forgotPasswordModalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 data-i18n="forgotPasswordTitle">Reset Your Password</h3>
+                <p data-i18n="forgotPasswordDesc">Enter your email address and we'll send you instructions to reset your
+                    password.</p>
+            </div>
+            <div class="modal-body">
+                <form id="forgotPasswordForm">
+                    <div class="form-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="reset-email" class="form-control" data-i18n-placeholder="email"
+                                placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn auth-submit-btn" data-i18n="sendResetInstructions">
+                        <span class="btn-text">Send Reset Instructions</span>
+                        <div class="btn-loader">
+                            <div class="loader-spinner"></div>
+                        </div>
+                    </button>
+                </form>
+                <div class="modal-footer">
+                    <p data-i18n="rememberPassword">Remember your password? <a href="#" class="back-to-login">Back to
+                            Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
 <html lang="en">
 
 <head>
@@ -1181,3 +2201,4 @@
 </body>
 
 </html>
+
