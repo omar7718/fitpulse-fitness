@@ -127,54 +127,6 @@ const translations = {
         confirmPlan: "Confirm Plan",
         followUs: "Follow Us",
         stayConnected: "Stay connected and get the latest updates, fitness tips, and exclusive offers.",
-        pilates: "Pilates",
-        cycling: "Cycling",
-        classesRegistered: "classes registered",
-        of: "of",
-        cancelAllClasses: "Cancel All Classes",
-        maximumClasses: "Maximum classes reached",
-        cancelAllConfirm: "Are you sure you want to cancel all registered classes?",
-        noClassesToCancel: "No classes to cancel",
-        cancelledAllClasses: "Cancelled all classes",
-        myAccount: "My Account",
-        supplementsTitle: "Premium Supplements",
-        supplementsDesc: "Enhance your fitness journey with our premium selection of supplements. All products are third-party tested for quality and purity.",
-        wheyProtein: "Whey Protein",
-        protein: "Protein",
-        proteinDesc: "Premium quality whey protein for muscle recovery and growth.",
-        creatine: "Creatine Monohydrate",
-        creatineDesc: "Pure creatine monohydrate for strength and power output.",
-        preWorkout: "Pre-Workout Energizer",
-        preworkoutDesc: "Advanced formula for energy, focus, and performance.",
-        multivitamin: "Daily Multivitamin",
-        multivitaminDesc: "Complete multivitamin for overall health and wellness.",
-        massGainer: "Weight Gainer",
-        massGainerDesc: "High-calorie formula for healthy weight and muscle gain.",
-        bcaa: "BCAA Amino Acids",
-        bcaaDesc: "Essential amino acids for muscle recovery and hydration.",
-        performance: "Performance",
-        energy: "Energy",
-        health: "Health",
-        weightGain: "Weight Gain",
-        recovery: "Recovery",
-        fastAbsorption: "Fast Absorption",
-        muscleRecovery: "Muscle Recovery",
-        strength: "Strength",
-        endurance: "Endurance",
-        energyBoost: "Energy Boost",
-        mentalFocus: "Mental Focus",
-        immuneSupport: "Immune Support",
-        dailyHealth: "Daily Health",
-        calorieDense: "Calorie Dense",
-        muscleGrowth: "Muscle Growth",
-        musclePreservation: "Muscle Preservation",
-        hydration: "Hydration",
-        addToCart: "Add to Cart",
-        yourCart: "Your Cart",
-        emptyCart: "Your cart is empty",
-        total: "Total",
-        proceedToCheckout: "Proceed to Checkout"
-
     },
 
     ar: {
@@ -304,118 +256,75 @@ const translations = {
         confirmPlan: "تأكيد الخطة",
         followUs: "تابعنا",
         stayConnected: "ابق على اتصال واحصل على آخر التحديثات ونصائح اللياقة والعروض الحصرية.",
-        pilates: "بيلاتس",
-        cycling: "ركوب الدراجات",
-        classesRegistered: "حصة مسجلة",
-        of: "من",
-        cancelAllClasses: "إلغاء جميع الحصص",
-        maximumClasses: "تم الوصول إلى الحد الأقصى للحصص",
-        cancelAllConfirm: "هل أنت متأكد أنك تريد إلغاء جميع الحصص المسجلة؟",
-        noClassesToCancel: "لا توجد حصص للإلغاء",
-        cancelledAllClasses: "تم إلغاء جميع الحصص",
-        myAccount: "حسابي",
-        supplementsTitle: "المكملات الغذائية المميزة",
-        supplementsDesc: "عزز رحلتك الرياضية مع مجموعتنا المميزة من المكملات الغذائية. جميع المنتجات مختبرة من جهات خارجية للجودة والنقاء.",
-        wheyProtein: "بروتين مصل اللبن",
-        protein: "بروتين",
-        proteinDesc: "بروتين مصل اللبن عالي الجودة لاستعادة وبناء العضلات.",
-        creatine: "كرياتين مونوهيدرات",
-        creatineDesc: "كرياتين نقي للقوة والأداء الرياضي.",
-        preWorkout: "منشط ما قبل التمرين",
-        preworkoutDesc: "تركيبة متقدمة للطاقة والتركيز والأداء.",
-        multivitamin: "فيتامينات متعددة يومية",
-        multivitaminDesc: "فيتامينات متعددة شاملة للصحة العامة والعافية.",
-        massGainer: "مكمل زيادة الوزن",
-        massGainerDesc: "تركيبة عالية السعرات لزيادة الوزن والعضلات بشكل صحي.",
-        bcaa: "أحماض أمينية متفرعة السلسلة",
-        bcaaDesc: "أحماض أمينية أساسية لاستعادة العضلات والترطيب.",
-        performance: "أداء",
-        energy: "طاقة",
-        health: "صحة",
-        weightGain: "زيادة الوزن",
-        recovery: "استعادة",
-        fastAbsorption: "امتصاص سريع",
-        muscleRecovery: "استعادة العضلات",
-        strength: "قوة",
-        endurance: "تحمل",
-        energyBoost: "تعزيز الطاقة",
-        mentalFocus: "تركيز ذهني",
-        immuneSupport: "دعم المناعة",
-        dailyHealth: "صحة يومية",
-        calorieDense: "غني بالسعرات",
-        muscleGrowth: "نمو العضلات",
-        musclePreservation: "الحفاظ على العضلات",
-        hydration: "ترطيب",
-        addToCart: "أضف إلى السلة",
-        yourCart: "سلة التسوق",
-        emptyCart: "سلة التسوق فارغة",
-        total: "المجموع",
-        proceedToCheckout: "إتمام الشراء"
     }
 };
 
-// Add logout translations
-translations.en.logout = "Logout";
-translations.ar.logout = "تسجيل الخروج";
 
 // ========== CORE FUNCTIONALITY ==========
 
 // Mobile Menu Toggle
-$('#mobile-menu').on('click', function () {
-    $('#main-nav').toggleClass('show');
+document.getElementById('mobile-menu').addEventListener('click', function () {
+    document.getElementById('main-nav').classList.toggle('show');
 });
 
 // Simple Page Navigation
 function showPage(pageId) {
     // Hide all pages
-    $('.page-section').removeClass('active');
+    document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+    });
 
     // Show selected page
-    $('#' + pageId).addClass('active');
+    document.getElementById(pageId).classList.add('active');
 
     // Update active nav link
-    $('.nav-link').removeClass('active');
-    $(`.nav-link[href="#${pageId}"]`).addClass('active');
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + pageId) {
+            link.classList.add('active');
+        }
+    });
 
     // Close mobile menu
-    $('#main-nav').removeClass('show');
+    document.getElementById('main-nav').classList.remove('show');
 
     // Scroll to top of page
-    $('html, body').animate({ scrollTop: 0 }, 400);
+    window.scrollTo(0, 0);
 }
 
 // Handle all navigation clicks
-$(document).on('click', 'a[href^="#"]', function (e) {
-    e.preventDefault();
-    const pageId = $(this).attr('href').substring(1);
+document.addEventListener('click', function (e) {
+    const link = e.target.closest('a');
+    if (link && link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const pageId = link.getAttribute('href').substring(1);
 
-    // Handle logout
-    if (pageId === 'logout') {
-        logout();
-        return;
-    }
-
-    // Only show page if it's a valid page section
-    if ($('#' + pageId).length) {
-        showPage(pageId);
+        // Only show page if it's a valid page section
+        if (document.getElementById(pageId)) {
+            showPage(pageId);
+        } else {
+            // For links that don't correspond to page sections, ensure scroll works
+            document.body.style.overflow = 'auto';
+        }
     }
 });
+
 // Testimonial Slider
 let currentSlide = 0;
-const testimonials = $('.testimonial');
-const dots = $('.slider-dot');
+const testimonials = document.querySelectorAll('.testimonial');
+const dots = document.querySelectorAll('.slider-dot');
 
 function showTestimonial(n) {
-    testimonials.removeClass('active');
-    dots.removeClass('active');
+    testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
 
     currentSlide = n;
-    testimonials.eq(currentSlide).addClass('active');
-    dots.eq(currentSlide).addClass('active');
+    testimonials[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
 }
 
-dots.on('click', function () {
-    showTestimonial($(this).index());
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showTestimonial(index));
 });
 
 setInterval(() => {
@@ -423,83 +332,100 @@ setInterval(() => {
 }, 5000);
 
 // Class Schedule Filter
-$('.filter-btn').on('click', function () {
-    // Update active button
-    $('.filter-btn').removeClass('active');
-    $(this).addClass('active');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
-    const filter = $(this).data('filter');
-    const classTypes = $('.class-type');
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        // Update active button
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
 
-    // Always show all table cells and rows
-    $('.schedule-table td, .schedule-table tr').show();
+        const filter = this.getAttribute('data-filter');
+        const classTypes = document.querySelectorAll('.class-type');
 
-    // Only hide the class type spans, not the table cells
-    if (filter === 'all') {
-        classTypes.show();
-    } else {
-        classTypes.hide();
-        classTypes.filter('.' + filter).show();
-    }
+        // Always show all table cells and rows
+        document.querySelectorAll('.schedule-table td, .schedule-table tr').forEach(element => {
+            element.style.display = '';
+        });
+
+        // Only hide the class type spans, not the table cells
+        classTypes.forEach(type => {
+            if (filter === 'all' || type.classList.contains(filter)) {
+                type.style.display = 'inline-block';
+            } else {
+                type.style.display = 'none';
+            }
+        });
+    });
 });
 
 // Auth Tabs
-$('.auth-tab').on('click', function () {
-    const index = $(this).index();
+const authTabs = document.querySelectorAll('.auth-tab');
+const authForms = document.querySelectorAll('.auth-form');
 
-    $('.auth-tab').removeClass('active');
-    $('.auth-form').removeClass('active');
+authTabs.forEach((tab, index) => {
+    tab.addEventListener('click', function () {
+        authTabs.forEach(t => t.classList.remove('active'));
+        authForms.forEach(f => f.classList.remove('active'));
 
-    $(this).addClass('active');
-    $('.auth-form').eq(index).addClass('active');
+        this.classList.add('active');
+        authForms[index].classList.add('active');
+    });
 });
 
 // Form Submissions
-$('#contactForm').on('submit', function (e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = $(this).find('.btn');
-    const originalText = btn.text();
+    const btn = this.querySelector('.btn');
+    const originalText = btn.textContent;
 
-    btn.text('Sending...').prop('disabled', true);
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
 
     setTimeout(() => {
         alert('Thank you for your message! We will get back to you soon.');
-        $(this).trigger('reset');
-        btn.text(originalText).prop('disabled', false);
+        this.reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
     }, 1500);
 });
 
 // Global showNotification function 
 function showNotification(message, type) {
     // Create notification element
-    const notification = $(`<div class="notification ${type}">${message}</div>`).css({
-        position: 'fixed',
-        top: '100px',
-        right: '20px',
-        background: type === 'success' ? 'var(--success)' : 'var(--primary)',
-        color: 'white',
-        padding: '15px 25px',
-        borderRadius: '10px',
-        boxShadow: 'var(--shadow-hover)',
-        zIndex: '10000',
-        transform: 'translateX(400px)',
-        transition: 'transform 0.3s ease',
-        maxWidth: '300px',
-        wordWrap: 'break-word'
-    });
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: ${type === 'success' ? 'var(--success)' : 'var(--primary)'};
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        box-shadow: var(--shadow-hover);
+        z-index: 10000;
+        transform: translateX(400px);
+        transition: transform 0.3s ease;
+        max-width: 300px;
+        word-wrap: break-word;
+    `;
+    notification.textContent = message;
 
-    $('body').append(notification);
+    document.body.appendChild(notification);
 
     // Animate in
     setTimeout(() => {
-        notification.css('transform', 'translateX(0)');
+        notification.style.transform = 'translateX(0)';
     }, 100);
 
     // Remove after 3 seconds
     setTimeout(() => {
-        notification.css('transform', 'translateX(400px)');
+        notification.style.transform = 'translateX(400px)';
         setTimeout(() => {
-            notification.remove();
+            if (document.body.contains(notification)) {
+                document.body.removeChild(notification);
+            }
         }, 300);
     }, 3000);
 }
@@ -521,109 +447,41 @@ function canRegisterForClasses() {
     return isUserLoggedIn() && hasActivePlan();
 }
 
-// Language Switching Functionality
-let currentLanguage = 'en';
-
-function initializeLanguage() {
-    // Check for saved language preference
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    if (savedLanguage) {
-        currentLanguage = savedLanguage;
-        switchLanguage(savedLanguage);
-    }
-
-    // Set up language switch button
-    $('#languageSwitch').on('click', function () {
-        const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-        switchLanguage(newLanguage);
-    });
-}
-
-function switchLanguage(lang) {
-    currentLanguage = lang;
-    localStorage.setItem('preferredLanguage', lang);
-
-    // Update HTML direction
-    $('html').attr({
-        dir: lang === 'ar' ? 'rtl' : 'ltr',
-        lang: lang
-    });
-
-    // Update all translatable elements
-    updateTextContent(lang);
-    updateLanguageButton(lang);
-    showNotification(lang === 'ar' ? 'تم التبديل إلى اللغة العربية' : 'Switched to English', 'success');
-}
-
-function updateTextContent(lang) {
-    const translation = translations[lang];
-
-    // Update elements with data-i18n attribute
-    $('[data-i18n]').each(function () {
-        const key = $(this).data('i18n');
-        if (translation[key]) {
-            // Special handling for login/logout button
-            if ($(this).hasClass('nav-link-text')) {
-                const isLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
-                if (isLoggedIn && key === 'login') {
-                    $(this).text(translation['logout']);
-                } else {
-                    $(this).text(translation[key]);
-                }
-            } else {
-                $(this).text(translation[key]);
-            }
-        }
-    });
-
-    // Update placeholder texts
-    $('[data-i18n-placeholder]').each(function () {
-        const key = $(this).data('i18n-placeholder');
-        if (translation[key]) {
-            $(this).attr('placeholder', translation[key]);
-        }
-    });
-}
-
-function updateLanguageButton(lang) {
-    const langText = $('#languageSwitch .lang-text');
-    langText.text(lang === 'en' ? 'العربية' : 'English');
-}
-
 // Update UI based on authentication status
 function updateUIBasedOnAuth() {
     const isLoggedIn = isUserLoggedIn();
-    const loginNavButton = $('#loginNavButton');
-    const navLinkText = loginNavButton.find('.nav-link-text');
+    const hasPlan = hasActivePlan();
 
-    if (isLoggedIn) {
-        // Change to Logout
-        navLinkText.text('Logout');
-        navLinkText.attr('data-i18n', 'logout');
-        loginNavButton.attr('data-page', 'logout');
-        loginNavButton.attr('href', '#logout');
-
-        // Update translation if in Arabic
-        if (currentLanguage === 'ar') {
-            navLinkText.text('تسجيل الخروج');
-        }
-    } else {
-        // Change to Login
-        navLinkText.text('Login');
-        navLinkText.attr('data-i18n', 'login');
-        loginNavButton.attr('data-page', 'login');
-        loginNavButton.attr('href', '#login');
-
-        // Update translation if in Arabic
-        if (currentLanguage === 'ar') {
-            navLinkText.text('تسجيل الدخول');
+    // Update navigation
+    const loginNavItem = document.querySelector('a[data-page="login"]');
+    if (loginNavItem) {
+        if (isLoggedIn) {
+            loginNavItem.textContent = 'My Account';
+            // Update translation if needed
+            if (currentLanguage === 'en') {
+                loginNavItem.setAttribute('data-i18n', 'myAccount');
+                if (translations.en.myAccount) {
+                    loginNavItem.textContent = translations.en.myAccount;
+                }
+            } else {
+                loginNavItem.setAttribute('data-i18n', 'myAccount');
+                if (translations.ar.myAccount) {
+                    loginNavItem.textContent = translations.ar.myAccount;
+                }
+            }
+        } else {
+            loginNavItem.textContent = currentLanguage === 'en' ? 'Login' : 'تسجيل الدخول';
+            loginNavItem.setAttribute('data-i18n', 'login');
         }
     }
 
-    // Update other UI elements
+    // Update class booking buttons visibility
     updateClassBookingUI();
+
+    // Update plan activation buttons
     updatePlanActivationUI();
 
+    // Update login required message
     if (window.classBookingSystem) {
         window.classBookingSystem.updateLoginRequiredMessage();
     }
@@ -632,23 +490,23 @@ function updateUIBasedOnAuth() {
 // Update class booking UI based on authentication
 function updateClassBookingUI() {
     const canRegister = canRegisterForClasses();
+    const classTypes = document.querySelectorAll('.class-type');
 
-    $('.class-type').each(function () {
-        const $this = $(this);
+    classTypes.forEach(classType => {
         if (canRegister) {
-            $this.css({
-                cursor: 'pointer',
-                opacity: '1',
-                pointerEvents: 'auto'
-            }).attr('title', 'Click to register for this class');
+            classType.style.cursor = 'pointer';
+            classType.style.opacity = '1';
+            classType.title = 'Click to register for this class';
+            classType.style.pointerEvents = 'auto';
         } else {
-            $this.css({
-                cursor: 'not-allowed',
-                opacity: '0.7',
-                pointerEvents: 'none'
-            }).attr('title', !isUserLoggedIn() ?
-                'Please login to register for classes' :
-                'Please activate a membership plan to register for classes');
+            classType.style.cursor = 'not-allowed';
+            classType.style.opacity = '0.7';
+            classType.style.pointerEvents = 'none';
+            if (!isUserLoggedIn()) {
+                classType.title = 'Please login to register for classes';
+            } else {
+                classType.title = 'Please activate a membership plan to register for classes';
+            }
         }
     });
 }
@@ -656,15 +514,18 @@ function updateClassBookingUI() {
 // Update plan activation UI based on authentication
 function updatePlanActivationUI() {
     const isLoggedIn = isUserLoggedIn();
+    const planButtons = document.querySelectorAll('.get-started-btn');
 
-    $('.get-started-btn').each(function () {
-        const $this = $(this);
-        $this.css({
-            cursor: 'pointer',
-            opacity: '1'
-        }).attr('title', !isLoggedIn ?
-            'Click to select this plan (login required)' :
-            'Click to activate this plan');
+    planButtons.forEach(button => {
+        if (!isLoggedIn) {
+            button.style.cursor = 'pointer';
+            button.style.opacity = '1';
+            button.title = 'Click to select this plan (login required)';
+        } else {
+            button.style.cursor = 'pointer';
+            button.style.opacity = '1';
+            button.title = 'Click to activate this plan';
+        }
     });
 }
 
@@ -673,58 +534,63 @@ function updatePlanActivationUI() {
 function setupClassBooking() {
     let registeredClasses = [];
     const MAX_CLASSES = 12;
-
     // Function to update the registered classes display
     function updateRegisteredClassesDisplay() {
-        const registeredContainer = $('.registered-classes-grid');
-        const emptyState = $('.empty-state');
+        const registeredContainer = document.querySelector('.registered-classes-grid');
+        const emptyState = document.querySelector('.empty-state');
 
-        if (!registeredContainer.length) return;
+        if (!registeredContainer) return;
 
-        registeredContainer.empty();
+        registeredContainer.innerHTML = '';
 
         if (registeredClasses.length === 0) {
-            emptyState.show();
+            if (emptyState) {
+                emptyState.style.display = 'block';
+            }
             return;
         }
 
-        emptyState.hide();
+        if (emptyState) {
+            emptyState.style.display = 'none';
+        }
 
         registeredClasses.forEach((classItem, index) => {
-            const classCard = $(`
-                <div class="registered-class-card">
-                    <div class="class-header">
-                        <h4>${classItem.name}</h4>
-                        <span class="class-type-badge ${classItem.type}">${classItem.type}</span>
+            const classCard = document.createElement('div');
+            classCard.className = 'registered-class-card';
+            classCard.innerHTML = `
+                <div class="class-header">
+                    <h4>${classItem.name}</h4>
+                    <span class="class-type-badge ${classItem.type}">${classItem.type}</span>
+                </div>
+                <div class="class-details">
+                    <div class="class-detail-item">
+                        <i class="fas fa-calendar-day"></i>
+                        <span>Day: ${classItem.day}</span>
                     </div>
-                    <div class="class-details">
-                        <div class="class-detail-item">
-                            <i class="fas fa-calendar-day"></i>
-                            <span>Day: ${classItem.day}</span>
-                        </div>
-                        <div class="class-detail-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Time: ${classItem.time}</span>
-                        </div>
-                        <div class="class-detail-item">
-                            <i class="fas fa-dumbbell"></i>
-                            <span>Intensity: ${getClassIntensity(classItem.type)}</span>
-                        </div>
+                    <div class="class-detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Time: ${classItem.time}</span>
                     </div>
-                    <div class="class-actions">
-                        <button class="cancel-btn" data-index="${index}">
-                            <i class="fas fa-times"></i> Cancel
-                        </button>
+                    <div class="class-detail-item">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Intensity: ${getClassIntensity(classItem.type)}</span>
                     </div>
                 </div>
-            `);
-            registeredContainer.append(classCard);
+                <div class="class-actions">
+                    <button class="cancel-btn" data-index="${index}">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            `;
+            registeredContainer.appendChild(classCard);
         });
 
         // Add event listeners to cancel buttons
-        $('.cancel-btn').on('click', function () {
-            const index = parseInt($(this).data('index'));
-            cancelClass(index);
+        document.querySelectorAll('.cancel-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const index = parseInt(this.getAttribute('data-index'));
+                cancelClass(index);
+            });
         });
     }
 
@@ -742,6 +608,7 @@ function setupClassBooking() {
     }
 
     // Function to register a class
+    // Function to register a class
     function registerClass(className, classType, day, time) {
         // STRICT CHECK: User must be logged in AND have active plan
         if (!canRegisterForClasses()) {
@@ -757,10 +624,7 @@ function setupClassBooking() {
 
         // CONSTRAINT 1: Check if user has reached maximum classes
         if (hasReachedMaxClasses()) {
-            showNotification(
-                currentLanguage === 'ar' ? translations.ar.maximumClasses : translations.en.maximumClasses,
-                'warning'
-            );
+            showNotification(`You can only register for a maximum of ${MAX_CLASSES} classes. Please cancel some classes before adding new ones.`, 'warning');
             return false;
         }
 
@@ -781,94 +645,149 @@ function setupClassBooking() {
         registeredClasses.push(classItem);
         updateRegisteredClassesDisplay();
         showNotification(`Successfully registered for ${className} on ${day} at ${time}`, 'success');
+
+        // Update class count display
         updateClassCountDisplay();
+
         return true;
     }
 
+    // Function to cancel a class
     // Function to cancel a class
     function cancelClass(index) {
         const classItem = registeredClasses[index];
         registeredClasses.splice(index, 1);
         updateRegisteredClassesDisplay();
         showNotification(`Cancelled ${classItem.name} class`, 'info');
+
+        // Update class count display
         updateClassCountDisplay();
     }
 
-    // Handle class type clicks
-    function setupClassClickHandlers() {
-        $('.class-type').off('click').on('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            // STRICT CHECK: User must be logged in AND have active plan
-            if (!canRegisterForClasses()) {
-                if (!isUserLoggedIn()) {
-                    showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning');
-                    showPage('login');
-                } else {
-                    showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
-                    showPage('membership');
-                }
-                return;
+    // Function to handle class registration with STRICT plan check
+    function handleClassClick(classType) {
+        // STRICT CHECK: User must be logged in AND have active plan
+        if (!canRegisterForClasses()) {
+            if (!isUserLoggedIn()) {
+                showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning'); showPage('login');
+            } else {
+                showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning'); showPage('membership');
             }
+            return;
+        }
 
-            const className = $(this).text();
-            const classTypeValue = $(this).attr('class').split(' ').find(cls => cls !== 'class-type');
-            const timeCell = $(this).closest('tr').find('td:first-child');
-            const classTime = timeCell.length ? timeCell.text() : 'unknown time';
-            const dayHeader = $(this).closest('table').find('thead th').eq($(this).closest('td').index());
-            const classDay = dayHeader.length ? dayHeader.text() : 'unknown day';
+        // Only proceed if BOTH conditions are met
+        const className = classType.textContent;
+        const classTypeValue = Array.from(classType.classList)
+            .find(cls => cls !== 'class-type');
+        const timeCell = classType.closest('tr').querySelector('td:first-child');
+        const classTime = timeCell ? timeCell.textContent : 'unknown time';
+        const dayHeader = classType.closest('table').querySelector('thead th:nth-child(' + (classType.closest('td').cellIndex + 1) + ')');
+        const classDay = dayHeader ? dayHeader.textContent : 'unknown day';
 
-            registerClass(className, classTypeValue, classDay, classTime);
+        registerClass(className, classTypeValue, classDay, classTime);
+    }
+
+    // Handle class type clicks - NEW EVENT LISTENERS
+    function setupClassClickHandlers() {
+        document.querySelectorAll('.class-type').forEach(classType => {
+            // Remove any existing event listeners
+            classType.replaceWith(classType.cloneNode(true));
+        });
+
+        // Add new event listeners
+        document.querySelectorAll('.class-type').forEach(classType => {
+            classType.addEventListener('click', function (e) {
+                // Prevent default behavior
+                e.preventDefault();
+                e.stopPropagation();
+
+                // STRICT CHECK: User must be logged in AND have active plan
+                if (!canRegisterForClasses()) {
+                    if (!isUserLoggedIn()) {
+                        showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning'); showPage('login');
+                    } else {
+                        showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning'); showPage('membership');
+                    }
+                    return;
+                }
+
+                // Only proceed if BOTH conditions are met
+                const className = this.textContent;
+                const classTypeValue = Array.from(this.classList)
+                    .find(cls => cls !== 'class-type');
+                const timeCell = this.closest('tr').querySelector('td:first-child');
+                const classTime = timeCell ? timeCell.textContent : 'unknown time';
+                const dayHeader = this.closest('table').querySelector('thead th:nth-child(' + (this.closest('td').cellIndex + 1) + ')');
+                const classDay = dayHeader ? dayHeader.textContent : 'unknown day';
+
+                registerClass(className, classTypeValue, classDay, classTime);
+            });
         });
     }
 
     // Handle "Book a Class Now" button
-    $('a[data-page="login"]').on('click', function (e) {
-        e.preventDefault();
+    const bookClassBtn = document.querySelector('a[data-page="login"]');
+    if (bookClassBtn) {
+        bookClassBtn.addEventListener('click', function (e) {
+            e.preventDefault();
 
-        if (!canRegisterForClasses()) {
-            if (!isUserLoggedIn()) {
-                showPage('login');
-                showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'info');
+            // STRICT CHECK: User must be logged in AND have active plan
+            if (!canRegisterForClasses()) {
+                if (!isUserLoggedIn()) {
+                    showPage('login');
+                    showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'info');
+                } else {
+                    showPage('membership');
+                    showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
+                }
             } else {
-                showPage('membership');
-                showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
+                showPage('schedule');
             }
-        } else {
-            showPage('schedule');
-        }
-    });
+        });
+    }
 
     // Function to update login required message based on login status
     function updateLoginRequiredMessage() {
-        const scheduleSection = $('.schedule');
-        let loginMessage = scheduleSection.find('.login-required');
+        const scheduleSection = document.querySelector('.schedule');
+        let loginMessage = scheduleSection.querySelector('.login-required');
         const canRegister = canRegisterForClasses();
 
         // Remove existing message if any
-        loginMessage.remove();
+        if (loginMessage) {
+            loginMessage.remove();
+        }
 
         if (!canRegister) {
             // Show appropriate message
-            loginMessage = $(`
-                <div class="login-required">
-                    <h4>${!isUserLoggedIn() ? 'Login Required' : 'Membership Required'}</h4>
-                    <p>${!isUserLoggedIn() ? 'Please login to register for classes' : 'Please activate a membership plan to book classes'}</p>
-                    <a href="#${!isUserLoggedIn() ? 'login' : 'membership'}" class="btn" data-page="${!isUserLoggedIn() ? 'login' : 'membership'}">
-                        ${!isUserLoggedIn() ? 'Login Now' : 'Choose a Plan'}
-                    </a>
-                </div>
-            `);
+            loginMessage = document.createElement('div');
+            loginMessage.className = 'login-required';
 
-            scheduleSection.append(loginMessage);
+            if (!isUserLoggedIn()) {
+                loginMessage.innerHTML = `
+                    <h4>Login Required</h4>
+                    <p>Please login to register for classes</p>
+                    <a href="#login" class="btn" data-page="login">Login Now</a>
+                `;
+            } else {
+                loginMessage.innerHTML = `
+                    <h4>Membership Required</h4>
+                    <p>Please activate a membership plan to book classes</p>
+                    <a href="#membership" class="btn" data-page="membership">Choose a Plan</a>
+                `;
+            }
+
+            scheduleSection.appendChild(loginMessage);
 
             // Add click events to buttons
-            loginMessage.find('a[data-page]').on('click', function (e) {
-                e.preventDefault();
-                const page = $(this).data('page');
-                showPage(page);
-            });
+            const actionBtn = loginMessage.querySelector('a[data-page]');
+            if (actionBtn) {
+                actionBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('data-page');
+                    showPage(page);
+                });
+            }
         }
     }
 
@@ -888,65 +807,55 @@ function setupClassBooking() {
 
     // Function to update the class count display
     function updateClassCountDisplay() {
-        const registeredClassesSection = $('.registered-classes');
-        let countDisplay = registeredClassesSection.find('.class-count-display');
+        const registeredClassesSection = document.querySelector('.registered-classes');
+        let countDisplay = registeredClassesSection.querySelector('.class-count-display');
 
-        if (!countDisplay.length) {
-            countDisplay = $('<div class="class-count-display"></div>');
-            registeredClassesSection.find('h3').after(countDisplay);
+        if (!countDisplay) {
+            countDisplay = document.createElement('div');
+            countDisplay.className = 'class-count-display';
+            registeredClassesSection.querySelector('h3').insertAdjacentElement('afterend', countDisplay);
         }
 
-        const countText = currentLanguage === 'ar'
-            ? `${registeredClasses.length} ${translations.ar.of} ${MAX_CLASSES} ${translations.ar.classesRegistered}`
-            : `${registeredClasses.length} ${translations.en.of} ${MAX_CLASSES} ${translations.en.classesRegistered}`;
-
-        const cancelText = currentLanguage === 'ar'
-            ? translations.ar.cancelAllClasses
-            : translations.en.cancelAllClasses;
-
-        countDisplay.html(`
-            <div class="count-info">
-                <i class="fas fa-chart-bar"></i>
-                <span class="count-text">${countText}</span>
-                ${registeredClasses.length > 0 ? `
-                    <button class="cancel-all-btn">
-                        <i class="fas fa-trash-alt"></i> ${cancelText}
-                    </button>
-                ` : ''}
-            </div>
-            <div class="progress-bar">
-                <div class="progress-fill" style="width: ${(registeredClasses.length / MAX_CLASSES) * 100}%"></div>
-            </div>
-        `);
+        countDisplay.innerHTML = `
+        <div class="count-info">
+            <i class="fas fa-chart-bar"></i>
+            <span>${registeredClasses.length} of ${MAX_CLASSES} classes registered</span>
+            ${registeredClasses.length > 0 ? `
+                <button class="cancel-all-btn">
+                    <i class="fas fa-trash-alt"></i> Cancel All Classes
+                </button>
+            ` : ''}
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: ${(registeredClasses.length / MAX_CLASSES) * 100}%"></div>
+        </div>
+    `;
 
         // Add event listener to cancel all button
-        countDisplay.find('.cancel-all-btn').on('click', cancelAllClasses);
+        const cancelAllBtn = countDisplay.querySelector('.cancel-all-btn');
+        if (cancelAllBtn) {
+            cancelAllBtn.addEventListener('click', cancelAllClasses);
+        }
 
         // Add warning style if approaching limit
-        countDisplay.toggleClass('warning', registeredClasses.length >= MAX_CLASSES - 2);
+        if (registeredClasses.length >= MAX_CLASSES - 2) {
+            countDisplay.classList.add('warning');
+        } else {
+            countDisplay.classList.remove('warning');
+        }
     }
 
     // Function to cancel all classes
     function cancelAllClasses() {
         if (registeredClasses.length === 0) {
-            showNotification(
-                currentLanguage === 'ar' ? translations.ar.noClassesToCancel : translations.en.noClassesToCancel,
-                'info'
-            );
+            showNotification('No classes to cancel', 'info');
             return;
         }
 
-        const confirmMessage = currentLanguage === 'ar'
-            ? translations.ar.cancelAllConfirm
-            : translations.en.cancelAllConfirm;
-
-        if (confirm(confirmMessage)) {
+        if (confirm(`Are you sure you want to cancel all ${registeredClasses.length} registered classes?`)) {
             registeredClasses = [];
             updateRegisteredClassesDisplay();
-            showNotification(
-                currentLanguage === 'ar' ? translations.ar.cancelledAllClasses : translations.en.cancelledAllClasses,
-                'success'
-            );
+            showNotification(`Cancelled all classes`, 'success');
             updateClassCountDisplay();
         }
     }
@@ -956,6 +865,8 @@ function setupClassBooking() {
     updateLoginRequiredMessage();
     setupClassClickHandlers();
     updateClassBookingUI();
+
+    // Initialize the class count display
     updateClassCountDisplay();
 
     return {
@@ -970,10 +881,11 @@ function setupClassBooking() {
 // ========== PLAN SELECTION SYSTEM ==========
 
 function setupPlanSelection() {
-    const planModal = $('#planModal');
-    const getStartedBtns = $('.get-started-btn');
-    const modalBackBtn = $('#modalBackBtn');
-    const modalConfirmBtn = $('#modalConfirmBtn');
+    const planModal = document.getElementById('planModal');
+    const planModalClose = document.getElementById('planModalClose');
+    const getStartedBtns = document.querySelectorAll('.get-started-btn');
+    const modalBackBtn = document.getElementById('modalBackBtn');
+    const modalConfirmBtn = document.getElementById('modalConfirmBtn');
 
     // Plan features data
     const planFeatures = {
@@ -1008,32 +920,38 @@ function setupPlanSelection() {
     };
 
     // Handle get started button clicks
-    getStartedBtns.on('click', function () {
-        const planType = $(this).data('plan');
-        const planPrice = $(this).data('price');
+    getStartedBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const planType = this.getAttribute('data-plan');
+            const planPrice = this.getAttribute('data-price');
 
-        // STRICT CHECK: User must be logged in to activate a plan
-        if (!isUserLoggedIn()) {
-            showPage('login');
-            showNotification('Please login to select a membership plan', 'info');
-            return;
-        }
+            // STRICT CHECK: User must be logged in to activate a plan
+            if (!isUserLoggedIn()) {
+                showPage('login');
+                showNotification('Please login to select a membership plan', 'info');
+                return;
+            }
 
-        openPlanModal(planType, planPrice);
+            openPlanModal(planType, planPrice);
+        });
     });
 
     // Close modal
-    $('#planModalClose, #planModal').on('click', function (e) {
-        if (e.target === this || $(e.target).is('#planModalClose')) {
+    planModalClose.addEventListener('click', closePlanModal);
+    planModal.addEventListener('click', function (e) {
+        if (e.target === planModal) {
             closePlanModal();
         }
     });
 
     // Modal button actions
-    modalBackBtn.on('click', closePlanModal);
-    modalConfirmBtn.on('click', function () {
-        const planName = $('#modalPlanName').text();
-        const planPrice = $('#modalPlanPrice').text();
+    modalBackBtn.addEventListener('click', closePlanModal);
+
+    modalConfirmBtn.addEventListener('click', function () {
+        const planName = document.getElementById('modalPlanName').textContent;
+        const planPrice = document.getElementById('modalPlanPrice').textContent;
+
+        // Activate the plan
         activateUserPlan(planName, planPrice);
         closePlanModal();
     });
@@ -1045,29 +963,33 @@ function setupPlanSelection() {
         if (!features) return;
 
         // Populate modal content
-        $('#modalPlanName').text(planName);
-        $('#modalPlanPrice').text(`$${planPrice}/month`);
+        document.getElementById('modalPlanName').textContent = planName;
+        document.getElementById('modalPlanPrice').textContent = `$${planPrice}/month`;
 
-        const featuresHtml = features.map(feature => `
-            <li>
-                <i class="${feature.icon} ${feature.included ? 'included' : 'excluded'}"></i>
-                <span>${feature.text}</span>
-            </li>
-        `).join('');
-
-        $('#modalPlanFeatures').html(`<ul>${featuresHtml}</ul>`);
+        const featuresContainer = document.getElementById('modalPlanFeatures');
+        featuresContainer.innerHTML = `
+            <ul>
+                ${features.map(feature => `
+                    <li>
+                        <i class="${feature.icon} ${feature.included ? 'included' : 'excluded'}"></i>
+                        <span>${feature.text}</span>
+                    </li>
+                `).join('')}
+            </ul>
+        `;
 
         // Store current plan selection
-        modalConfirmBtn.data('plan-type', planType).data('plan-price', planPrice);
+        modalConfirmBtn.setAttribute('data-plan-type', planType);
+        modalConfirmBtn.setAttribute('data-plan-price', planPrice);
 
         // Show modal
-        planModal.addClass('active');
-        $('body').css('overflow', 'hidden');
+        planModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     function closePlanModal() {
-        planModal.removeClass('active');
-        $('body').css('overflow', 'auto');
+        planModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
     }
 
     function activateUserPlan(planName, planPrice) {
@@ -1101,8 +1023,8 @@ function setupPlanSelection() {
     }
 
     // Close modal with Escape key
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape' && planModal.hasClass('active')) {
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && planModal.classList.contains('active')) {
             closePlanModal();
         }
     });
@@ -1111,21 +1033,28 @@ function setupPlanSelection() {
 // ========== LOGIN/SIGNUP HANDLING ==========
 
 // Login Form Submission
-$('#loginForm').on('submit', function (e) {
+document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = $(this).find('.btn');
-    const originalText = btn.text();
+    const btn = this.querySelector('.btn');
+    const originalText = btn.textContent;
 
-    btn.text('Logging in...').prop('disabled', true);
+    btn.textContent = 'Logging in...';
+    btn.disabled = true;
 
     setTimeout(() => {
+        // Set user as logged in
         localStorage.setItem('userLoggedIn', 'true');
+
         showNotification('Login successful!', 'success');
-        updateUIBasedOnAuth(); // Add this line
-        $(this).trigger('reset');
-        btn.text(originalText).prop('disabled', false);
+        this.reset();
+
+        btn.textContent = 'Login';
+        btn.disabled = false;
+
+        // Update UI based on new authentication status
         updateUIBasedOnAuth();
 
+        // Check if user has an active plan
         const hasActivePlan = localStorage.getItem('userPlanActive') === 'true';
         if (hasActivePlan) {
             showPage('schedule');
@@ -1135,6 +1064,7 @@ $('#loginForm').on('submit', function (e) {
             showNotification('Please select a membership plan to continue', 'info');
         }
 
+        // Update registered classes display and login status
         if (window.classBookingSystem) {
             window.classBookingSystem.updateLoginRequiredMessage();
             window.classBookingSystem.setupClassClickHandlers();
@@ -1143,28 +1073,39 @@ $('#loginForm').on('submit', function (e) {
 });
 
 // Signup Form Submission
-$('#signupForm').on('submit', function (e) {
+document.getElementById('signupForm').addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = $(this).find('.btn');
-    const originalText = btn.text();
+    const btn = this.querySelector('.btn');
+    const originalText = btn.textContent;
 
-    btn.text('Creating Account...').prop('disabled', true);
+    btn.textContent = 'Creating Account...';
+    btn.disabled = true;
 
     setTimeout(() => {
+        // Set user as logged in after signup
         localStorage.setItem('userLoggedIn', 'true');
+
         showNotification('Account created successfully!', 'success');
-        $(this).trigger('reset');
-        btn.text(originalText).prop('disabled', false);
+        this.reset();
+
+        btn.textContent = 'Sign Up';
+        btn.disabled = false;
+
+        // Update UI based on new authentication status
         updateUIBasedOnAuth();
+
+        // Redirect to membership page after signup
         showPage('membership');
         showNotification('Please choose a membership plan to get started', 'info');
 
+        // Update systems
         if (window.classBookingSystem) {
             window.classBookingSystem.updateLoginRequiredMessage();
             window.classBookingSystem.setupClassClickHandlers();
         }
 
-        $('.auth-tab').first().trigger('click');
+        // Switch to login tab
+        document.querySelectorAll('.auth-tab')[0].click();
     }, 1500);
 });
 
@@ -1172,80 +1113,88 @@ $('#signupForm').on('submit', function (e) {
 
 // Enhanced Trainers Functionality
 function setupTrainers() {
-    const trainerModal = $('#trainerModal');
-    const bookSessionBtns = $('.book-session-btn');
-    const modalBookBtn = $('#modalBookBtn');
-    const modalScheduleBtn = $('#modalScheduleBtn');
+    const trainerModal = document.getElementById('trainerModal');
+    const modalClose = document.getElementById('modalClose');
+    const bookSessionBtns = document.querySelectorAll('.book-session-btn');
+    const modalBookBtn = document.getElementById('modalBookBtn');
+    const modalScheduleBtn = document.getElementById('modalScheduleBtn');
 
     // Trainer data
     const trainersData = {
         marcus: {
             name: "Marcus Johnson",
-            specialty: "Strength & Conditioning",
+            specialty: "Strength & Conditioning Specialist",
             stats: [
-                { value: "12+", label: "Years Exp" },
-                { value: "500+", label: "Clients" },
-                { value: "95%", label: "Success" }
+                { value: "12+ Years", label: "Experience" },
+                { value: "500+ Clients", label: "Trained" },
+                { value: "95% Success", label: "Rate" }
             ],
-            bio: "Specializes in strength training and functional fitness. Helps clients build muscle and improve athletic performance.",
+            bio: "With over 12 years of experience in strength training and functional fitness, Marcus specializes in helping clients build muscle, increase strength, and improve overall athletic performance. His evidence-based approach combines scientific principles with practical application.",
             achievements: [
-                "National Powerlifting Champion",
-                "Certified Strength Coach",
-                "Nutrition Certified"
+                "2022 National Powerlifting Champion",
+                "Certified Strength Coach (CSCS)",
+                "Precision Nutrition Level 2 Certified",
+                "NASM Certified Personal Trainer"
             ],
-            expertise: ["Powerlifting", "Bodybuilding", "Athletic Performance"]
+            expertise: ["Powerlifting", "Bodybuilding", "Athletic Performance", "Injury Prevention", "Nutrition Planning"]
         },
         sophia: {
             name: "Sophia Martinez",
-            specialty: "Yoga & Mindfulness",
+            specialty: "Yoga & Mindfulness Expert",
             stats: [
-                { value: "8+", label: "Years Exp" },
-                { value: "300+", label: "Clients" },
-                { value: "98%", label: "Satisfaction" }
+                { value: "8+ Years", label: "Experience" },
+                { value: "300+ Clients", label: "Transformed" },
+                { value: "98% Satisfaction", label: "Rate" }
             ],
-            bio: "Holistic approach combining yoga with mindfulness. Focus on flexibility and mental wellness.",
+            bio: "Sophia brings a holistic approach to fitness, combining ancient yoga practices with modern mindfulness techniques. Her classes focus on building strength, flexibility, and mental clarity through intentional movement and breath work.",
             achievements: [
-                "Yoga Alliance Certified",
-                "Meditation Teacher",
-                "Published Author"
+                "International Yoga Alliance Certified (RYT-500)",
+                "Mindfulness Meditation Teacher",
+                "Published Author: 'Mindful Movement'",
+                "Trauma-Informed Yoga Specialist"
             ],
-            expertise: ["Vinyasa Flow", "Yin Yoga", "Meditation"]
+            expertise: ["Vinyasa Flow", "Yin Yoga", "Meditation", "Stress Relief", "Flexibility Training"]
         },
-        ronnie: {
-            name: "Ronnie Coleman",
-            specialty: "HIIT & Cardio",
+        omar: {
+            name: "Omar Murra",
+            specialty: "HIIT & Cardio Specialist",
             stats: [
-                { value: "6+", label: "Years Exp" },
-                { value: "650+", label: "Clients" },
-                { value: "12k+", label: "Lbs Lost" }
+                { value: "6+ Years", label: "Experience" },
+                { value: "650+ Clients", label: "Transformed" },
+                { value: "12k+ Lbs", label: "Total Weight Lost" }
             ],
-            bio: "High-energy workouts for maximum calorie burn. Specializes in fat loss and endurance training.",
+            bio: "Omar's high-energy workouts are scientifically designed to maximize calorie burn and improve cardiovascular health. His dynamic training style keeps workouts engaging while delivering measurable results in record time.",
             achievements: [
-                "Transformation Specialist",
-                "Functional Training",
-                "Group Fitness Expert"
+                "Transformation Specialist of the Year 2023",
+                "Functional Training Certified",
+                "Group Fitness Instructor Expert",
+                "ACE Certified Personal Trainer"
             ],
-            expertise: ["HIIT", "Fat Loss", "Endurance"]
+            expertise: ["HIIT", "Fat Loss", "Metabolic Conditioning", "Endurance Training", "Circuit Training"]
         }
     };
 
     // Open modal when book session button is clicked
-    bookSessionBtns.on('click', function () {
-        const trainerId = $(this).data('trainer');
-        openTrainerModal(trainerId);
+    bookSessionBtns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            const trainerId = this.getAttribute('data-trainer');
+            openTrainerModal(trainerId);
+        });
     });
 
     // Close modal
-    $('#modalClose, #trainerModal').on('click', function (e) {
-        if (e.target === this || $(e.target).is('#modalClose')) {
+    modalClose.addEventListener('click', closeTrainerModal);
+    trainerModal.addEventListener('click', function (e) {
+        if (e.target === trainerModal) {
             closeTrainerModal();
         }
     });
 
     // Modal button actions
-    modalBookBtn.on('click', function () {
-        const trainerName = $('#modalTrainerName').text();
+    modalBookBtn.addEventListener('click', function () {
+        const trainerName = document.getElementById('modalTrainerName').textContent;
 
+        // Check if user can book sessions (must be logged in AND have active plan)
         if (!canRegisterForClasses()) {
             if (!isUserLoggedIn()) {
                 showNotification('Please login to book training sessions', 'warning');
@@ -1262,7 +1211,7 @@ function setupTrainers() {
         showPage('schedule');
     });
 
-    modalScheduleBtn.on('click', function () {
+    modalScheduleBtn.addEventListener('click', function () {
         showNotification('Showing trainer availability schedule', 'info');
         closeTrainerModal();
         showPage('schedule');
@@ -1273,59 +1222,63 @@ function setupTrainers() {
         if (!trainer) return;
 
         // Populate modal content
-        $('#modalTrainerName').text(trainer.name);
-        $('#modalTrainerSpecialty').text(trainer.specialty);
-        $('#modalBio').text(trainer.bio);
+        document.getElementById('modalTrainerName').textContent = trainer.name;
+        document.getElementById('modalTrainerSpecialty').textContent = trainer.specialty;
+        document.getElementById('modalBio').textContent = trainer.bio;
 
         // Populate stats
-        const statsHtml = trainer.stats.map(stat => `
+        const statsContainer = document.getElementById('modalStats');
+        statsContainer.innerHTML = trainer.stats.map(stat => `
             <div class="modal-stat">
                 <span class="modal-stat-value">${stat.value}</span>
                 <span class="modal-stat-label">${stat.label}</span>
             </div>
         `).join('');
-        $('#modalStats').html(statsHtml);
 
         // Populate achievements
-        const achievementsHtml = trainer.achievements.map(achievement => `
-            <div class="achievement-item">
-                <i class="fas fa-award"></i>
-                <span>${achievement}</span>
-            </div>
-        `).join('');
-        $('#modalAchievements').html(`
+        const achievementsContainer = document.getElementById('modalAchievements');
+        achievementsContainer.innerHTML = `
             <div class="achievements-title">
                 <i class="fas fa-trophy"></i>
                 <span>Key Achievements</span>
             </div>
-            <div class="achievements-list">${achievementsHtml}</div>
-        `);
+            <div class="achievements-list">
+                ${trainer.achievements.map(achievement => `
+                    <div class="achievement-item">
+                        <i class="fas fa-award"></i>
+                        <span>${achievement}</span>
+                    </div>
+                `).join('')}
+            </div>
+        `;
 
         // Populate expertise
-        const expertiseHtml = trainer.expertise.map(skill => `
-            <span class="expertise-tag">${skill}</span>
-        `).join('');
-        $('#modalExpertise').html(`
+        const expertiseContainer = document.getElementById('modalExpertise');
+        expertiseContainer.innerHTML = `
             <div class="expertise-title">
                 <i class="fas fa-dumbbell"></i>
                 <span>Areas of Expertise</span>
             </div>
-            <div class="expertise-tags">${expertiseHtml}</div>
-        `);
+            <div class="expertise-tags">
+                ${trainer.expertise.map(skill => `
+                    <span class="expertise-tag">${skill}</span>
+                `).join('')}
+            </div>
+        `;
 
         // Show modal
-        trainerModal.addClass('active');
-        $('body').css('overflow', 'hidden');
+        trainerModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeTrainerModal() {
-        trainerModal.removeClass('active');
-        $('body').css('overflow', 'auto');
+        trainerModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
     }
 
     // Close modal with Escape key
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape' && trainerModal.hasClass('active')) {
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && trainerModal.classList.contains('active')) {
             closeTrainerModal();
         }
     });
@@ -1333,7 +1286,7 @@ function setupTrainers() {
 
 // Dark Mode Toggle
 function setupDarkMode() {
-    const darkModeToggle = $('#darkModeToggle');
+    const darkModeToggle = document.getElementById('darkModeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
     // Check for saved theme or prefer OS setting
@@ -1341,76 +1294,373 @@ function setupDarkMode() {
         (prefersDarkScheme.matches ? 'dark' : 'light');
 
     if (currentTheme === 'dark') {
-        $('html').attr('data-theme', 'dark');
-        darkModeToggle.prop('checked', true);
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.checked = true;
     }
 
-    darkModeToggle.on('change', function () {
+    darkModeToggle.addEventListener('change', function () {
         if (this.checked) {
-            $('html').attr('data-theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'dark');
             localStorage.setItem('theme', 'dark');
         } else {
-            $('html').removeAttr('data-theme');
+            document.documentElement.removeAttribute('data-theme');
             localStorage.setItem('theme', 'light');
         }
     });
 }
 
-// Enhanced Auth Functionality
-function setupEnhancedAuth() {
-    // Password toggle functionality
-    $('.password-toggle').on('click', function () {
-        const input = $(this).siblings('input');
-        const icon = $(this).find('i');
+// Language Switching Functionality
+let currentLanguage = 'en';
 
-        if (input.attr('type') === 'password') {
-            input.attr('type', 'text');
-            icon.removeClass('fa-eye').addClass('fa-eye-slash');
-        } else {
-            input.attr('type', 'password');
-            icon.removeClass('fa-eye-slash').addClass('fa-eye');
+function initializeLanguage() {
+    // Check for saved language preference
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage) {
+        currentLanguage = savedLanguage;
+        switchLanguage(savedLanguage);
+    }
+
+    // Set up language switch button
+    const languageSwitch = document.getElementById('languageSwitch');
+    if (languageSwitch) {
+        languageSwitch.addEventListener('click', function () {
+            const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            switchLanguage(newLanguage);
+        });
+    }
+}
+
+function switchLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('preferredLanguage', lang);
+
+    // Update HTML direction
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lang;
+
+    // Update all translatable elements
+    updateTextContent(lang);
+
+    // Update language switch button
+    updateLanguageButton(lang);
+
+    // Show notification
+    showNotification(lang === 'ar' ? 'تم التبديل إلى اللغة العربية' : 'Switched to English', 'success');
+}
+
+function updateTextContent(lang) {
+    const translation = translations[lang];
+
+    // Update elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translation[key]) {
+            element.textContent = translation[key];
         }
     });
 
-    // Password strength indicator
-    $('#signup-password').on('input', function () {
-        const strengthBar = $('.strength-fill');
-        const strengthText = $('.strength-text');
-        const password = $(this).val();
-        let strength = 0;
+    // Update placeholder texts
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (translation[key]) {
+            element.placeholder = translation[key];
+        }
+    });
+}
 
-        if (password.length >= 8) strength++;
-        if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
-        if (password.match(/\d/)) strength++;
-        if (password.match(/[^a-zA-Z\d]/)) strength++;
+function updateLanguageButton(lang) {
+    const langBtn = document.getElementById('languageSwitch');
+    const langText = langBtn.querySelector('.lang-text');
 
-        strengthBar.attr('data-strength', strength);
+    if (lang === 'en') {
+        langText.textContent = 'العربية';
+    } else {
+        langText.textContent = 'English';
+    }
+}
 
-        const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];
-        strengthText.text(strengthLabels[strength]);
+// ========== INITIALIZATION ==========
+
+// Initialize everything when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    showPage('home');
+
+    // Initialize all systems
+    setupDarkMode();
+    initializeLanguage();
+    window.classBookingSystem = setupClassBooking();
+    setupPlanSelection();
+    setupTrainers();
+
+    // Update UI based on current authentication status
+    updateUIBasedOnAuth();
+
+    // Set initial filter
+    document.querySelector('.filter-btn[data-filter="all"]').click();
+
+    // Add a logout function for testing
+    window.logout = function () {
+        localStorage.removeItem('userLoggedIn');
+        localStorage.removeItem('userPlanActive');
+        localStorage.removeItem('userPlan');
+        localStorage.removeItem('userPlanPrice');
+        updateUIBasedOnAuth();
+        showNotification('Logged out successfully', 'info');
+        showPage('home');
+    };
+});
+
+// ========== PAGE LOAD - AUTO LOGOUT ==========
+
+// Clear login state when page loads
+window.addEventListener('load', function () {
+    // Clear all authentication-related data from localStorage
+    localStorage.removeItem('userLoggedIn');
+    localStorage.removeItem('userPlanActive');
+    localStorage.removeItem('userPlan');
+    localStorage.removeItem('userPlanPrice');
+    localStorage.removeItem('registeredClasses');
+
+    // Update UI to reflect logged out state
+    updateUIBasedOnAuth();
+
+    // Reset any login forms
+    document.getElementById('loginForm')?.reset();
+    document.getElementById('signupForm')?.reset();
+
+    // Clear the registered classes display
+    if (window.classBookingSystem) {
+        window.classBookingSystem.updateRegisteredClassesDisplay();
+    }
+});
+
+// ========== MODIFIED AUTHENTICATION CHECK FUNCTIONS ==========
+
+// Check if user is logged in (now always returns false on page load)
+function isUserLoggedIn() {
+    // Always return false since we clear on page load
+    return localStorage.getItem('userLoggedIn') === 'true';
+}
+
+// Check if user has an active plan
+function hasActivePlan() {
+    return localStorage.getItem('userPlanActive') === 'true';
+}
+
+// Check if user can register for classes (must be logged in AND have active plan)
+function canRegisterForClasses() {
+    return isUserLoggedIn() && hasActivePlan();
+}
+
+// ========== MODIFIED LOGIN/SIGNUP HANDLING ==========
+
+// Login Form Submission
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn');
+    const originalText = btn.textContent;
+
+    btn.textContent = 'Logging in...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+        // Set user as logged in (this will persist until page refresh)
+        localStorage.setItem('userLoggedIn', 'true');
+
+        showNotification('Login successful!', 'success');
+        this.reset();
+
+        btn.textContent = originalText;
+        btn.disabled = false;
+
+        // Update UI based on new authentication status
+        updateUIBasedOnAuth();
+
+        // Check if user has an active plan
+        const hasActivePlan = localStorage.getItem('userPlanActive') === 'true';
+        if (hasActivePlan) {
+            showPage('schedule');
+            showNotification('Welcome back! Your plan is active.', 'success');
+        } else {
+            showPage('membership');
+            showNotification('Please select a membership plan to continue', 'info');
+        }
+
+        // Update registered classes display and login status
+        if (window.classBookingSystem) {
+            window.classBookingSystem.updateLoginRequiredMessage();
+            window.classBookingSystem.setupClassClickHandlers();
+        }
+    }, 1500);
+});
+
+// Signup Form Submission
+document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = this.querySelector('.btn');
+    const originalText = btn.textContent;
+
+    btn.textContent = 'Creating Account...';
+    btn.disabled = true;
+
+    setTimeout(() => {
+        // Set user as logged in after signup (this will persist until page refresh)
+        localStorage.setItem('userLoggedIn', 'true');
+
+        showNotification('Account created successfully!', 'success');
+        this.reset();
+
+        btn.textContent = originalText;
+        btn.disabled = false;
+
+        // Update UI based on new authentication status
+        updateUIBasedOnAuth();
+
+        // Redirect to membership page after signup
+        showPage('membership');
+        showNotification('Please choose a membership plan to get started', 'info');
+
+        // Update systems
+        if (window.classBookingSystem) {
+            window.classBookingSystem.updateLoginRequiredMessage();
+            window.classBookingSystem.setupClassClickHandlers();
+        }
+
+        // Switch to login tab
+        document.querySelectorAll('.auth-tab')[0].click();
+    }, 1500);
+});
+
+// ========== MANUAL LOGOUT FUNCTION ==========
+
+// Add logout function that can be called manually
+function logout() {
+    // Clear all authentication data
+    localStorage.removeItem('userLoggedIn');
+    localStorage.removeItem('userPlanActive');
+    localStorage.removeItem('userPlan');
+    localStorage.removeItem('userPlanPrice');
+
+    // Update UI
+    updateUIBasedOnAuth();
+
+    // Show notification
+    showNotification('Logged out successfully', 'info');
+
+    // Redirect to home page
+    showPage('home');
+}
+
+// ========== MODIFIED UI UPDATE FUNCTION ==========
+
+// Update UI based on authentication status
+function updateUIBasedOnAuth() {
+    const isLoggedIn = isUserLoggedIn();
+    const hasPlan = hasActivePlan();
+
+    // Update navigation
+    const loginNavItem = document.querySelector('a[data-page="login"]');
+    if (loginNavItem) {
+        if (isLoggedIn) {
+            loginNavItem.textContent = 'Logout';
+            loginNavItem.setAttribute('data-i18n', 'logout');
+
+            // Remove existing click handlers and add logout functionality
+            loginNavItem.replaceWith(loginNavItem.cloneNode(true));
+            const newLoginItem = document.querySelector('a[data-page="login"]');
+            newLoginItem.addEventListener('click', function (e) {
+                e.preventDefault();
+                logout();
+            });
+        } else {
+            loginNavItem.textContent = currentLanguage === 'en' ? 'Login' : 'تسجيل الدخول';
+            loginNavItem.setAttribute('data-i18n', 'login');
+
+            // Restore original navigation functionality
+            loginNavItem.replaceWith(loginNavItem.cloneNode(true));
+        }
+    }
+
+    // Update class booking buttons visibility
+    updateClassBookingUI();
+
+    // Update plan activation buttons
+    updatePlanActivationUI();
+
+    // Update login required message
+    if (window.classBookingSystem) {
+        window.classBookingSystem.updateLoginRequiredMessage();
+    }
+}
+
+// ========== ADD LOGOUT TRANSLATIONS ==========
+
+// Add logout to your translations object
+translations.en.logout = "Logout";
+translations.ar.logout = "تسجيل الخروج";
+
+// Enhanced Auth Functionality
+function setupEnhancedAuth() {
+    // Password toggle functionality
+    document.querySelectorAll('.password-toggle').forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            const input = this.parentElement.querySelector('input');
+            const icon = this.querySelector('i');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        });
     });
 
+    // Password strength indicator
+    const passwordInput = document.getElementById('signup-password');
+    if (passwordInput) {
+        passwordInput.addEventListener('input', function () {
+            const strengthBar = document.querySelector('.strength-fill');
+            const strengthText = document.querySelector('.strength-text');
+            const password = this.value;
+            let strength = 0;
+
+            if (password.length >= 8) strength++;
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/)) strength++;
+            if (password.match(/\d/)) strength++;
+            if (password.match(/[^a-zA-Z\d]/)) strength++;
+
+            strengthBar.setAttribute('data-strength', strength);
+
+            const strengthLabels = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong'];
+            strengthText.textContent = strengthLabels[strength];
+        });
+    }
+
     // Enhanced form submissions with loading states
-    $('#loginForm').on('submit', function (e) {
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const submitBtn = $(this).find('.auth-submit-btn');
-        submitBtn.addClass('loading');
+        const submitBtn = this.querySelector('.auth-submit-btn');
+        submitBtn.classList.add('loading');
 
         setTimeout(() => {
-            submitBtn.removeClass('loading');
+            submitBtn.classList.remove('loading');
+            // Your existing login logic here
             localStorage.setItem('userLoggedIn', 'true');
             showNotification('Login successful!', 'success');
             showPage('membership');
         }, 2000);
     });
 
-    $('#signupForm').on('submit', function (e) {
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const submitBtn = $(this).find('.auth-submit-btn');
-        submitBtn.addClass('loading');
+        const submitBtn = this.querySelector('.auth-submit-btn');
+        submitBtn.classList.add('loading');
 
         setTimeout(() => {
-            submitBtn.removeClass('loading');
+            submitBtn.classList.remove('loading');
+            // Your existing signup logic here
             localStorage.setItem('userLoggedIn', 'true');
             showNotification('Account created successfully!', 'success');
             showPage('membership');
@@ -1418,218 +1668,235 @@ function setupEnhancedAuth() {
     });
 }
 
-// Social Login Functionality
-function setupSocialLogin() {
-    $('.social-btn.google').on('click', function (e) {
-        e.preventDefault();
-        handleSocialLogin('google');
-    });
+// Initialize enhanced auth when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    setupEnhancedAuth();
+});
 
-    $('.social-btn.facebook').on('click', function (e) {
-        e.preventDefault();
-        handleSocialLogin('facebook');
-    });
+// ========== TERMS & PRIVACY MODAL SYSTEM ==========
 
-    $('.social-btn.apple').on('click', function (e) {
-        e.preventDefault();
-        handleSocialLogin('apple');
-    });
-}
-
-function handleSocialLogin(provider) {
-    showNotification(`Connecting with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`, 'info');
-
-    setTimeout(() => {
-        localStorage.setItem('userLoggedIn', 'true');
-        showNotification(`Successfully logged in with ${provider.charAt(0).toUpperCase() + provider.slice(1)}!`, 'success');
-        updateUIBasedOnAuth();
-
-        const hasActivePlan = localStorage.getItem('userPlanActive') === 'true';
-        showPage(hasActivePlan ? 'schedule' : 'membership');
-    }, 2000);
-}
-
-// Supplement Cart System
-function setupSupplementCart() {
-    let cart = [];
-    const cartItems = $('#cartItems');
-    const cartTotal = $('#cartTotal');
-    const checkoutBtn = $('#checkoutBtn');
-    const emptyCart = $('.empty-cart');
-
-    // Add to cart functionality
-    $('.add-to-cart-btn').on('click', function () {
-        const product = $(this).data('product');
-        const price = parseFloat($(this).data('price'));
-        const productName = $(this).closest('.supplement-info').find('h3').text();
-
-        addToCart(product, productName, price);
-    });
-
-    // Checkout functionality
-    checkoutBtn.on('click', function () {
-        if (cart.length > 0) {
-            processCheckout();
-        }
-    });
-
-    function addToCart(product, name, price) {
-        // Check if product already in cart
-        const existingItem = cart.find(item => item.product === product);
-
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({
-                product: product,
-                name: name,
-                price: price,
-                quantity: 1
-            });
-        }
-
-        updateCartDisplay();
-        showNotification(`Added ${name} to cart`, 'success');
-    }
-
-    function removeFromCart(product) {
-        cart = cart.filter(item => item.product !== product);
-        updateCartDisplay();
-    }
-
-    function updateCartDisplay() {
-        // Update empty cart message
-        if (cart.length === 0) {
-            emptyCart.show();
-            cartItems.html('<div class="empty-cart" data-i18n="emptyCart">Your cart is empty</div>');
-        } else {
-            emptyCart.hide();
-
-            // Update cart items
-            const cartHtml = cart.map(item => `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">$${item.price} x ${item.quantity}</div>
+function setupTermsAndPrivacy() {
+    // Create modal HTML
+    const modalHTML = `
+        <div class="terms-modal" id="termsModal">
+            <div class="modal-content">
+                <button class="modal-close" id="termsModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-header">
+                    <h3 id="modalTitle">Terms & Conditions</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="terms-content" id="termsContent">
+                        <!-- Content will be populated dynamically -->
                     </div>
-                    <button class="cart-item-remove" data-product="${item.product}">
-                        <i class="fas fa-trash"></i>
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn primary" id="termsAcceptBtn">
+                        <i class="fas fa-check"></i>
+                        <span>I Understand</span>
                     </button>
                 </div>
-            `).join('');
-            cartItems.html(cartHtml);
+            </div>
+        </div>
+    `;
 
-            // Add event listeners to remove buttons
-            $('.cart-item-remove').on('click', function () {
-                const product = $(this).data('product');
-                removeFromCart(product);
-            });
+    // Add modal to body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const termsModal = document.getElementById('termsModal');
+    const termsModalClose = document.getElementById('termsModalClose');
+    const termsAcceptBtn = document.getElementById('termsAcceptBtn');
+
+    // Terms and Privacy content
+    const termsContent = {
+        terms: {
+            title: "Terms & Conditions",
+            content: `
+                <div class="terms-section">
+                    <h4>1. Membership Agreement</h4>
+                    <p>By joining Fitpulse Fitness, you agree to abide by our gym rules and regulations. Membership fees are billed monthly and can be canceled with 30 days' notice.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>2. Payment Terms</h4>
+                    <p>All membership fees are due monthly. Late payments may result in suspension of membership privileges. We accept major credit cards and electronic transfers.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>3. Cancellation Policy</h4>
+                    <p>Members may cancel their membership with 30 days written notice. Refunds are not provided for partial months.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>4. Code of Conduct</h4>
+                    <p>Members must respect other members and staff. Proper gym attire is required. Equipment must be used safely and returned to its proper place after use.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>5. Liability</h4>
+                    <p>Members participate in fitness activities at their own risk. Fitpulse Fitness is not liable for any injuries sustained while using our facilities.</p>
+                </div>
+            `
+        },
+        privacy: {
+            title: "Privacy Policy",
+            content: `
+                <div class="terms-section">
+                    <h4>1. Information We Collect</h4>
+                    <p>We collect personal information including name, email, phone number, and fitness goals to provide you with the best possible service.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>2. How We Use Your Information</h4>
+                    <p>Your information is used to manage your membership, communicate important updates, and personalize your fitness experience.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>3. Data Protection</h4>
+                    <p>We implement industry-standard security measures to protect your personal information from unauthorized access or disclosure.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>4. Third-Party Sharing</h4>
+                    <p>We do not sell your personal information to third parties. We may share data with trusted partners only for service provision.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>5. Your Rights</h4>
+                    <p>You have the right to access, correct, or delete your personal information at any time by contacting our support team.</p>
+                </div>
+            `
+        },
+        service: {
+            title: "Terms of Service",
+            content: `
+                <div class="terms-section">
+                    <h4>1. Service Description</h4>
+                    <p>Fitpulse Fitness provides access to gym facilities, fitness classes, personal training, and related services as described in your membership plan.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>2. Member Responsibilities</h4>
+                    <p>Members are responsible for their own safety and should consult with a physician before beginning any fitness program.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>3. Facility Access</h4>
+                    <p>Access to facilities is granted based on your membership level and operating hours. Some areas may have restricted access.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>4. Class Bookings</h4>
+                    <p>Classes can be booked through our online system. Cancellations must be made at least 2 hours in advance to avoid penalties.</p>
+                </div>
+                <div class="terms-section">
+                    <h4>5. Changes to Service</h4>
+                    <p>We reserve the right to modify services, facilities, or class schedules with reasonable notice to members.</p>
+                </div>
+            `
         }
+    };
 
-        // Update total
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        cartTotal.text(`$${total.toFixed(2)}`);
+    // Handle all terms and privacy link clicks
+    document.addEventListener('click', function (e) {
+        const link = e.target.closest('a');
+        if (link && link.getAttribute('href') === '#') {
+            const linkText = link.textContent.toLowerCase();
 
-        // Update checkout button
-        checkoutBtn.prop('disabled', cart.length === 0);
-    }
-
-    function processCheckout() {
-        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-        // STRICT CHECK: User must be logged in to checkout
-        if (!isUserLoggedIn()) {
-            showNotification('Please login to complete your purchase', 'warning');
-            showPage('login');
-            return;
+            if (linkText.includes('terms') && linkText.includes('conditions')) {
+                e.preventDefault();
+                openTermsModal('terms');
+            } else if (linkText.includes('privacy') && linkText.includes('policy')) {
+                e.preventDefault();
+                openTermsModal('privacy');
+            } else if (linkText.includes('terms') && linkText.includes('service')) {
+                e.preventDefault();
+                openTermsModal('service');
+            }
         }
-
-        // Show processing message
-        checkoutBtn.html('<i class="fas fa-spinner fa-spin"></i> Processing...').prop('disabled', true);
-
-        // Simulate payment processing
-        setTimeout(() => {
-            showNotification(`Order placed successfully! Total: $${total.toFixed(2)}`, 'success');
-
-            // Clear cart
-            cart = [];
-            updateCartDisplay();
-
-            // Reset checkout button
-            checkoutBtn.html('<i class="fas fa-credit-card"></i> Proceed to Checkout').prop('disabled', true);
-        }, 2000);
-    }
-
-    // Initialize cart display
-    updateCartDisplay();
-}
-
-// Enhanced glow effects with JavaScript
-function setupEnhancedGlowEffects() {
-    const trainerCards = $('.trainer-card');
-
-    trainerCards.each((index, card) => {
-        // Add data attribute for easier targeting
-        $(card).attr('data-trainer-glow', index + 1);
-
-        // Enhanced mouse move effect for more dynamic glow
-        $(card).on('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const angle = Math.atan2(y - centerY, x - centerX) * 180 / Math.PI;
-
-            // You can use this angle to create more dynamic glow effects if needed
-        });
-    });
-}
-
-// Forgot Password Functionality
-function setupForgotPassword() {
-    const forgotPasswordModal = $('#forgotPasswordModal');
-    const forgotPasswordForm = $('#forgotPasswordForm');
-    const backToLoginLinks = $('.back-to-login');
-    const forgotPasswordLinks = $('.forgot-password');
-
-    // Open modal when forgot password is clicked
-    forgotPasswordLinks.on('click', function (e) {
-        e.preventDefault();
-        openForgotPasswordModal();
     });
 
     // Close modal
-    $('#forgotPasswordModalClose, #forgotPasswordModal').on('click', function (e) {
-        if (e.target === this || $(e.target).is('#forgotPasswordModalClose')) {
+    termsModalClose.addEventListener('click', closeTermsModal);
+    termsModal.addEventListener('click', function (e) {
+        if (e.target === termsModal) {
+            closeTermsModal();
+        }
+    });
+
+    // Accept button
+    termsAcceptBtn.addEventListener('click', function () {
+        closeTermsModal();
+        showNotification('Thank you for reviewing our policies!', 'success');
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && termsModal.classList.contains('active')) {
+            closeTermsModal();
+        }
+    });
+
+    function openTermsModal(type) {
+        const content = termsContent[type];
+        if (!content) return;
+
+        document.getElementById('modalTitle').textContent = content.title;
+        document.getElementById('termsContent').innerHTML = content.content;
+
+        termsModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeTermsModal() {
+        termsModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Initialize the system
+document.addEventListener('DOMContentLoaded', function () {
+    setupTermsAndPrivacy();
+});
+
+// Forgot Password Functionality
+function setupForgotPassword() {
+    const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+    const forgotPasswordModalClose = document.getElementById('forgotPasswordModalClose');
+    const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+    const backToLoginLinks = document.querySelectorAll('.back-to-login');
+    const forgotPasswordLinks = document.querySelectorAll('.forgot-password');
+
+    // Open modal when forgot password is clicked
+    forgotPasswordLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            openForgotPasswordModal();
+        });
+    });
+
+    // Close modal
+    forgotPasswordModalClose.addEventListener('click', closeForgotPasswordModal);
+    forgotPasswordModal.addEventListener('click', function (e) {
+        if (e.target === forgotPasswordModal) {
             closeForgotPasswordModal();
         }
     });
 
     // Back to login
-    backToLoginLinks.on('click', function (e) {
-        e.preventDefault();
-        closeForgotPasswordModal();
-        // Switch to login tab if in auth section
-        const authTabs = $('.auth-tab');
-        if (authTabs.length > 0) {
-            authTabs.first().trigger('click');
-        }
+    backToLoginLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            closeForgotPasswordModal();
+            // Switch to login tab if in auth section
+            const authTabs = document.querySelectorAll('.auth-tab');
+            if (authTabs.length > 0) {
+                authTabs[0].click();
+            }
+        });
     });
 
     // Form submission
-    forgotPasswordForm.on('submit', function (e) {
+    forgotPasswordForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        const submitBtn = $(this).find('.auth-submit-btn');
-        const email = $('#reset-email').val();
+        const submitBtn = this.querySelector('.auth-submit-btn');
+        const email = document.getElementById('reset-email').value;
 
-        submitBtn.addClass('loading');
+        submitBtn.classList.add('loading');
 
         // Simulate API call
         setTimeout(() => {
-            submitBtn.removeClass('loading');
+            submitBtn.classList.remove('loading');
 
             // Show success message
             showNotification(
@@ -1640,154 +1907,35 @@ function setupForgotPassword() {
             );
 
             closeForgotPasswordModal();
-            $(this).trigger('reset');
+            this.reset();
         }, 2000);
     });
 
     // Close with Escape key
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape' && forgotPasswordModal.hasClass('active')) {
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && forgotPasswordModal.classList.contains('active')) {
             closeForgotPasswordModal();
         }
     });
 
     function openForgotPasswordModal() {
-        forgotPasswordModal.addClass('active');
-        $('body').css('overflow', 'hidden');
+        forgotPasswordModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
 
         // Focus on email input
         setTimeout(() => {
-            $('#reset-email').focus();
+            document.getElementById('reset-email').focus();
         }, 300);
     }
 
     function closeForgotPasswordModal() {
-        forgotPasswordModal.removeClass('active');
-        $('body').css('overflow', 'auto');
-        forgotPasswordForm.trigger('reset');
+        forgotPasswordModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        forgotPasswordForm.reset();
     }
 }
 
-// Manual Logout Function
-function logout() {
-    // Clear all authentication data
-    localStorage.removeItem('userLoggedIn');
-    localStorage.removeItem('userPlanActive');
-    localStorage.removeItem('userPlan');
-    localStorage.removeItem('userPlanPrice');
-
-    // Update UI
-    updateUIBasedOnAuth();
-
-    // Show notification
-    showNotification('Logged out successfully', 'info');
-
-    // Redirect to home page
-    showPage('home');
-}
-
-// ========== INITIALIZATION ==========
-
-// Initialize everything when the page loads
-$(document).ready(function () {
-    showPage('home');
-
-    // Initialize all systems
-    setupDarkMode();
-    initializeLanguage();
-    window.classBookingSystem = setupClassBooking();
-    setupPlanSelection();
-    setupTrainers();
-    setupSocialLogin();
-    setupEnhancedAuth();
+// Initialize forgot password when DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
     setupForgotPassword();
-    setupSupplementCart();
-    setupEnhancedGlowEffects();
-
-    // Update UI based on current authentication status
-    updateUIBasedOnAuth(); // Add this line
-
-    // Set initial filter
-    $('.filter-btn[data-filter="all"]').trigger('click');
 });
-// ========== PAGE LOAD - AUTO LOGOUT ==========
-
-$(window).on('load', function () {
-    // Clear all authentication-related data from localStorage
-    localStorage.removeItem('userLoggedIn');
-    localStorage.removeItem('userPlanActive');
-    localStorage.removeItem('userPlan');
-    localStorage.removeItem('userPlanPrice');
-    localStorage.removeItem('registeredClasses');
-
-    // Update UI to reflect logged out state
-    updateUIBasedOnAuth();
-
-    // Reset any login forms
-    $('#loginForm, #signupForm').trigger('reset');
-
-    // Clear the registered classes display
-    if (window.classBookingSystem) {
-        window.classBookingSystem.updateRegisteredClassesDisplay();
-    }
-});
-
-// Handle "Book a Class Now" button in schedule page
-$(document).on('click', '.book-class-btn', function (e) {
-    e.preventDefault();
-
-    if (!canRegisterForClasses()) {
-        if (!isUserLoggedIn()) {
-            showPage('login');
-            showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'info');
-        } else {
-            showPage('membership');
-            showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
-        }
-    } else {
-        // User is logged in and has active plan, they can book classes
-        showNotification(currentLanguage === 'en' ? 'You can now click on any class to register!' : 'يمكنك الآن النقر على أي حصة للتسجيل!', 'success');
-    }
-});
-
-// ========== PAGE LOAD - AUTO LOGOUT ==========
-$(window).on('load', function () {
-    // Comment out or remove the auto-logout if you want to persist login state
-    // Or keep it if you want users to always start logged out
-
-    // Clear all authentication-related data from localStorage
-    localStorage.removeItem('userLoggedIn');
-    localStorage.removeItem('userPlanActive');
-    localStorage.removeItem('userPlan');
-    localStorage.removeItem('userPlanPrice');
-    localStorage.removeItem('registeredClasses');
-
-    // Update UI to reflect logged out state
-    updateUIBasedOnAuth();
-
-    // Reset any login forms
-    $('#loginForm, #signupForm').trigger('reset');
-
-    // Clear the registered classes display
-    if (window.classBookingSystem) {
-        window.classBookingSystem.updateRegisteredClassesDisplay();
-    }
-});
-
-// Manual Logout Function
-function logout() {
-    // Clear all authentication data
-    localStorage.removeItem('userLoggedIn');
-    localStorage.removeItem('userPlanActive');
-    localStorage.removeItem('userPlan');
-    localStorage.removeItem('userPlanPrice');
-
-    // Update UI
-    updateUIBasedOnAuth();
-
-    // Show notification
-    showNotification('Logged out successfully', 'info');
-
-    // Redirect to home page
-    showPage('home');
-}
