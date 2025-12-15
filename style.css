@@ -1,4 +1,4 @@
-/* Modern Color Scheme */
+
 :root {
     --primary: #e63946;
     --primary-dark: #c1121f;
@@ -17,7 +17,7 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Dark Mode Variables */
+/* Dark Mode */
 [data-theme="dark"] {
     --primary: #ff6b35;
     --primary-dark: #e55a2b;
@@ -1710,7 +1710,6 @@ footer {
     animation: fadeInUp 0.6s ease;
 }
 
-/* Responsive Styles */
 @media (max-width: 1200px) {
     .hero h1 {
         font-size: 3.5rem;
@@ -1802,7 +1801,6 @@ footer {
     }
 }
 
-/* Registered Classes Section */
 .registered-classes {
     margin-top: 60px;
     padding: 40px;
@@ -1924,7 +1922,6 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Login Required Message */
 .login-required {
     text-align: center;
     padding: 30px;
@@ -1944,7 +1941,6 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Enhanced Trainer Cards */
 .trainer-stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2115,7 +2111,6 @@ footer {
     font-size: 0.8rem;
 }
 
-/* Trainer Modal */
 .trainer-modal {
     display: none;
     position: fixed;
@@ -2277,22 +2272,16 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Add spacing between Book Session button and social media icons */
 .trainer-cta {
     margin-bottom: 25px;
-    /* Add this line */
 }
 
 .trainer-social {
     margin-top: 20px;
-    /* Add this line for extra insurance */
     padding-top: 15px;
-    /* Optional: adds visual separation */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-    /* Optional: subtle divider */
 }
 
-/* Membership Onboarding Modal */
 .onboarding-modal {
     display: none;
     position: fixed;
@@ -2346,7 +2335,6 @@ footer {
     background: linear-gradient(135deg, var(--success) 0%, #34c759 100%);
 }
 
-/* Plan Summary */
 .plan-summary {
     padding: 30px 40px;
 }
@@ -2404,7 +2392,6 @@ footer {
     font-size: 1.1rem;
 }
 
-/* Goal Selection */
 .goal-selection {
     padding: 30px 40px;
 }
@@ -2470,7 +2457,6 @@ footer {
     line-height: 1.4;
 }
 
-/* Welcome Step */
 .welcome-content {
     padding: 30px 40px;
     text-align: center;
@@ -2518,7 +2504,6 @@ footer {
     line-height: 1.5;
 }
 
-/* App Download */
 .app-download {
     padding: 20px 40px;
     border-top: 1px solid #f0f0f0;
@@ -2569,7 +2554,6 @@ footer {
     border-color: var(--success);
 }
 
-/* Onboarding Actions */
 .onboarding-actions {
     padding: 25px 40px;
     border-top: 1px solid #f0f0f0;
@@ -2586,7 +2570,6 @@ footer {
     flex: 1;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .goal-options {
         grid-template-columns: 1fr;
@@ -2606,7 +2589,6 @@ footer {
     }
 }
 
-/* Dark Mode Toggle */
 .theme-toggle {
     margin-left: 20px;
 }
@@ -2672,7 +2654,6 @@ footer {
     opacity: 1;
 }
 
-/* Gym Aesthetic Enhancements */
 .hero {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%),
         url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
@@ -2699,7 +2680,6 @@ footer {
     background: var(--gradient);
 }
 
-/* Add subtle gym pattern overlay */
 .hero::after {
     content: '';
     position: absolute;
@@ -2714,9 +2694,7 @@ footer {
     pointer-events: none;
 }
 
-/* ===== DARK MODE FIXES ===== */
 
-/* Fix dark mode text color conflicts */
 [data-theme="dark"] .section-title p,
 [data-theme="dark"] .feature-card p,
 [data-theme="dark"] .testimonial p,
@@ -2738,7 +2716,6 @@ footer {
     color: var(--dark) !important;
 }
 
-/* Fix specific section backgrounds */
 [data-theme="dark"] .testimonials .section-title p,
 [data-theme="dark"] .testimonials .client-name {
     color: rgba(255, 255, 255, 0.9) !important;
@@ -2748,7 +2725,6 @@ footer {
     color: var(--dark) !important;
 }
 
-/* Dark Mode Support for Auth Section */
 [data-theme="dark"] .auth-section {
     background: linear-gradient(135deg, rgba(15, 26, 42, 0.9) 0%, rgba(255, 107, 53, 0.8) 100%),
         url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
@@ -2804,7 +2780,6 @@ footer {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Theme Toggle Styles */
 .theme-toggle {
     margin-left: 20px;
     display: flex;
@@ -2884,7 +2859,6 @@ footer {
     color: var(--dark);
 }
 
-/* Mobile responsive for toggle */
 @media (max-width: 768px) {
     .toggle-text {
         display: none;
@@ -2895,7 +2869,6 @@ footer {
     }
 }
 
-/* Fix login page specifically */
 [data-theme="dark"] .auth-tab {
     color: white;
 }
@@ -2913,7 +2886,6 @@ footer {
     color: var(--dark) !important;
 }
 
-/* Plan Ribbon Styles */
 .plan-ribbon {
     position: absolute;
     top: 20px;
@@ -2935,13 +2907,11 @@ footer {
     overflow: hidden;
 }
 
-/* Dark mode support for ribbon */
 [data-theme="dark"] .plan-ribbon {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-light) 100%);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* Make sure the popular plan stands out */
 .plan-card.popular {
     transform: scale(1.05);
     border: 2px solid var(--primary);
@@ -2952,7 +2922,6 @@ footer {
     background: var(--gradient);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .plan-card.popular {
         transform: scale(1.02);
@@ -2965,7 +2934,6 @@ footer {
     }
 }
 
-/* Add this to your CSS for better visual feedback */
 .logged-in .class-type {
     cursor: pointer;
 }
@@ -2975,12 +2943,10 @@ footer {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Style for when user is logged in */
 body.logged-in .login-required {
     display: none !important;
 }
 
-/* Language Toggle Styles */
 .language-toggle {
     margin-left: 15px;
 }
@@ -3015,7 +2981,7 @@ body.logged-in .login-required {
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-light) 100%);
 }
 
-/* RTL Support */
+
 [dir="rtl"] body {
     text-align: right;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -3068,7 +3034,6 @@ body.logged-in .login-required {
     flex-direction: row-reverse;
 }
 
-/* Mobile responsive for language toggle */
 @media (max-width: 768px) {
     .lang-btn {
         padding: 8px 12px;
@@ -3084,7 +3049,7 @@ body.logged-in .login-required {
     }
 }
 
-/* Plan Confirmation Modal */
+
 .plan-modal {
     display: none;
     position: fixed;
@@ -3235,7 +3200,6 @@ body.logged-in .login-required {
     transform: rotate(90deg);
 }
 
-/* Dark Mode Support for Plan Modal */
 [data-theme="dark"] .plan-modal .modal-content {
     background: var(--surface);
     color: var(--dark);
@@ -3251,7 +3215,6 @@ body.logged-in .login-required {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* RTL Support for Plan Modal */
 [dir="rtl"] .plan-modal .modal-close {
     right: auto;
     left: 20px;
@@ -3261,7 +3224,6 @@ body.logged-in .login-required {
     flex-direction: row-reverse;
 }
 
-/* Enhanced Auth Section */
 .auth-section {
     display: flex;
     justify-content: center;
@@ -3669,14 +3631,12 @@ body.logged-in .login-required {
 .divider span {
     background: var(--light);
     padding: 0 20px;
-    /* Increased from 15px to 20px for more space */
     color: var(--gray);
     font-size: 0.9rem;
     position: relative;
     z-index: 1;
 }
 
-/* Dark mode support */
 [data-theme="dark"] .divider span {
     background: var(--surface);
 }
@@ -3782,7 +3742,7 @@ body.logged-in .login-required {
     text-decoration: underline;
 }
 
-/* Dark Mode Support */
+
 [data-theme="dark"] .auth-container {
     background: rgba(15, 26, 42, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -3813,7 +3773,6 @@ body.logged-in .login-required {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Add dark mode support for social buttons */
 [data-theme="dark"] .social-btn {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
@@ -3826,7 +3785,6 @@ body.logged-in .login-required {
 }
 
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .auth-section {
         padding: 20px 15px;
@@ -3868,7 +3826,6 @@ body.logged-in .login-required {
     }
 }
 
-/* Terms & Privacy Modal Styles */
 .terms-modal {
     display: none;
     position: fixed;
@@ -4000,7 +3957,6 @@ body.logged-in .login-required {
     transform: rotate(90deg);
 }
 
-/* Dark Mode Support */
 [data-theme="dark"] .terms-modal .modal-content {
     background: var(--surface);
 }
@@ -4025,7 +3981,6 @@ body.logged-in .login-required {
     border-top-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .terms-modal .modal-content {
         max-width: 95%;
@@ -4046,7 +4001,6 @@ body.logged-in .login-required {
     }
 }
 
-/* Enhanced link styles in forms */
 .checkbox-group a,
 .auth-footer a {
     color: var(--primary);
@@ -4062,7 +4016,6 @@ body.logged-in .login-required {
     border-bottom-color: var(--primary);
 }
 
-/* Scrollbar styling for modal content */
 .terms-modal .modal-body::-webkit-scrollbar {
     width: 6px;
 }
@@ -4089,7 +4042,6 @@ body.logged-in .login-required {
     background: var(--primary);
 }
 
-/* Forgot Password Modal */
 .forgot-password-modal {
     display: none;
     position: fixed;
@@ -4189,7 +4141,6 @@ body.logged-in .login-required {
     transform: rotate(90deg);
 }
 
-/* Dark Mode Support */
 [data-theme="dark"] .forgot-password-modal .modal-content {
     background: var(--surface);
 }
@@ -4207,13 +4158,11 @@ body.logged-in .login-required {
     color: var(--gray);
 }
 
-/* RTL Support */
 [dir="rtl"] .forgot-password-modal .modal-close {
     right: auto;
     left: 20px;
 }
 
-/* Class Count Display Styles */
 .class-count-display {
     margin: 20px 0;
     padding: 15px;
@@ -4258,7 +4207,6 @@ body.logged-in .login-required {
     background: var(--warning);
 }
 
-/* Dark mode support */
 [data-theme="dark"] .class-count-display {
     background: rgba(255, 255, 255, 0.05);
 }
@@ -4267,7 +4215,6 @@ body.logged-in .login-required {
     background: rgba(233, 196, 106, 0.1);
 }
 
-/* Cancel All Button Styles */
 .cancel-all-btn {
     margin-left: auto;
     padding: 8px 16px;
@@ -4290,7 +4237,6 @@ body.logged-in .login-required {
     box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
 }
 
-/* Dark mode support */
 [data-theme="dark"] .cancel-all-btn {
     background: var(--primary);
 }
@@ -4309,7 +4255,6 @@ body.logged-in .login-required {
     color: #2d3436;
 }
 
-/* Fix for Arabic RTL layout in registered classes section */
 [dir="rtl"] .class-count-display {
     text-align: right;
     direction: rtl;
@@ -4359,7 +4304,6 @@ body.logged-in .login-required {
     margin-right: 0;
 }
 
-/* Mobile responsive fixes for RTL */
 @media (max-width: 768px) {
     [dir="rtl"] .count-info {
         flex-direction: column;
@@ -4386,7 +4330,6 @@ body.logged-in .login-required {
     margin-top: 8px;
 }
 
-/* Fix Arabic text order in class count display */
 [dir="rtl"] .count-info span:first-child {
     direction: ltr;
     unicode-bidi: embed;
@@ -4405,7 +4348,6 @@ body.logged-in .login-required {
     order: 1;
 }
 
-/* Enhanced RTL support for class count display */
 [dir="rtl"] .class-count-display {
     text-align: right;
     direction: rtl;
@@ -4433,7 +4375,6 @@ body.logged-in .login-required {
     margin-right: 0;
 }
 
-/* Mobile responsive for RTL */
 @media (max-width: 768px) {
     [dir="rtl"] .count-info {
         flex-direction: column;
@@ -4453,7 +4394,6 @@ body.logged-in .login-required {
     }
 }
 
-/* Enhanced Trainer Card Glow Effects with External Glow */
 .trainers-grid {
     position: relative;
     z-index: 1;
@@ -4467,7 +4407,6 @@ body.logged-in .login-required {
     overflow: visible;
 }
 
-/* Marcus - Left (Purple) */
 .trainer-card:nth-child(1) {
     position: relative;
 }
@@ -4497,7 +4436,6 @@ body.logged-in .login-required {
     filter: blur(20px);
 }
 
-/* Sophia - Middle (Pink) */
 .trainer-card:nth-child(2) {
     position: relative;
 }
@@ -4527,7 +4465,6 @@ body.logged-in .login-required {
     filter: blur(20px);
 }
 
-/* Ronnie - Right (Cyan) */
 .trainer-card:nth-child(3) {
     position: relative;
 }
@@ -4557,13 +4494,11 @@ body.logged-in .login-required {
     filter: blur(20px);
 }
 
-/* Enhanced card hover effects */
 .trainer-card:hover {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }
 
-/* Specializations Hover Glow - Enhanced */
 .expertise-tag {
     transition: all 0.3s ease;
     position: relative;
@@ -4591,7 +4526,6 @@ body.logged-in .login-required {
     transform: translateY(-3px);
 }
 
-/* Book Session Button Glow - Enhanced */
 .book-session-btn {
     position: relative;
     overflow: hidden;
@@ -4614,7 +4548,6 @@ body.logged-in .login-required {
     transform: translateY(-3px) scale(1.05);
 }
 
-/* Social Media Icons Glow - Enhanced */
 .trainer-social a {
     transition: all 0.4s ease;
     position: relative;
@@ -4636,7 +4569,6 @@ body.logged-in .login-required {
     transform: translateY(-5px) scale(1.15);
 }
 
-/* Dark Mode Adjustments - Enhanced */
 [data-theme="dark"] .trainer-card::before {
     opacity: 0;
     filter: blur(20px);
@@ -4652,7 +4584,6 @@ body.logged-in .login-required {
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* Achievement Items Hover Effects - Enhanced */
 .achievement-item {
     transition: all 0.4s ease;
     position: relative;
@@ -4677,7 +4608,6 @@ body.logged-in .login-required {
     transform: translateX(8px) translateY(-2px);
 }
 
-/* Trainer Stats Hover Effects - Enhanced */
 .trainer-stat {
     transition: all 0.4s ease;
     position: relative;
@@ -4701,7 +4631,6 @@ body.logged-in .login-required {
     box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2);
 }
 
-/* Enhanced trainer image overlay with glow */
 .trainer-img {
     position: relative;
     overflow: hidden;
@@ -4725,7 +4654,6 @@ body.logged-in .login-required {
     opacity: 1;
 }
 
-/* Specific gradient overlays for each trainer with enhanced glow */
 .trainer-card:nth-child(1):hover .trainer-img::after {
     background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.3));
 }
@@ -4738,7 +4666,6 @@ body.logged-in .login-required {
     background: linear-gradient(135deg, transparent, rgba(6, 182, 212, 0.3));
 }
 
-/* Add a subtle pulse animation to the glow */
 @keyframes pulseGlow {
     0% {
         opacity: 0.7;
@@ -4760,7 +4687,6 @@ body.logged-in .login-required {
     animation: pulseGlow 2s ease-in-out infinite;
 }
 
-/* Ensure proper z-index layering */
 .trainers .container {
     position: relative;
     z-index: 1;
@@ -4771,7 +4697,6 @@ body.logged-in .login-required {
     z-index: 2;
 }
 
-/* Mobile responsiveness for enhanced glow */
 @media (max-width: 768px) {
     .trainer-card::before {
         top: -4px;
@@ -4795,7 +4720,7 @@ body.logged-in .login-required {
     }
 }
 
-/* Add a subtle background glow container for better performance */
+
 .trainer-card-glow-container {
     position: absolute;
     top: -20px;
@@ -4813,7 +4738,7 @@ body.logged-in .login-required {
     opacity: 1;
 }
 
-/* Enhanced Trainer Card Hover Shadows with Specific Colors */
+
 .trainer-card:nth-child(1):hover {
     box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4), 0 15px 30px rgba(139, 92, 246, 0.3);
 }
@@ -4826,7 +4751,7 @@ body.logged-in .login-required {
     box-shadow: 0 25px 50px rgba(6, 182, 212, 0.4), 0 15px 30px rgba(6, 182, 212, 0.3);
 }
 
-/* Social button loading states */
+
 .social-btn:disabled,
 .social-btn.loading {
     opacity: 0.7;
@@ -4847,7 +4772,7 @@ body.logged-in .login-required {
     }
 }
 
-/* Enhanced social button hover effects */
+
 .social-btn.google:hover {
     background: #db4437 !important;
     border-color: #db4437 !important;
@@ -4869,14 +4794,12 @@ body.logged-in .login-required {
     transform: translateY(-2px);
 }
 
-/* Dark mode adjustments for social buttons */
 [data-theme="dark"] .social-btn.google:hover,
 [data-theme="dark"] .social-btn.facebook:hover,
 [data-theme="dark"] .social-btn.apple:hover {
     filter: brightness(1.1);
 }
 
-/* Supplement Sales Section */
 .supplements {
     background: white;
     padding: 80px 0;
@@ -5001,7 +4924,6 @@ body.logged-in .login-required {
     font-size: 0.9rem;
 }
 
-/* Cart Summary */
 .cart-summary {
     background: white;
     border-radius: 15px;
@@ -5122,7 +5044,6 @@ body.logged-in .login-required {
     transform: none !important;
 }
 
-/* RTL Support for Supplements */
 [dir="rtl"] .supplement-info {
     text-align: right;
 }
@@ -5139,7 +5060,6 @@ body.logged-in .login-required {
     flex-direction: row-reverse;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .supplements-grid {
         grid-template-columns: 1fr;
@@ -5155,7 +5075,6 @@ body.logged-in .login-required {
     }
 }
 
-/* Fix for supplement images height */
 .supplement-img {
     height: 200px;
     overflow: hidden;
@@ -5172,7 +5091,6 @@ body.logged-in .login-required {
     object-position: center;
 }
 
-/* Fix for trainer images height and alignment */
 .trainer-img {
     height: 350px;
     overflow: hidden;
@@ -5188,12 +5106,10 @@ body.logged-in .login-required {
     object-position: center top;
 }
 
-/* Specific fix for Ronnie Coleman image */
 .trainer-card:nth-child(3) .trainer-img img {
     object-position: center 20%;
 }
 
-/* Fix for testimonial images */
 .client-img {
     width: 100px;
     height: 100px;
@@ -5214,19 +5130,16 @@ body.logged-in .login-required {
     object-position: center;
 }
 
-/* Ensure all images maintain aspect ratio */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Dark mode support for supplement images */
 [data-theme="dark"] .supplement-img {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive fixes */
 @media (max-width: 768px) {
     .supplement-img {
         height: 180px;
@@ -5251,7 +5164,6 @@ img {
     }
 }
 
-/* Fix for trainer images */
 .trainer-img {
     height: 350px;
     overflow: hidden;
@@ -5259,7 +5171,6 @@ img {
     align-items: center;
     justify-content: center;
     background: #f8f9fa;
-    /* Add background for consistency */
 }
 
 .trainer-img img {
@@ -5269,24 +5180,18 @@ img {
     object-position: center;
 }
 
-/* Specific fix for Ronnie Coleman - make image smaller to fit in box */
 .trainer-card:nth-child(3) .trainer-img img {
     object-fit: contain;
-    /* Change to contain to see full image */
     object-position: center center;
     width: 90%;
-    /* Reduce width */
     height: 90%;
-    /* Reduce height */
 }
 
-/* Specific fix for Marcus Johnson - center the image */
 .trainer-card:nth-child(1) .trainer-img img {
     object-position: center 30%;
-    /* Adjust vertical position to center face */
+   
 }
 
-/* Fix for supplement images */
 .supplement-img {
     height: 200px;
     overflow: hidden;
@@ -5300,31 +5205,23 @@ img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    /* Use contain to see full product */
     object-position: center;
     padding: 10px;
-    /* Add some padding */
 }
 
-/* Specific fix for multivitamin - make larger */
 .supplement-card:nth-child(4) .supplement-img img {
     transform: scale(1.3);
-    /* Scale up the image */
 }
 
-/* Specific fix for BCAA - make larger */
 .supplement-card:nth-child(6) .supplement-img img {
     transform: scale(1.2);
-    /* Scale up the image */
 }
 
-/* Dark mode support */
 [data-theme="dark"] .trainer-img,
 [data-theme="dark"] .supplement-img {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .trainer-img {
         height: 300px;
@@ -5365,7 +5262,6 @@ img {
     }
 }
 
-/* Specific class-based fixes */
 .ronnie-image {
     object-fit: contain !important;
     width: 90% !important;
@@ -5385,7 +5281,6 @@ img {
     transform: scale(1.2) !important;
 }
 
-/* New Icon System */
 .icon {
     display: inline-block;
     font-style: normal;
@@ -5395,14 +5290,12 @@ img {
     vertical-align: middle;
 }
 
-/* Social Icons */
 .social-icon .icon {
     font-size: 1.3rem;
     width: 1em;
     height: 1em;
 }
 
-/* UI Icons */
 .feature-icon .icon,
 .contact-icon .icon {
     font-size: 3.5rem;
@@ -5417,7 +5310,6 @@ img {
     font-size: 1rem;
 }
 
-/* Specific icon adjustments */
 .icon[title="facebook"] {
     font-family: Arial, sans-serif;
 }
@@ -5436,7 +5328,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* Loading spinner animation */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
@@ -5452,7 +5343,6 @@ img {
     display: inline-block;
 }
 
-/* Ensure proper alignment */
 .btn .icon,
 .nav-link .icon {
     margin-right: 8px;
@@ -5464,7 +5354,6 @@ img {
     margin-left: 8px;
 }
 
-/* Fix for check and cross icons in plan features */
 .plan-features .icon {
     width: 20px;
     text-align: center;
@@ -5480,7 +5369,6 @@ img {
     opacity: 0.5;
 }
 
-/* Modern Trainer Modal */
 .trainer-modal {
     display: none;
     position: fixed;
@@ -5589,12 +5477,9 @@ img {
 .trainer-modal .modal-body {
     padding: 30px;
     max-height: none;
-    /* Remove max-height to eliminate scrollbar */
     overflow: visible;
-    /* Change from auto to visible */
 }
 
-/* Modern Stats Grid */
 .trainer-modal .modal-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5654,7 +5539,6 @@ img {
     letter-spacing: 0.5px;
 }
 
-/* Modern Bio Section */
 .trainer-modal .modal-bio {
     background: rgba(255, 255, 255, 0.03);
     border-left: 4px solid #4ecdc4;
@@ -5667,7 +5551,6 @@ img {
     backdrop-filter: blur(10px);
 }
 
-/* Modern Achievements */
 .trainer-modal .modal-achievements {
     margin-bottom: 25px;
 }
@@ -5757,7 +5640,6 @@ img {
     box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
 }
 
-/* Modern Action Buttons */
 .trainer-modal .modal-actions {
     display: flex;
     gap: 15px;
@@ -5820,13 +5702,11 @@ img {
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Dark theme adjustments */
 [data-theme="dark"] .trainer-modal .modal-content {
     background: linear-gradient(135deg, #0a0f17 0%, #131c2a 100%);
     border: 1px solid rgba(255, 107, 53, 0.2);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
     .trainer-modal .modal-content {
         margin: 10px;
@@ -5873,10 +5753,8 @@ img {
     }
 }
 
-/* Fix trainer modal sizing and button visibility */
 .trainer-modal .modal-content {
     max-height: 85vh;
-    /* Limit height to ensure buttons are visible */
     display: flex;
     flex-direction: column;
 }
@@ -5884,9 +5762,7 @@ img {
 .trainer-modal .modal-body {
     flex: 1;
     overflow-y: auto;
-    /* Allow scrolling if content is too long */
     padding-bottom: 20px;
-    /* Add space at bottom */
 }
 
 .trainer-modal .modal-actions {
@@ -5896,7 +5772,6 @@ img {
     padding: 20px 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: auto;
-    /* Push to bottom */
 }
 
 .plan-note {
@@ -5909,4 +5784,153 @@ img {
 
 [data-theme="dark"] .plan-note {
     color: var(--primary-light);
+}
+
+.nutrition {
+    background: linear-gradient(135deg, var(--light) 0%, white 100%);
+    padding: 100px 0;
+}
+
+[data-theme="dark"] .nutrition {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--surface) 100%);
+}
+
+.nutrition-locked {
+    background: white;
+    border-radius: 20px;
+    padding: 60px 40px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 2px dashed var(--primary-light);
+}
+
+[data-theme="dark"] .nutrition-locked {
+    background: var(--surface);
+    border-color: rgba(255, 107, 53, 0.3);
+}
+
+.locked-content .icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+    color: var(--primary);
+}
+
+.locked-content h3 {
+    color: var(--secondary);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.locked-content p {
+    color: var(--gray);
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.nutrition-unlocked .nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.nutrition-feature {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .nutrition-feature {
+    background: var(--surface);
+    border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.nutrition-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.nutrition-icon .icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+    color: var(--primary);
+}
+
+.nutrition-feature h3 {
+    color: var(--secondary);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+[data-theme="dark"] .nutrition-feature h3 {
+    color: var(--dark);
+}
+
+.nutrition-feature p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.nutrition-cta {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#startNutritionPlanning {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #2a9d8f 0%, var(--success) 100%);
+}
+
+#startNutritionPlanning:hover {
+    background: linear-gradient(135deg, var(--success) 0%, #2a9d8f 100%);
+    transform: translateY(-3px);
+}
+
+.elite-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #333;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+[data-theme="dark"] .elite-badge {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .nutrition {
+        padding: 80px 0;
+    }
+
+    .nutrition-locked {
+        padding: 40px 20px;
+    }
+
+    .nutrition-unlocked .nutrition-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nutrition-feature {
+        padding: 25px 20px;
+    }
 }
