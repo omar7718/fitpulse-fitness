@@ -5899,3 +5899,14 @@ img {
     /* Push to bottom */
 }
 
+.plan-note {
+    font-size: 0.8rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+[data-theme="dark"] .plan-note {
+    color: var(--primary-light);
+}
