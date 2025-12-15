@@ -173,7 +173,9 @@ const translations = {
         yourCart: "Your Cart",
         emptyCart: "Your cart is empty",
         total: "Total",
-        proceedToCheckout: "Proceed to Checkout"
+        proceedToCheckout: "Proceed to Checkout",
+        basicPlanNoClasses: "Basic plan does not include class registration",
+upgradeForClasses: "Upgrade to Premium or Elite for class access",
 
     },
 
@@ -348,7 +350,9 @@ const translations = {
         yourCart: "سلة التسوق",
         emptyCart: "سلة التسوق فارغة",
         total: "المجموع",
-        proceedToCheckout: "إتمام الشراء"
+        proceedToCheckout: "إتمام الشراء",
+        basicPlanNoClasses: "الخطة الأساسية لا تشمل تسجيل الحصص",
+upgradeForClasses: "قم بالترقية إلى المميزة أو النخبة للوصول إلى الحصص",
     }
 };
 
@@ -480,14 +484,14 @@ function isUserLoggedIn() {
     return localStorage.getItem('userLoggedIn') === 'true';
 }
 
-// Check if user has an active plan
-function hasActivePlan() {
-    return localStorage.getItem('userPlanActive') === 'true';
+function hasPremiumOrElitePlan() {
+    const userPlan = localStorage.getItem('userPlan');
+    return userPlan === 'Premium' || userPlan === 'Elite';
 }
 
 // Check if user can register for classes (must be logged in AND have active plan)
 function canRegisterForClasses() {
-    return isUserLoggedIn() && hasActivePlan();
+    return isUserLoggedIn() && hasPremiumOrElitePlan();
 }
 
 // Language Switching Functionality
@@ -592,6 +596,8 @@ function updateUIBasedOnAuth() {
 // Update class booking UI based on authentication
 function updateClassBookingUI() {
     const canRegister = canRegisterForClasses();
+    const currentPlan = localStorage.getItem('userPlan');
+    
     $('.class-type').each(function () {
         const $this = $(this);
         if (canRegister) {
@@ -601,13 +607,20 @@ function updateClassBookingUI() {
                 pointerEvents: 'auto'
             }).attr('title', 'Click to register for this class');
         } else {
+            let title = '';
+            if (!isUserLoggedIn()) {
+                title = 'Please login to register for classes';
+            } else if (currentPlan === 'Basic') {
+                title = 'Basic plan does not include class registration. Upgrade to Premium or Elite.';
+            } else {
+                title = 'Please activate a Premium or Elite membership plan to register for classes';
+            }
+            
             $this.css({
                 cursor: 'not-allowed',
                 opacity: '0.7',
                 pointerEvents: 'none'
-            }).attr('title', !isUserLoggedIn() ?
-                'Please login to register for classes' :
-                'Please activate a membership plan to register for classes');
+            }).attr('title', title);
         }
     });
 }
@@ -744,34 +757,37 @@ function setupClassBooking() {
         updateClassCountDisplay();
     }
 
-    function setupClassClickHandlers() {
-        $('.class-type').off('click').on('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+   function setupClassClickHandlers() {
+    $('.class-type').off('click').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-            // STRICT CHECK: User must be logged in AND have active plan
-            if (!canRegisterForClasses()) {
-                if (!isUserLoggedIn()) {
-                    showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning');
-                    showPage('login');
-                } else {
-                    showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
-                    showPage('membership');
-                }
-                return;
+        // STRICT CHECK: User must be logged in AND have premium/elite plan
+        if (!canRegisterForClasses()) {
+            const currentPlan = localStorage.getItem('userPlan');
+            if (!isUserLoggedIn()) {
+                showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning');
+                showPage('login');
+            } else if (currentPlan === 'Basic') {
+                showNotification(currentLanguage === 'en' ? 'Basic plan does not include classes. Upgrade to Premium or Elite.' : 'الخطة الأساسية لا تشمل الحصص. قم بالترقية إلى المميزة أو النخبة.', 'warning');
+                showPage('membership');
+            } else {
+                showNotification(currentLanguage === 'en' ? 'Please choose a Premium or Elite plan to continue.' : 'يرجى اختيار خطة مميزة أو نخبة للمتابعة.', 'warning');
+                showPage('membership');
             }
+            return;
+        }
 
-            const className = $(this).text();
-            const classTypeValue = $(this).attr('class').split(' ').find(cls => cls !== 'class-type');
-            const timeCell = $(this).closest('tr').find('td:first-child');
-            const classTime = timeCell.length ? timeCell.text() : 'unknown time';
-            const dayHeader = $(this).closest('table').find('thead th').eq($(this).closest('td').index());
-            const classDay = dayHeader.length ? dayHeader.text() : 'unknown day';
+        const className = $(this).text();
+        const classTypeValue = $(this).attr('class').split(' ').find(cls => cls !== 'class-type');
+        const timeCell = $(this).closest('tr').find('td:first-child');
+        const classTime = timeCell.length ? timeCell.text() : 'unknown time';
+        const dayHeader = $(this).closest('table').find('thead th').eq($(this).closest('td').index());
+        const classDay = dayHeader.length ? dayHeader.text() : 'unknown day';
 
-            registerClass(className, classTypeValue, classDay, classTime);
-        });
-    }
-
+        registerClass(className, classTypeValue, classDay, classTime);
+    });
+}
     // Handle "Book a Class Now" button
     $('a[data-page="login"]').on('click', function (e) {
         e.preventDefault();
@@ -790,37 +806,59 @@ function setupClassBooking() {
     });
 
     // Function to update login required message based on login status
-    function updateLoginRequiredMessage() {
-        const scheduleSection = $('.schedule');
-        let loginMessage = scheduleSection.find('.login-required');
-        const canRegister = canRegisterForClasses();
+   // Function to update login required message based on login status
+function updateLoginRequiredMessage() {
+    const scheduleSection = $('.schedule');
+    let loginMessage = scheduleSection.find('.login-required');
+    const canRegister = canRegisterForClasses();
+    const currentPlan = localStorage.getItem('userPlan');
 
-        // Remove existing message if any
-        loginMessage.remove();
+    // Remove existing message if any
+    loginMessage.remove();
 
-        if (!canRegister) {
-            // Show appropriate message
-            loginMessage = $(`
-                <div class="login-required">
-                    <h4>${!isUserLoggedIn() ? 'Login Required' : 'Membership Required'}</h4>
-                    <p>${!isUserLoggedIn() ? 'Please login to register for classes' : 'Please activate a membership plan to book classes'}</p>
-                    <a href="#${!isUserLoggedIn() ? 'login' : 'membership'}" class="btn" data-page="${!isUserLoggedIn() ? 'login' : 'membership'}">
-                        ${!isUserLoggedIn() ? 'Login Now' : 'Choose a Plan'}
-                    </a>
-                </div>
-            `);
-
-            scheduleSection.append(loginMessage);
-
-            // Add click events to buttons
-            loginMessage.find('a[data-page]').on('click', function (e) {
-                e.preventDefault();
-                const page = $(this).data('page');
-                showPage(page);
-            });
+    if (!canRegister) {
+        let title = '';
+        let message = '';
+        let buttonText = '';
+        let targetPage = '';
+        
+        if (!isUserLoggedIn()) {
+            title = 'Login Required';
+            message = 'Please login to register for classes';
+            buttonText = 'Login Now';
+            targetPage = 'login';
+        } else if (currentPlan === 'Basic') {
+            title = 'Upgrade Required';
+            message = 'Basic plan does not include class registration. Upgrade to Premium or Elite.';
+            buttonText = 'Upgrade Plan';
+            targetPage = 'membership';
+        } else {
+            title = 'Membership Required';
+            message = 'Please activate a Premium or Elite membership plan to book classes';
+            buttonText = 'Choose a Plan';
+            targetPage = 'membership';
         }
-    }
 
+        loginMessage = $(`
+            <div class="login-required">
+                <h4>${title}</h4>
+                <p>${message}</p>
+                <a href="#${targetPage}" class="btn" data-page="${targetPage}">
+                    ${buttonText}
+                </a>
+            </div>
+        `);
+
+        scheduleSection.append(loginMessage);
+
+        // Add click events to buttons
+        loginMessage.find('a[data-page]').on('click', function (e) {
+            e.preventDefault();
+            const page = $(this).data('page');
+            showPage(page);
+        });
+    }
+}
     // Function to check if a class already exists at the same time
     function isClassAlreadyRegistered(className, classDay, classTime) {
         return registeredClasses.some(classItem =>
@@ -1017,24 +1055,31 @@ function setupPlanSelection() {
         $('body').css('overflow', 'auto');
     }
 
-    function activateUserPlan(planName, planPrice) {
-        if (!isUserLoggedIn()) {
-            showNotification('Please login to activate a membership plan', 'warning');
-            showPage('login');
-            return;
-        }
-        localStorage.setItem('userPlan', planName);
-        localStorage.setItem('userPlanPrice', planPrice);
-        localStorage.setItem('userPlanActive', 'true');
-        showNotification(`${planName} plan activated successfully! You can now book classes.`, 'success');
-        updateUIBasedOnAuth();
-        if (window.classBookingSystem) {
-            window.classBookingSystem.updateLoginRequiredMessage();
-            window.classBookingSystem.setupClassClickHandlers();
-            window.classBookingSystem.updateRegisteredClassesDisplay();
-        }
-        showPage('schedule');
+   function activateUserPlan(planName, planPrice) {
+    if (!isUserLoggedIn()) {
+        showNotification('Please login to activate a membership plan', 'warning');
+        showPage('login');
+        return;
     }
+    localStorage.setItem('userPlan', planName);
+    localStorage.setItem('userPlanPrice', planPrice);
+    localStorage.setItem('userPlanActive', 'true');
+    
+    // Show appropriate message based on plan type
+    if (planName === 'Premium' || planName === 'Elite') {
+        showNotification(`${planName} plan activated successfully! You can now book classes.`, 'success');
+    } else {
+        showNotification(`${planName} plan activated! Note: Basic plan does not include class registration.`, 'info');
+    }
+    
+    updateUIBasedOnAuth();
+    if (window.classBookingSystem) {
+        window.classBookingSystem.updateLoginRequiredMessage();
+        window.classBookingSystem.setupClassClickHandlers();
+        window.classBookingSystem.updateRegisteredClassesDisplay();
+    }
+    showPage('schedule');
+}
 
     // Close modal with Escape key
     $(document).on('keydown', function (e) {
@@ -1052,26 +1097,35 @@ $('#loginForm').on('submit', function (e) {
     const btn = $(this).find('.btn');
     const originalText = btn.text();
     btn.text('Logging in...').prop('disabled', true);
-    setTimeout(() => {
-        localStorage.setItem('userLoggedIn', 'true');
-        showNotification('Login successful!', 'success');
-        updateUIBasedOnAuth(); // Add this line
-        $(this).trigger('reset');
-        btn.text(originalText).prop('disabled', false);
-        updateUIBasedOnAuth();
-        const hasActivePlan = localStorage.getItem('userPlanActive') === 'true';
-        if (hasActivePlan) {
-            showPage('schedule');
-            showNotification('Welcome back! Your plan is active.', 'success');
+   // Inside login form submission success callback
+setTimeout(() => {
+    localStorage.setItem('userLoggedIn', 'true');
+    showNotification('Login successful!', 'success');
+    updateUIBasedOnAuth();
+    $(this).trigger('reset');
+    btn.text(originalText).prop('disabled', false);
+    updateUIBasedOnAuth();
+    
+    const hasPremiumOrElite = hasPremiumOrElitePlan();
+    if (hasPremiumOrElite) {
+        showPage('schedule');
+        showNotification('Welcome back! Your plan includes class registration.', 'success');
+    } else {
+        const currentPlan = localStorage.getItem('userPlan');
+        if (currentPlan === 'Basic') {
+            showPage('membership');
+            showNotification('Basic plan does not include class registration. Upgrade to Premium or Elite.', 'warning');
         } else {
             showPage('membership');
             showNotification('Please select a membership plan to continue', 'info');
         }
-        if (window.classBookingSystem) {
-            window.classBookingSystem.updateLoginRequiredMessage();
-            window.classBookingSystem.setupClassClickHandlers();
-        }
-    }, 1500);
+    }
+    
+    if (window.classBookingSystem) {
+        window.classBookingSystem.updateLoginRequiredMessage();
+        window.classBookingSystem.setupClassClickHandlers();
+    }
+}, 1500);
 });
 
 // Signup Form Submission
