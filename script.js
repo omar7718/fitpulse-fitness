@@ -175,7 +175,21 @@ const translations = {
         total: "Total",
         proceedToCheckout: "Proceed to Checkout",
         basicPlanNoClasses: "Basic plan does not include class registration",
-upgradeForClasses: "Upgrade to Premium or Elite for class access",
+        upgradeForClasses: "Upgrade to Premium or Elite for class access",
+        nutritionTitle: "Personalized Nutrition Planning",
+        nutritionDesc: "Exclusive benefit for Elite members - Get custom meal plans and nutrition guidance from our certified dietitians.",
+        nutritionLockedTitle: "Exclusive Elite Member Feature",
+        nutritionLockedDesc: "Upgrade to Elite membership to unlock personalized nutrition planning with certified dietitians.",
+        upgradeToElite: "Upgrade to Elite",
+        mealPlanning: "Custom Meal Plans",
+        mealPlanningDesc: "Personalized meal plans tailored to your fitness goals, dietary preferences, and lifestyle.",
+        macrosTracking: "Macro Tracking",
+        macrosTrackingDesc: "Detailed macronutrient analysis and tracking to optimize your nutrition for results.",
+        dietitianConsult: "Dietitian Consultation",
+        dietitianConsultDesc: "Monthly one-on-one sessions with certified sports nutritionists.",
+        nutritionApp: "Nutrition App Access",
+        nutritionAppDesc: "Access our exclusive nutrition tracking app with recipe database and progress monitoring.",
+        startNutritionPlan: "Start Nutrition Planning"
 
     },
 
@@ -352,7 +366,21 @@ upgradeForClasses: "Upgrade to Premium or Elite for class access",
         total: "المجموع",
         proceedToCheckout: "إتمام الشراء",
         basicPlanNoClasses: "الخطة الأساسية لا تشمل تسجيل الحصص",
-upgradeForClasses: "قم بالترقية إلى المميزة أو النخبة للوصول إلى الحصص",
+        upgradeForClasses: "قم بالترقية إلى المميزة أو النخبة للوصول إلى الحصص",
+        nutritionTitle: "التخطيط الغذائي الشخصي",
+        nutritionDesc: "ميزة حصرية لأعضاء النخبة - احصل على خطط وجبات مخصصة وإرشادات تغذية من أخصائيي التغذية المعتمدين لدينا.",
+        nutritionLockedTitle: "ميزة حصرية لأعضاء النخبة",
+        nutritionLockedDesc: "قم بالترقية إلى عضوية النخبة لفتح التخطيط الغذائي الشخصي مع أخصائيي التغذية المعتمدين.",
+        upgradeToElite: "الترقية إلى النخبة",
+        mealPlanning: "خطط وجبات مخصصة",
+        mealPlanningDesc: "خطط وجبات شخصية مصممة خصيصًا لأهدافك الرياضية وتفضيلاتك الغذائية ونمط حياتك.",
+        macrosTracking: "تتبع المغذيات الكبرى",
+        macrosTrackingDesc: "تحليل مفصل للمغذيات الكبرى والتتبع لتحسين تغذيتك لتحقيق النتائج.",
+        dietitianConsult: "استشارة أخصائي تغذية",
+        dietitianConsultDesc: "جلسات شهرية فردية مع أخصائيي التغذية الرياضية المعتمدين.",
+        nutritionApp: "وصول لتطبيق التغذية",
+        nutritionAppDesc: "الوصول إلى تطبيق التتبع الغذائي الحصري مع قاعدة بيانات الوصفات ومراقبة التقدم.",
+        startNutritionPlan: "ابدأ التخطيط الغذائي"
     }
 };
 
@@ -561,30 +589,25 @@ function updateUIBasedOnAuth() {
     const navLinkText = loginNavButton.find('.nav-link-text');
 
     if (isLoggedIn) {
-        // Change to Logout
         navLinkText.text('Logout');
         navLinkText.attr('data-i18n', 'logout');
         loginNavButton.attr('data-page', 'logout');
         loginNavButton.attr('href', '#logout');
 
-        // Update translation if in Arabic
         if (currentLanguage === 'ar') {
             navLinkText.text('تسجيل الخروج');
         }
     } else {
-        // Change to Login
         navLinkText.text('Login');
         navLinkText.attr('data-i18n', 'login');
         loginNavButton.attr('data-page', 'login');
         loginNavButton.attr('href', '#login');
 
-        // Update translation if in Arabic
         if (currentLanguage === 'ar') {
             navLinkText.text('تسجيل الدخول');
         }
     }
 
-    // Update other UI elements
     updateClassBookingUI();
     updatePlanActivationUI();
 
@@ -593,11 +616,10 @@ function updateUIBasedOnAuth() {
     }
 }
 
-// Update class booking UI based on authentication
 function updateClassBookingUI() {
     const canRegister = canRegisterForClasses();
     const currentPlan = localStorage.getItem('userPlan');
-    
+
     $('.class-type').each(function () {
         const $this = $(this);
         if (canRegister) {
@@ -615,7 +637,7 @@ function updateClassBookingUI() {
             } else {
                 title = 'Please activate a Premium or Elite membership plan to register for classes';
             }
-            
+
             $this.css({
                 cursor: 'not-allowed',
                 opacity: '0.7',
@@ -625,7 +647,6 @@ function updateClassBookingUI() {
     });
 }
 
-// Update plan activation UI based on authentication
 function updatePlanActivationUI() {
     const isLoggedIn = isUserLoggedIn();
 
@@ -646,7 +667,6 @@ function setupClassBooking() {
     let registeredClasses = [];
     const MAX_CLASSES = 12;
 
-    // Function to update the registered classes display
     function updateRegisteredClassesDisplay() {
         const registeredContainer = $('.registered-classes-grid');
         const emptyState = $('.empty-state');
@@ -700,7 +720,6 @@ function setupClassBooking() {
         });
     }
 
-    // Function to get class intensity based on type
     function getClassIntensity(type) {
         const intensities = {
             'yoga': 'Low',
@@ -713,7 +732,6 @@ function setupClassBooking() {
         return intensities[type] || 'Medium';
     }
 
-    // Function to register a class
     function registerClass(className, classType, day, time) {
         if (!canRegisterForClasses()) {
             if (!isUserLoggedIn()) {
@@ -757,38 +775,36 @@ function setupClassBooking() {
         updateClassCountDisplay();
     }
 
-   function setupClassClickHandlers() {
-    $('.class-type').off('click').on('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
+    function setupClassClickHandlers() {
+        $('.class-type').off('click').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-        // STRICT CHECK: User must be logged in AND have premium/elite plan
-        if (!canRegisterForClasses()) {
-            const currentPlan = localStorage.getItem('userPlan');
-            if (!isUserLoggedIn()) {
-                showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning');
-                showPage('login');
-            } else if (currentPlan === 'Basic') {
-                showNotification(currentLanguage === 'en' ? 'Basic plan does not include classes. Upgrade to Premium or Elite.' : 'الخطة الأساسية لا تشمل الحصص. قم بالترقية إلى المميزة أو النخبة.', 'warning');
-                showPage('membership');
-            } else {
-                showNotification(currentLanguage === 'en' ? 'Please choose a Premium or Elite plan to continue.' : 'يرجى اختيار خطة مميزة أو نخبة للمتابعة.', 'warning');
-                showPage('membership');
+            if (!canRegisterForClasses()) {
+                const currentPlan = localStorage.getItem('userPlan');
+                if (!isUserLoggedIn()) {
+                    showNotification(currentLanguage === 'en' ? 'Please login to continue.' : 'يرجى تسجيل الدخول للمتابعة.', 'warning');
+                    showPage('login');
+                } else if (currentPlan === 'Basic') {
+                    showNotification(currentLanguage === 'en' ? 'Basic plan does not include classes. Upgrade to Premium or Elite.' : 'الخطة الأساسية لا تشمل الحصص. قم بالترقية إلى المميزة أو النخبة.', 'warning');
+                    showPage('membership');
+                } else {
+                    showNotification(currentLanguage === 'en' ? 'Please choose a Premium or Elite plan to continue.' : 'يرجى اختيار خطة مميزة أو نخبة للمتابعة.', 'warning');
+                    showPage('membership');
+                }
+                return;
             }
-            return;
-        }
 
-        const className = $(this).text();
-        const classTypeValue = $(this).attr('class').split(' ').find(cls => cls !== 'class-type');
-        const timeCell = $(this).closest('tr').find('td:first-child');
-        const classTime = timeCell.length ? timeCell.text() : 'unknown time';
-        const dayHeader = $(this).closest('table').find('thead th').eq($(this).closest('td').index());
-        const classDay = dayHeader.length ? dayHeader.text() : 'unknown day';
+            const className = $(this).text();
+            const classTypeValue = $(this).attr('class').split(' ').find(cls => cls !== 'class-type');
+            const timeCell = $(this).closest('tr').find('td:first-child');
+            const classTime = timeCell.length ? timeCell.text() : 'unknown time';
+            const dayHeader = $(this).closest('table').find('thead th').eq($(this).closest('td').index());
+            const classDay = dayHeader.length ? dayHeader.text() : 'unknown day';
 
-        registerClass(className, classTypeValue, classDay, classTime);
-    });
-}
-    // Handle "Book a Class Now" button
+            registerClass(className, classTypeValue, classDay, classTime);
+        });
+    }
     $('a[data-page="login"]').on('click', function (e) {
         e.preventDefault();
 
@@ -805,41 +821,40 @@ function setupClassBooking() {
         }
     });
 
-    // Function to update login required message based on login status
-   // Function to update login required message based on login status
-function updateLoginRequiredMessage() {
-    const scheduleSection = $('.schedule');
-    let loginMessage = scheduleSection.find('.login-required');
-    const canRegister = canRegisterForClasses();
-    const currentPlan = localStorage.getItem('userPlan');
+    
+    function updateLoginRequiredMessage() {
+        const scheduleSection = $('.schedule');
+        let loginMessage = scheduleSection.find('.login-required');
+        const canRegister = canRegisterForClasses();
+        const currentPlan = localStorage.getItem('userPlan');
 
-    // Remove existing message if any
-    loginMessage.remove();
+        // Remove existing message if any
+        loginMessage.remove();
 
-    if (!canRegister) {
-        let title = '';
-        let message = '';
-        let buttonText = '';
-        let targetPage = '';
-        
-        if (!isUserLoggedIn()) {
-            title = 'Login Required';
-            message = 'Please login to register for classes';
-            buttonText = 'Login Now';
-            targetPage = 'login';
-        } else if (currentPlan === 'Basic') {
-            title = 'Upgrade Required';
-            message = 'Basic plan does not include class registration. Upgrade to Premium or Elite.';
-            buttonText = 'Upgrade Plan';
-            targetPage = 'membership';
-        } else {
-            title = 'Membership Required';
-            message = 'Please activate a Premium or Elite membership plan to book classes';
-            buttonText = 'Choose a Plan';
-            targetPage = 'membership';
-        }
+        if (!canRegister) {
+            let title = '';
+            let message = '';
+            let buttonText = '';
+            let targetPage = '';
 
-        loginMessage = $(`
+            if (!isUserLoggedIn()) {
+                title = 'Login Required';
+                message = 'Please login to register for classes';
+                buttonText = 'Login Now';
+                targetPage = 'login';
+            } else if (currentPlan === 'Basic') {
+                title = 'Upgrade Required';
+                message = 'Basic plan does not include class registration. Upgrade to Premium or Elite.';
+                buttonText = 'Upgrade Plan';
+                targetPage = 'membership';
+            } else {
+                title = 'Membership Required';
+                message = 'Please activate a Premium or Elite membership plan to book classes';
+                buttonText = 'Choose a Plan';
+                targetPage = 'membership';
+            }
+
+            loginMessage = $(`
             <div class="login-required">
                 <h4>${title}</h4>
                 <p>${message}</p>
@@ -849,17 +864,15 @@ function updateLoginRequiredMessage() {
             </div>
         `);
 
-        scheduleSection.append(loginMessage);
+            scheduleSection.append(loginMessage);
 
-        // Add click events to buttons
-        loginMessage.find('a[data-page]').on('click', function (e) {
-            e.preventDefault();
-            const page = $(this).data('page');
-            showPage(page);
-        });
+            loginMessage.find('a[data-page]').on('click', function (e) {
+                e.preventDefault();
+                const page = $(this).data('page');
+                showPage(page);
+            });
+        }
     }
-}
-    // Function to check if a class already exists at the same time
     function isClassAlreadyRegistered(className, classDay, classTime) {
         return registeredClasses.some(classItem =>
             classItem.name === className &&
@@ -868,12 +881,10 @@ function updateLoginRequiredMessage() {
         );
     }
 
-    // Function to check if user has reached the maximum number of classes
     function hasReachedMaxClasses() {
         return registeredClasses.length >= MAX_CLASSES;
     }
 
-    // Function to update the class count display
     function updateClassCountDisplay() {
         const registeredClassesSection = $('.registered-classes');
         let countDisplay = registeredClassesSection.find('.class-count-display');
@@ -906,14 +917,10 @@ function updateLoginRequiredMessage() {
         </div>
     `);
 
-        // Add event listener to cancel all button
         countDisplay.find('.cancel-all-btn').on('click', cancelAllClasses);
-
-        // Add warning style if approaching limit
         countDisplay.toggleClass('warning', registeredClasses.length >= MAX_CLASSES - 2);
     }
 
-    // Function to cancel all classes
     function cancelAllClasses() {
         if (registeredClasses.length === 0) {
             showNotification(
@@ -936,7 +943,6 @@ function updateLoginRequiredMessage() {
         }
     }
 
-    // Initialize the display
     updateRegisteredClassesDisplay();
     updateLoginRequiredMessage();
     setupClassClickHandlers();
@@ -985,19 +991,16 @@ function setupPlanSelection() {
         ]
     };
 
-    // Plan names for display
     const planNames = {
         basic: 'Basic',
         premium: 'Premium',
         elite: 'Elite'
     };
 
-    // Handle get started button clicks
     getStartedBtns.on('click', function () {
         const planType = $(this).data('plan');
         const planPrice = $(this).data('price');
 
-        //User must be logged in to activate a plan
         if (!isUserLoggedIn()) {
             showPage('login');
             showNotification('Please login to select a membership plan', 'info');
@@ -1014,7 +1017,6 @@ function setupPlanSelection() {
         }
     });
 
-    // Modal button actions
     modalBackBtn.on('click', closePlanModal);
     modalConfirmBtn.on('click', function () {
         const planName = $('#modalPlanName').text();
@@ -1029,7 +1031,6 @@ function setupPlanSelection() {
 
         if (!features) return;
 
-        // Populate modal content
         $('#modalPlanName').text(planName);
         $('#modalPlanPrice').text(`$${planPrice}/month`);
 
@@ -1042,10 +1043,8 @@ function setupPlanSelection() {
 
         $('#modalPlanFeatures').html(`<ul>${featuresHtml}</ul>`);
 
-        // Store current plan selection
         modalConfirmBtn.data('plan-type', planType).data('plan-price', planPrice);
 
-        // Show modal
         planModal.addClass('active');
         $('body').css('overflow', 'hidden');
     }
@@ -1055,33 +1054,31 @@ function setupPlanSelection() {
         $('body').css('overflow', 'auto');
     }
 
-   function activateUserPlan(planName, planPrice) {
-    if (!isUserLoggedIn()) {
-        showNotification('Please login to activate a membership plan', 'warning');
-        showPage('login');
-        return;
-    }
-    localStorage.setItem('userPlan', planName);
-    localStorage.setItem('userPlanPrice', planPrice);
-    localStorage.setItem('userPlanActive', 'true');
-    
-    // Show appropriate message based on plan type
-    if (planName === 'Premium' || planName === 'Elite') {
-        showNotification(`${planName} plan activated successfully! You can now book classes.`, 'success');
-    } else {
-        showNotification(`${planName} plan activated! Note: Basic plan does not include class registration.`, 'info');
-    }
-    
-    updateUIBasedOnAuth();
-    if (window.classBookingSystem) {
-        window.classBookingSystem.updateLoginRequiredMessage();
-        window.classBookingSystem.setupClassClickHandlers();
-        window.classBookingSystem.updateRegisteredClassesDisplay();
-    }
-    showPage('schedule');
-}
+    function activateUserPlan(planName, planPrice) {
+        if (!isUserLoggedIn()) {
+            showNotification('Please login to activate a membership plan', 'warning');
+            showPage('login');
+            return;
+        }
+        localStorage.setItem('userPlan', planName);
+        localStorage.setItem('userPlanPrice', planPrice);
+        localStorage.setItem('userPlanActive', 'true');
 
-    // Close modal with Escape key
+        if (planName === 'Premium' || planName === 'Elite') {
+            showNotification(`${planName} plan activated successfully! You can now book classes.`, 'success');
+        } else {
+            showNotification(`${planName} plan activated! Note: Basic plan does not include class registration.`, 'info');
+        }
+
+        updateUIBasedOnAuth();
+        if (window.classBookingSystem) {
+            window.classBookingSystem.updateLoginRequiredMessage();
+            window.classBookingSystem.setupClassClickHandlers();
+            window.classBookingSystem.updateRegisteredClassesDisplay();
+        }
+        showPage('schedule');
+    }
+
     $(document).on('keydown', function (e) {
         if (e.key === 'Escape' && planModal.hasClass('active')) {
             closePlanModal();
@@ -1089,7 +1086,6 @@ function setupPlanSelection() {
     });
 }
 
-// LOGIN/SIGNUP HANDLING
 
 // Login Form Submission
 $('#loginForm').on('submit', function (e) {
@@ -1097,35 +1093,35 @@ $('#loginForm').on('submit', function (e) {
     const btn = $(this).find('.btn');
     const originalText = btn.text();
     btn.text('Logging in...').prop('disabled', true);
-   // Inside login form submission success callback
-setTimeout(() => {
-    localStorage.setItem('userLoggedIn', 'true');
-    showNotification('Login successful!', 'success');
-    updateUIBasedOnAuth();
-    $(this).trigger('reset');
-    btn.text(originalText).prop('disabled', false);
-    updateUIBasedOnAuth();
-    
-    const hasPremiumOrElite = hasPremiumOrElitePlan();
-    if (hasPremiumOrElite) {
-        showPage('schedule');
-        showNotification('Welcome back! Your plan includes class registration.', 'success');
-    } else {
-        const currentPlan = localStorage.getItem('userPlan');
-        if (currentPlan === 'Basic') {
-            showPage('membership');
-            showNotification('Basic plan does not include class registration. Upgrade to Premium or Elite.', 'warning');
+    // Inside login form submission success callback
+    setTimeout(() => {
+        localStorage.setItem('userLoggedIn', 'true');
+        showNotification('Login successful!', 'success');
+        updateUIBasedOnAuth();
+        $(this).trigger('reset');
+        btn.text(originalText).prop('disabled', false);
+        updateUIBasedOnAuth();
+
+        const hasPremiumOrElite = hasPremiumOrElitePlan();
+        if (hasPremiumOrElite) {
+            showPage('schedule');
+            showNotification('Welcome back! Your plan includes class registration.', 'success');
         } else {
-            showPage('membership');
-            showNotification('Please select a membership plan to continue', 'info');
+            const currentPlan = localStorage.getItem('userPlan');
+            if (currentPlan === 'Basic') {
+                showPage('membership');
+                showNotification('Basic plan does not include class registration. Upgrade to Premium or Elite.', 'warning');
+            } else {
+                showPage('membership');
+                showNotification('Please select a membership plan to continue', 'info');
+            }
         }
-    }
-    
-    if (window.classBookingSystem) {
-        window.classBookingSystem.updateLoginRequiredMessage();
-        window.classBookingSystem.setupClassClickHandlers();
-    }
-}, 1500);
+
+        if (window.classBookingSystem) {
+            window.classBookingSystem.updateLoginRequiredMessage();
+            window.classBookingSystem.setupClassClickHandlers();
+        }
+    }, 1500);
 });
 
 // Signup Form Submission
@@ -1154,16 +1150,14 @@ $('#signupForm').on('submit', function (e) {
     }, 1500);
 });
 
-// OTHER SYSTEMS 
 
-// Enhanced Trainers Functionality
 function setupTrainers() {
     const trainerModal = $('#trainerModal');
     const bookSessionBtns = $('.book-session-btn');
     const modalBookBtn = $('#modalBookBtn');
     const modalScheduleBtn = $('#modalScheduleBtn');
 
-    // Trainer data
+    // Trainer 
     const trainersData = {
         marcus: {
             name: "Marcus Johnson",
@@ -1232,7 +1226,6 @@ function setupTrainers() {
         }
     });
 
-    // Modal button actions
     modalBookBtn.on('click', function () {
         const trainerName = $('#modalTrainerName').text();
         if (!canRegisterForClasses()) {
@@ -1260,12 +1253,10 @@ function setupTrainers() {
         const trainer = trainersData[trainerId];
         if (!trainer) return;
 
-        // Populate modal content
         $('#modalTrainerName').text(trainer.name);
         $('#modalTrainerSpecialty').text(trainer.specialty);
         $('#modalBio').text(trainer.bio);
 
-        // Populate stats
         const statsHtml = trainer.stats.map(stat => `
             <div class="modal-stat">
                 <span class="modal-stat-value">${stat.value}</span>
@@ -1274,7 +1265,6 @@ function setupTrainers() {
         `).join('');
         $('#modalStats').html(statsHtml);
 
-        // Populate achievements
         const achievementsHtml = trainer.achievements.map(achievement => `
         <div class="achievement-item">
             <span class="icon">🎖️</span>
@@ -1289,7 +1279,6 @@ function setupTrainers() {
         <div class="achievements-list">${achievementsHtml}</div>
     `);
 
-        // Populate expertise
         const expertiseHtml = trainer.expertise.map(skill => `
     <span class="expertise-tag">${skill}</span>
 `).join('');
@@ -1301,7 +1290,6 @@ function setupTrainers() {
     <div class="expertise-tags">${expertiseHtml}</div>
 `);
 
-        // Show modal
         trainerModal.addClass('active');
         $('body').css('overflow', 'hidden');
     }
@@ -1311,7 +1299,6 @@ function setupTrainers() {
         $('body').css('overflow', 'auto');
     }
 
-    // Close modal with Escape key
     $(document).on('keydown', function (e) {
         if (e.key === 'Escape' && trainerModal.hasClass('active')) {
             closeTrainerModal();
@@ -1319,7 +1306,6 @@ function setupTrainers() {
     });
 }
 
-// Dark Mode Toggle
 function setupDarkMode() {
     const darkModeToggle = $('#darkModeToggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
@@ -1340,9 +1326,7 @@ function setupDarkMode() {
     });
 }
 
-// Enhanced Auth Functionality
 function setupEnhancedAuth() {
-    // Password toggle functionality
     $('.password-toggle').on('click', function () {
         const input = $(this).siblings('input');
         const icon = $(this).find('i');
@@ -1356,7 +1340,6 @@ function setupEnhancedAuth() {
         }
     });
 
-    // Password strength indicator
     $('#signup-password').on('input', function () {
         const strengthBar = $('.strength-fill');
         const strengthText = $('.strength-text');
@@ -1374,7 +1357,6 @@ function setupEnhancedAuth() {
         strengthText.text(strengthLabels[strength]);
     });
 
-    // Enhanced form submissions with loading states
     $('#loginForm').on('submit', function (e) {
         e.preventDefault();
         const submitBtn = $(this).find('.auth-submit-btn');
@@ -1402,7 +1384,6 @@ function setupEnhancedAuth() {
     });
 }
 
-// Social Login Functionality
 function setupSocialLogin() {
     $('.social-btn.google').on('click', function (e) {
         e.preventDefault();
@@ -1431,7 +1412,6 @@ function handleSocialLogin(provider) {
     }, 2000);
 }
 
-// Supplement Cart System
 function setupSupplementCart() {
     let cart = [];
     const cartItems = $('#cartItems');
@@ -1632,12 +1612,11 @@ $(document).ready(function () {
     setupForgotPassword();
     setupSupplementCart();
     setupEnhancedGlowEffects();
-
-    updateUIBasedOnAuth(); // Add this line
+    setupNutritionPlanning();
+    updateUIBasedOnAuth();
 
     $('.filter-btn[data-filter="all"]').trigger('click');
 });
-// ========== PAGE LOAD - AUTO LOGOUT ==========
 
 $(window).on('load', function () {
     localStorage.removeItem('userLoggedIn');
@@ -1655,7 +1634,6 @@ $(window).on('load', function () {
     }
 });
 
-// Handle "Book a Class Now" button in schedule page
 $(document).on('click', '.book-class-btn', function (e) {
     e.preventDefault();
 
@@ -1668,48 +1646,133 @@ $(document).on('click', '.book-class-btn', function (e) {
             showNotification(currentLanguage === 'en' ? 'Please choose a plan to continue.' : 'يرجى اختيار خطة للمتابعة.', 'warning');
         }
     } else {
-        // User is logged in and has active plan, they can book classes
         showNotification(currentLanguage === 'en' ? 'You can now click on any class to register!' : 'يمكنك الآن النقر على أي حصة للتسجيل!', 'success');
     }
 });
 
-// ========== PAGE LOAD - AUTO LOGOUT ==========
 $(window).on('load', function () {
-   
 
-    // Clear all authentication-related data from localStorage
+
     localStorage.removeItem('userLoggedIn');
     localStorage.removeItem('userPlanActive');
     localStorage.removeItem('userPlan');
     localStorage.removeItem('userPlanPrice');
     localStorage.removeItem('registeredClasses');
 
-    // Update UI to reflect logged out state
     updateUIBasedOnAuth();
 
-    // Reset any login forms
     $('#loginForm, #signupForm').trigger('reset');
 
-    // Clear the registered classes display
     if (window.classBookingSystem) {
         window.classBookingSystem.updateRegisteredClassesDisplay();
     }
 });
 
-// Manual Logout Function
 function logout() {
-    // Clear all authentication data
     localStorage.removeItem('userLoggedIn');
     localStorage.removeItem('userPlanActive');
     localStorage.removeItem('userPlan');
     localStorage.removeItem('userPlanPrice');
-
-    // Update UI
     updateUIBasedOnAuth();
-
-    // Show notification
     showNotification('Logged out successfully', 'info');
-
-    // Redirect to home page
     showPage('home');
+}
+
+function setupNutritionPlanning() {
+    const nutritionLocked = $('#nutritionLocked');
+    const nutritionUnlocked = $('#nutritionUnlocked');
+    const startNutritionBtn = $('#startNutritionPlanning');
+
+    function checkNutritionAccess() {
+        const isLoggedIn = isUserLoggedIn();
+        const userPlan = localStorage.getItem('userPlan');
+        const isEliteMember = userPlan === 'Elite';
+
+        if (isLoggedIn && isEliteMember) {
+            nutritionLocked.hide();
+            nutritionUnlocked.show();
+        } else {
+            nutritionLocked.show();
+            nutritionUnlocked.hide();
+        }
+    }
+
+
+    startNutritionBtn.on('click', function (e) {
+        e.preventDefault();
+
+        if (!isUserLoggedIn()) {
+            showNotification('Please login to access nutrition planning', 'warning');
+            showPage('login');
+            return;
+        }
+
+        const userPlan = localStorage.getItem('userPlan');
+        if (userPlan !== 'Elite') {
+            showNotification('Nutrition planning is exclusive to Elite members. Please upgrade your plan.', 'warning');
+            showPage('membership');
+            return;
+        }
+
+        showNutritionSuccess();
+    });
+
+    $(document).on('authStatusChanged', checkNutritionAccess);
+
+    checkNutritionAccess();
+
+    const originalUpdateUIBasedOnAuth = updateUIBasedOnAuth;
+    updateUIBasedOnAuth = function () {
+        originalUpdateUIBasedOnAuth();
+        checkNutritionAccess();
+    };
+}
+
+function showNutritionSuccess() {
+    const successHtml = `
+        <div class="nutrition-success-message" style="
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, var(--success) 0%, #2a9d8f 100%);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 9999;
+            box-shadow: var(--shadow-hover);
+            max-width: 400px;
+            animation: fadeIn 0.3s ease;
+        ">
+            <span class="icon" style="font-size: 3rem; display: block; margin-bottom: 15px;">🎯</span>
+            <h3 style="margin-bottom: 10px; color: white;">Nutrition Planning Access Granted!</h3>
+            <p style="margin-bottom: 20px; opacity: 0.9;">
+                As an Elite member, you now have access to personalized nutrition planning.
+                This feature will be available in your member dashboard.
+            </p>
+            <button class="btn" style="background: white; color: var(--success);" id="closeNutritionSuccess">
+                Got it!
+            </button>
+        </div>
+    `;
+    
+    const overlay = $('<div class="nutrition-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9998;"></div>');
+    
+    $('body').append(overlay);
+    $('body').append(successHtml);
+    
+    $('#closeNutritionSuccess').on('click', function() {
+        $('.nutrition-success-message, .nutrition-overlay').remove();
+    });
+    
+    overlay.on('click', function() {
+        $('.nutrition-success-message, .nutrition-overlay').remove();
+    });
+    
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape') {
+            $('.nutrition-success-message, .nutrition-overlay').remove();
+        }
+    });
 }
