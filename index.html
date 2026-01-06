@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitpulse Fitness | Modern Gym Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
+z
 <body>
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <span class="icon">🏋️</span>
+                <i class="fas fa-dumbbell"></i>
                 <h1>Fitpulse Fitness</h1>
             </div>
             <nav>
@@ -24,22 +25,18 @@
                     <li><a href="#schedule" class="nav-link" data-page="schedule" data-i18n="schedule">Classes</a></li>
                     <li><a href="#trainers" class="nav-link" data-page="trainers" data-i18n="trainers">Trainers</a></li>
                     <li><a href="#contact" class="nav-link" data-page="contact" data-i18n="contact">Contact</a></li>
-                    <li>
-                        <a href="#login" class="nav-link" data-page="login" id="loginNavButton">
-                            <span class="nav-link-text" data-i18n="login">Login</span>
-                        </a>
-                    </li>
+                    <li><a href="#login" class="nav-link" data-page="login" data-i18n="login">Login</a></li>
                 </ul>
                 <div class="mobile-menu" id="mobile-menu">
-                    <span class="icon">☰</span>
+                    <i class="fas fa-bars"></i>
                 </div>
             </nav>
 
             <div class="theme-toggle">
                 <input type="checkbox" id="darkModeToggle" class="toggle-checkbox">
                 <label for="darkModeToggle" class="toggle-label">
-                    <span class="icon">🌙</span>
-                    <span class="icon">☀️</span>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
                     <span class="toggle-ball"></span>
                 </label>
             </div>
@@ -47,7 +44,7 @@
             <!-- Add Language Toggle -->
             <div class="language-toggle">
                 <button id="languageSwitch" class="lang-btn">
-                    <span class="icon">🌐</span>
+                    <i class="fas fa-language"></i>
                     <span class="lang-text">العربية</span>
                 </button>
             </div>
@@ -84,7 +81,7 @@
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <span class="icon">🏋️</span>
+                            <i class="fas fa-dumbbell"></i>
                         </div>
                         <h3 data-i18n="modernEquipment">Modern Equipment</h3>
                         <p data-i18n="equipmentDesc">Access to the latest fitness technology and equipment for all your
@@ -92,7 +89,7 @@
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <span class="icon">👥</span>
+                            <i class="fas fa-users"></i>
                         </div>
                         <h3 data-i18n="expertTrainers">Expert Trainers</h3>
                         <p data-i18n="trainersDesc">Certified professionals to guide and motivate you through your
@@ -100,7 +97,7 @@
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <span class="icon">📅</span>
+                            <i class="fas fa-calendar-alt"></i>
                         </div>
                         <h3 data-i18n="flexibleSchedule">Flexible Schedule</h3>
                         <p data-i18n="scheduleDesc">Classes and training sessions available throughout the day to fit
@@ -121,7 +118,7 @@
                 <div class="testimonials-slider">
                     <div class="testimonial active">
                         <div class="client-img">
-                            <img src="imgs/what customers say woman.jpg" alt="Client">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
                         </div>
                         <p>"I've been a member at Fitpulse for 6 months and have never felt better! The trainers are
                             knowledgeable and the community is so supportive. I've lost 20 pounds and gained so much
@@ -130,7 +127,7 @@
                     </div>
                     <div class="testimonial">
                         <div class="client-img">
-                            <img src="imgs/what customer say man.jpg" alt="Client">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
                         </div>
                         <p>"The class variety at Fitpulse is incredible. From yoga to HIIT, there's something for
                             everyone. The booking system is so easy to use, and I love being able to track my progress."
@@ -139,7 +136,7 @@
                     </div>
                     <div class="testimonial">
                         <div class="client-img">
-                            <img src="imgs/what customer say woman2.jpg" alt="Client">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
                         </div>
                         <p>"As a busy professional, I appreciate the flexible hours and the ability to book classes on
                             my phone. The trainers really know how to push you to be your best. Highly recommend!"</p>
@@ -154,6 +151,122 @@
             </div>
         </section>
     </section>
+
+                <!-- Transformations Section -->
+        <section class="section transformations">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="transformationsTitle">Real Transformations</h2>
+                    <p data-i18n="transformationsDesc">See the incredible journeys of our members who achieved their fitness goals with Fitpulse Fitness.</p>
+                </div>
+                <div class="transformation-grid">
+                    <!-- Transformation 1 -->
+                    <div class="transformation-card">
+                        <div class="transformation-images">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Sarah's after transformation" class="transformation-image">
+                            <div class="transformation-badge" data-i18n="weightLoss">Weight Loss</div>
+                            <div class="transformation-overlay">
+                                <h4>Sarah's Journey</h4>
+                                <p>From 210lbs to 150lbs</p>
+                            </div>
+                        </div>
+                        <div class="transformation-info">
+                            <h3 data-i18n="sarahStory">Sarah's Weight Loss Journey</h3>
+                            <div class="transformation-stats">
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">-60lbs</span>
+                                    <span class="transformation-stat-label" data-i18n="weightLost">Weight Lost</span>
+                                </div>
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">8in</span>
+                                    <span class="transformation-stat-label" data-i18n="waistReduced">Waist Reduced</span>
+                                </div>
+                            </div>
+                            <p class="transformation-story" data-i18n="sarahStoryText">
+                                "Fitpulse changed my life! With the help of expert trainers and supportive community, 
+                                I lost 60 pounds and gained confidence I never thought possible."
+                            </p>
+                            <div class="transformation-duration">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="duration">Duration:</span>
+                                <span>6 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transformation 2 -->
+                    <div class="transformation-card">
+                        <div class="transformation-images">
+                            <img src="https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Mike's after transformation" class="transformation-image">
+                            <div class="transformation-badge" data-i18n="muscleGain">Muscle Gain</div>
+                            <div class="transformation-overlay">
+                                <h4>Mike's Transformation</h4>
+                                <p>Gained 25lbs of muscle</p>
+                            </div>
+                        </div>
+                        <div class="transformation-info">
+                            <h3 data-i18n="mikeStory">Mike's Muscle Building Success</h3>
+                            <div class="transformation-stats">
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">+25lbs</span>
+                                    <span class="transformation-stat-label" data-i18n="muscleGained">Muscle Gained</span>
+                                </div>
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">40%</span>
+                                    <span class="transformation-stat-label" data-i18n="strengthIncrease">Strength Increase</span>
+                                </div>
+                            </div>
+                            <p class="transformation-story" data-i18n="mikeStoryText">
+                                "The personalized training program and nutrition guidance helped me transform my body 
+                                completely. I've never been stronger or more confident!"
+                            </p>
+                            <div class="transformation-duration">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="duration">Duration:</span>
+                                <span>8 months</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transformation 3 -->
+                    <div class="transformation-card">
+                        <div class="transformation-images">
+                            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Emma's after transformation" class="transformation-image">
+                            <div class="transformation-badge" data-i18n="bodyToning">Body Toning</div>
+                            <div class="transformation-overlay">
+                                <h4>Emma's Fitness Journey</h4>
+                                <p>Complete body transformation</p>
+                            </div>
+                        </div>
+                        <div class="transformation-info">
+                            <h3 data-i18n="emmaStory">Emma's Total Body Transformation</h3>
+                            <div class="transformation-stats">
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">-18%</span>
+                                    <span class="transformation-stat-label" data-i18n="bodyFat">Body Fat</span>
+                                </div>
+                                <div class="transformation-stat">
+                                    <span class="transformation-stat-value">15in</span>
+                                    <span class="transformation-stat-label" data-i18n="totalInches">Total Inches Lost</span>
+                                </div>
+                            </div>
+                            <p class="transformation-story" data-i18n="emmaStoryText">
+                                "Yoga and strength training at Fitpulse helped me achieve the toned, strong body 
+                                I always wanted. The community support made all the difference!"
+                            </p>
+                            <div class="transformation-duration">
+                                <i class="fas fa-clock"></i>
+                                <span data-i18n="duration">Duration:</span>
+                                <span>5 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     <!-- Membership Page -->
     <section id="membership" class="page-section">
@@ -172,13 +285,13 @@
                         </div>
                         <div class="plan-features">
                             <ul>
-                                <li><span class="icon">✓</span> <span data-i18n="gymAccess">Gym Access</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="lockerRoom">Locker Room</span></li>
-                                <li><span class="icon">✕</span> <span data-i18n="groupClasses">Group Classes</span>
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-times"></i> <span data-i18n="groupClasses">Group Classes</span>
                                 </li>
-                                <li><span class="icon">✕</span> <span data-i18n="personalTraining">Personal
+                                <li><i class="fas fa-times"></i> <span data-i18n="personalTraining">Personal
                                         Training</span></li>
-                                <li><span class="icon">✕</span> <span data-i18n="nutritionPlanning">Nutrition
+                                <li><i class="fas fa-times"></i> <span data-i18n="nutritionPlanning">Nutrition
                                         Planning</span></li>
                             </ul>
                         </div>
@@ -195,13 +308,13 @@
                         </div>
                         <div class="plan-features">
                             <ul>
-                                <li><span class="icon">✓</span> <span data-i18n="gymAccess">Gym Access</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="lockerRoom">Locker Room</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="allGroupClasses">All Group
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="allGroupClasses">All Group
                                         Classes</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="personalSessions">2 Personal
+                                <li><i class="fas fa-check"></i> <span data-i18n="personalSessions">2 Personal
                                         Sessions</span></li>
-                                <li><span class="icon">✕</span> <span data-i18n="nutritionPlanning">Nutrition
+                                <li><i class="fas fa-times"></i> <span data-i18n="nutritionPlanning">Nutrition
                                         Planning</span></li>
                             </ul>
                         </div>
@@ -217,13 +330,13 @@
                         </div>
                         <div class="plan-features">
                             <ul>
-                                <li><span class="icon">✓</span> <span data-i18n="gymAccess">Gym Access</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="lockerRoom">Locker Room</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="allGroupClasses">All Group
+                                <li><i class="fas fa-check"></i> <span data-i18n="gymAccess">Gym Access</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="lockerRoom">Locker Room</span></li>
+                                <li><i class="fas fa-check"></i> <span data-i18n="allGroupClasses">All Group
                                         Classes</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="personalSessions">5 Personal
+                                <li><i class="fas fa-check"></i> <span data-i18n="personalSessions">5 Personal
                                         Sessions</span></li>
-                                <li><span class="icon">✓</span> <span data-i18n="nutritionPlanning">Nutrition
+                                <li><i class="fas fa-check"></i> <span data-i18n="nutritionPlanning">Nutrition
                                         Planning</span></li>
                             </ul>
                         </div>
@@ -231,167 +344,6 @@
                             <button class="btn get-started-btn" data-plan="elite" data-price="79"
                                 data-i18n="getStarted">Get Started</button>
                         </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- Supplement Sales Section -->
-            <div class="section supplements">
-                <div class="container">
-                    <div class="section-title">
-                        <h2 data-i18n="supplementsTitle">Premium Supplements</h2>
-                        <p data-i18n="supplementsDesc">Enhance your fitness journey with our premium selection of
-                            supplements.
-                            All products are third-party tested for quality and purity.</p>
-                    </div>
-                    <div class="supplements-grid">
-                        <!-- Protein -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/whey protein.webp" alt="Whey Protein">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="wheyProtein">Whey Protein</h3>
-                                <div class="supplement-category" data-i18n="protein">Protein</div>
-                                <div class="supplement-price">$49.99</div>
-                                <div class="supplement-desc" data-i18n="proteinDesc">Premium quality whey protein for
-                                    muscle recovery and growth.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="fastAbsorption">Fast Absorption</span>
-                                    <span class="feature-tag" data-i18n="muscleRecovery">Muscle Recovery</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="whey-protein" data-price="49.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Creatine -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/creatine.jpg" alt="Creatine Monohydrate">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="creatine">Creatine Monohydrate</h3>
-                                <div class="supplement-category" data-i18n="performance">Performance</div>
-                                <div class="supplement-price">$29.99</div>
-                                <div class="supplement-desc" data-i18n="creatineDesc">Pure creatine monohydrate for
-                                    strength and power output.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="strength">Strength</span>
-                                    <span class="feature-tag" data-i18n="endurance">Endurance</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="creatine" data-price="29.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Pre-Workout -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/pre workout.png" alt="Pre-Workout">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="preWorkout">Pre-Workout Energizer</h3>
-                                <div class="supplement-category" data-i18n="energy">Energy</div>
-                                <div class="supplement-price">$39.99</div>
-                                <div class="supplement-desc" data-i18n="preworkoutDesc">Advanced formula for energy,
-                                    focus, and performance.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="energyBoost">Energy Boost</span>
-                                    <span class="feature-tag" data-i18n="mentalFocus">Mental Focus</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="preworkout" data-price="39.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Multivitamin -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/multivitamin.png" alt="Multivitamin" class="multivitamin-image">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="multivitamin">Daily Multivitamin</h3>
-                                <div class="supplement-category" data-i18n="health">Health</div>
-                                <div class="supplement-price">$24.99</div>
-                                <div class="supplement-desc" data-i18n="multivitaminDesc">Complete multivitamin for
-                                    overall health and wellness.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="immuneSupport">Immune Support</span>
-                                    <span class="feature-tag" data-i18n="dailyHealth">Daily Health</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="multivitamin" data-price="24.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Mass Gainer -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/mass gainer.jpg" alt="Mass Gainer">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="massGainer">Weight Gainer</h3>
-                                <div class="supplement-category" data-i18n="weightGain">Weight Gain</div>
-                                <div class="supplement-price">$59.99</div>
-                                <div class="supplement-desc" data-i18n="massGainerDesc">High-calorie formula for healthy
-                                    weight and muscle gain.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="calorieDense">Calorie Dense</span>
-                                    <span class="feature-tag" data-i18n="muscleGrowth">Muscle Growth</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="mass-gainer" data-price="59.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- BCAAs -->
-                        <div class="supplement-card">
-                            <div class="supplement-img">
-                                <img src="imgs/bcaa.jpg" alt="BCAAs" class="bcaa-image">
-                            </div>
-                            <div class="supplement-info">
-                                <h3 data-i18n="bcaa">BCAA Amino Acids</h3>
-                                <div class="supplement-category" data-i18n="recovery">Recovery</div>
-                                <div class="supplement-price">$34.99</div>
-                                <div class="supplement-desc" data-i18n="bcaaDesc">Essential amino acids for muscle
-                                    recovery and hydration.</div>
-                                <div class="supplement-features">
-                                    <span class="feature-tag" data-i18n="musclePreservation">Muscle Preservation</span>
-                                    <span class="feature-tag" data-i18n="hydration">Hydration</span>
-                                </div>
-                                <button class="btn add-to-cart-btn" data-product="bcaa" data-price="34.99">
-                                    <span class="icon">🛒</span>
-                                    <span data-i18n="addToCart">Add to Cart</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Shopping Cart Summary -->
-                    <div class="cart-summary">
-                        <h3 data-i18n="yourCart">Your Cart</h3>
-                        <div class="cart-items" id="cartItems">
-                            <div class="empty-cart" data-i18n="emptyCart">Your cart is empty</div>
-                        </div>
-                        <div class="cart-total">
-                            <strong data-i18n="total">Total:</strong>
-                            <span id="cartTotal">$0.00</span>
-                        </div>
-                        <button class="btn checkout-btn" id="checkoutBtn" disabled>
-                            <span class="icon">💳</span>
-                            <span data-i18n="proceedToCheckout">Proceed to Checkout</span>
-                        </button>
                     </div>
                 </div>
             </div>
@@ -479,13 +431,13 @@
                     </table>
                 </div>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="#schedule" class="btn book-class-btn" data-i18n="bookClassNow">Book a Class Now</a>
+                    <a href="#login" class="btn" data-page="login" data-i18n="bookClassNow">Book a Class Now</a>
                 </div>
                 <div class="registered-classes">
                     <h3 data-i18n="yourRegisteredClasses">Your Registered Classes</h3>
                     <div class="registered-classes-grid">
                         <div class="empty-state" style="display: block;">
-                            <span class="icon">📅</span>
+                            <i class="fas fa-calendar-plus"></i>
                             <p data-i18n="noClassesRegistered">No classes registered yet</p>
                             <p data-i18n="clickToRegister">Click on any class above to register!</p>
                         </div>
@@ -508,18 +460,19 @@
                     <!-- Marcus Johnson -->
                     <div class="trainer-card">
                         <div class="trainer-img">
-                            <img src="imgs/marcus johnson.jpg" alt="Marcus Johnson" class="marcus-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Marcus Johnson">
                         </div>
                         <div class="trainer-info">
                             <h3>Marcus Johnson</h3>
                             <div class="trainer-specialty">Strength & Conditioning Specialist</div>
                             <div class="trainer-rating">
                                 <div class="rating-stars">
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">½</span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
                                 </div>
                                 <span class="rating-value">4.8</span>
                                 <span class="rating-count">(247 reviews)</span>
@@ -544,27 +497,27 @@
                             </div>
                             <div class="trainer-achievements">
                                 <div class="achievements-title">
-                                    <span class="icon">🏆</span>
+                                    <i class="fas fa-trophy"></i>
                                     <span data-i18n="keyAchievements">Key Achievements</span>
                                 </div>
                                 <div class="achievements-list">
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>2022 National Powerlifting Champion</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Certified Strength Coach (CSCS)</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Precision Nutrition Level 2 Certified</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="trainer-expertise">
                                 <div class="expertise-title">
-                                    <span class="icon">🏋️</span>
+                                    <i class="fas fa-dumbbell"></i>
                                     <span data-i18n="specializations">Specializations</span>
                                 </div>
                                 <div class="expertise-tags">
@@ -576,14 +529,14 @@
                             </div>
                             <div class="trainer-cta">
                                 <button class="book-session-btn" data-trainer="marcus">
-                                    <span class="icon">✅</span>
+                                    <i class="fas fa-calendar-check"></i>
                                     <span data-i18n="bookSession">Book Session</span> with Marcus
                                 </button>
                             </div>
                             <div class="trainer-social">
-                                <a href="#"><span class="icon">📷</span></a>
-                                <a href="#"><span class="icon">🐦</span></a>
-                                <a href="#"><span class="icon">in</span></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -591,18 +544,19 @@
                     <!-- Sophia Martinez -->
                     <div class="trainer-card">
                         <div class="trainer-img">
-                            <img src="imgs/sophia.jpg" alt="Sophia Martinez">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2120&q=80"
+                                alt="Sophia Martinez">
                         </div>
                         <div class="trainer-info">
                             <h3>Sophia Martinez</h3>
                             <div class="trainer-specialty">Yoga & Mindfulness Expert</div>
                             <div class="trainer-rating">
                                 <div class="rating-stars">
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                                 <span class="rating-value">5.0</span>
                                 <span class="rating-count">(189 reviews)</span>
@@ -627,27 +581,27 @@
                             </div>
                             <div class="trainer-achievements">
                                 <div class="achievements-title">
-                                    <span class="icon">🏆</span>
+                                    <i class="fas fa-trophy"></i>
                                     <span data-i18n="keyAchievements">Key Achievements</span>
                                 </div>
                                 <div class="achievements-list">
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>International Yoga Alliance Certified</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Mindfulness Meditation Teacher</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Published Author: "Mindful Movement"</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="trainer-expertise">
                                 <div class="expertise-title">
-                                    <span class="icon">💆</span>
+                                    <i class="fas fa-spa"></i>
                                     <span data-i18n="specializations">Specializations</span>
                                 </div>
                                 <div class="expertise-tags">
@@ -660,14 +614,14 @@
                             </div>
                             <div class="trainer-cta">
                                 <button class="book-session-btn" data-trainer="sophia">
-                                    <span class="icon">✅</span>
+                                    <i class="fas fa-calendar-check"></i>
                                     <span data-i18n="bookSession">Book Session</span> with Sophia
                                 </button>
                             </div>
                             <div class="trainer-social">
-                                <a href="#"><span class="icon">📷</span></a>
-                                <a href="#"><span class="icon">🐦</span></a>
-                                <a href="#"><span class="icon">in</span></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -675,18 +629,19 @@
                     <!-- Ronnie Coleman -->
                     <div class="trainer-card">
                         <div class="trainer-img">
-                            <img src="imgs/ronnie.jpg" alt="Ronnie Coleman" class="ronnie-image">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                                alt="Ronnie Coleman">
                         </div>
                         <div class="trainer-info">
                             <h3>Ronnie Coleman</h3>
                             <div class="trainer-specialty">HIIT & Cardio Specialist</div>
                             <div class="trainer-rating">
                                 <div class="rating-stars">
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
-                                    <span class="icon">⭐</span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                 </div>
                                 <span class="rating-value">4.9</span>
                                 <span class="rating-count">(312 reviews)</span>
@@ -711,27 +666,27 @@
                             </div>
                             <div class="trainer-achievements">
                                 <div class="achievements-title">
-                                    <span class="icon">🏆</span>
+                                    <i class="fas fa-trophy"></i>
                                     <span data-i18n="keyAchievements">Key Achievements</span>
                                 </div>
                                 <div class="achievements-list">
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Transformation Specialist of the Year 2023</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Functional Training Certified</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="icon">🎖️</span>
+                                        <i class="fas fa-award"></i>
                                         <span>Group Fitness Instructor Expert</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="trainer-expertise">
                                 <div class="expertise-title">
-                                    <span class="icon">⚡</span>
+                                    <i class="fas fa-bolt"></i>
                                     <span data-i18n="specializations">Specializations</span>
                                 </div>
                                 <div class="expertise-tags">
@@ -744,15 +699,16 @@
                             </div>
                             <div class="trainer-cta">
                                 <button class="book-session-btn" data-trainer="ronnie">
-                                    <span class="icon">✅</span>
+                                    <i class="fas fa-calendar-check"></i>
                                     <span data-i18n="bookSession">Book Session</span> with Ronnie
                                 </button>
                             </div>
                             <div class="trainer-social">
-                                <a href="https://www.instagram.com/ronniecoleman8/?hl=en" target="_blank"><span
-                                        class="icon">📷</span></a>
-                                <a href="#" target="_blank"><span class="icon">🐦</span></a>
-                                <a href="#"><span class="icon">in</span></a>
+                                <a href="https://www.instagram.com/ronniecoleman8/?hl=en"
+                                    target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="#" target="_blank"><i
+                                        class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
                             </div>
                         </div>
                     </div>
@@ -764,7 +720,7 @@
         <div class="trainer-modal" id="trainerModal">
             <div class="modal-content">
                 <button class="modal-close" id="modalClose">
-                    <span class="icon">✕</span>
+                    <i class="fas fa-times"></i>
                 </button>
                 <div class="modal-header">
                     <h3 id="modalTrainerName">Trainer Name</h3>
@@ -777,11 +733,11 @@
                     <div class="modal-expertise" id="modalExpertise"></div>
                     <div class="modal-actions">
                         <button class="modal-btn primary" id="modalBookBtn">
-                            <span class="icon">✅</span>
+                            <i class="fas fa-calendar-check"></i>
                             <span data-i18n="bookSession">Book Session</span>
                         </button>
                         <button class="modal-btn secondary" id="modalScheduleBtn">
-                            <span class="icon">🕒</span>
+                            <i class="fas fa-clock"></i>
                             <span data-i18n="viewSchedule">View Schedule</span>
                         </button>
                     </div>
@@ -803,7 +759,7 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <span class="icon">📍</span>
+                                <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-details">
                                 <h3 data-i18n="ourLocation">Our Location</h3>
@@ -812,7 +768,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <span class="icon">📞</span>
+                                <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-details">
                                 <h3 data-i18n="phoneNumber">Phone Number</h3>
@@ -821,7 +777,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <span class="icon">✉️</span>
+                                <i class="fas fa-envelope"></i>
                             </div>
                             <div class="contact-details">
                                 <h3 data-i18n="emailAddress">Email Address</h3>
@@ -830,7 +786,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">
-                                <span class="icon">🕒</span>
+                                <i class="fas fa-clock"></i>
                             </div>
                             <div class="contact-details">
                                 <h3 data-i18n="openingHours">Opening Hours</h3>
@@ -876,6 +832,7 @@
     </section>
 
     <!-- Login/Signup Page -->
+    <!-- Login/Signup Page -->
     <section id="login" class="page-section">
         <div class="auth-section">
             <!-- Background Elements -->
@@ -884,17 +841,17 @@
                 <div class="bg-circle circle-2"></div>
                 <div class="bg-circle circle-3"></div>
                 <div class="bg-dumbbell">
-                    <span class="icon">🏋️</span>
+                    <i class="fas fa-dumbbell"></i>
                 </div>
                 <div class="bg-heart">
-                    <span class="icon">💓</span>
+                    <i class="fas fa-heartbeat"></i>
                 </div>
             </div>
 
             <div class="auth-container">
                 <div class="auth-header">
                     <div class="auth-logo">
-                        <span class="icon">🏋️</span>
+                        <i class="fas fa-dumbbell"></i>
                         <h2>Fitpulse Fitness</h2>
                     </div>
                     <p class="auth-tagline">Transform Your Fitness Journey</p>
@@ -912,18 +869,18 @@
                     <form id="loginForm">
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">✉️</span>
+                                <i class="fas fa-envelope"></i>
                                 <input type="email" id="login-email" class="form-control" data-i18n-placeholder="email"
                                     placeholder="Enter your email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">🔒</span>
+                                <i class="fas fa-lock"></i>
                                 <input type="password" id="login-password" class="form-control"
                                     data-i18n-placeholder="password" placeholder="Enter your password" required>
                                 <button type="button" class="password-toggle">
-                                    <span class="icon">👁️</span>
+                                    <i class="fas fa-eye"></i>
                                 </button>
                             </div>
                         </div>
@@ -949,15 +906,15 @@
                     <div class="social-login">
                         <div class="social-btns">
                             <a href="#" class="social-btn google">
-                                <span class="icon">G</span>
+                                <i class="fab fa-google"></i>
                                 <span>Google</span>
                             </a>
                             <a href="#" class="social-btn facebook">
-                                <span class="icon">f</span>
+                                <i class="fab fa-facebook-f"></i>
                                 <span>Facebook</span>
                             </a>
                             <a href="#" class="social-btn apple">
-
+                                <i class="fab fa-apple"></i>
                                 <span>Apple</span>
                             </a>
                         </div>
@@ -971,25 +928,25 @@
                     <form id="signupForm">
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">👤</span>
+                                <i class="fas fa-user"></i>
                                 <input type="text" id="signup-name" class="form-control"
                                     data-i18n-placeholder="fullName" placeholder="Enter your full name" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">✉️</span>
+                                <i class="fas fa-envelope"></i>
                                 <input type="email" id="signup-email" class="form-control" data-i18n-placeholder="email"
                                     placeholder="Enter your email" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">🔒</span>
+                                <i class="fas fa-lock"></i>
                                 <input type="password" id="signup-password" class="form-control"
                                     data-i18n-placeholder="password" placeholder="Create a password" required>
                                 <button type="button" class="password-toggle">
-                                    <span class="icon">👁️</span>
+                                    <i class="fas fa-eye"></i>
                                 </button>
                             </div>
                             <div class="password-strength">
@@ -1001,7 +958,7 @@
                         </div>
                         <div class="form-group">
                             <div class="input-with-icon">
-                                <span class="icon">🔒</span>
+                                <i class="fas fa-lock"></i>
                                 <input type="password" id="signup-confirm" class="form-control"
                                     data-i18n-placeholder="confirmPassword" placeholder="Confirm your password"
                                     required>
@@ -1027,15 +984,15 @@
                     <div class="social-login">
                         <div class="social-btns">
                             <a href="#" class="social-btn google">
-                                <span class="icon">G</span>
+                                <i class="fab fa-google"></i>
                                 <span>Google</span>
                             </a>
                             <a href="#" class="social-btn facebook">
-                                <span class="icon">f</span>
+                                <i class="fab fa-facebook-f"></i>
                                 <span>Facebook</span>
                             </a>
                             <a href="#" class="social-btn apple">
-                                <span class="icon"></span>
+                                <i class="fab fa-apple"></i>
                                 <span>Apple</span>
                             </a>
                         </div>
@@ -1054,7 +1011,7 @@
     <div class="plan-modal" id="planModal">
         <div class="modal-content">
             <button class="modal-close" id="planModalClose">
-                <span class="icon">✕</span>
+                <i class="fas fa-times"></i>
             </button>
             <div class="modal-header">
                 <h3 id="modalPlanName">Plan Name</h3>
@@ -1066,11 +1023,11 @@
                 </div>
                 <div class="modal-actions">
                     <button class="modal-btn secondary" id="modalBackBtn">
-                        <span class="icon">←</span>
+                        <i class="fas fa-arrow-left"></i>
                         <span data-i18n="back">Back</span>
                     </button>
                     <button class="modal-btn primary" id="modalConfirmBtn">
-                        <span class="icon">✓</span>
+                        <i class="fas fa-check"></i>
                         <span data-i18n="confirmPlan">Confirm Plan</span>
                     </button>
                 </div>
@@ -1078,6 +1035,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1104,9 +1062,9 @@
                 <div class="footer-col">
                     <h3 data-i18n="contactInfo">Contact Info</h3>
                     <ul>
-                        <li><span class="icon">📍</span> 123 Fitness Street, Health City</li>
-                        <li><span class="icon">📞</span> (555) 123-4567</li>
-                        <li><span class="icon">✉️</span> info@fitpulsefitness.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Health City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitpulsefitness.com</li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1115,19 +1073,19 @@
                         offers.</p>
                     <div class="social-icons">
                         <a href="https://facebook.com" target="_blank" class="social-icon" aria-label="Facebook">
-                            <span class="icon">f</span>
+                            <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
-                            <span class="icon">📷</span>
+                            <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://twitter.com" target="_blank" class="social-icon" aria-label="Twitter">
-                            <span class="icon">🐦</span>
+                            <i class="fab fa-twitter"></i>
                         </a>
                         <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube">
-                            <span class="icon">📺</span>
+                            <i class="fab fa-youtube"></i>
                         </a>
                         <a href="https://tiktok.com" target="_blank" class="social-icon" aria-label="TikTok">
-                            <span class="icon">🎵</span>
+                            <i class="fab fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
@@ -1144,7 +1102,7 @@
     <div class="forgot-password-modal" id="forgotPasswordModal">
         <div class="modal-content">
             <button class="modal-close" id="forgotPasswordModalClose">
-                <span class="icon">✕</span>
+                <i class="fas fa-times"></i>
             </button>
             <div class="modal-header">
                 <h3 data-i18n="forgotPasswordTitle">Reset Your Password</h3>
@@ -1155,7 +1113,7 @@
                 <form id="forgotPasswordForm">
                     <div class="form-group">
                         <div class="input-with-icon">
-                            <span class="icon">✉️</span>
+                            <i class="fas fa-envelope"></i>
                             <input type="email" id="reset-email" class="form-control" data-i18n-placeholder="email"
                                 placeholder="Enter your email" required>
                         </div>
@@ -1174,7 +1132,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script src="script.js"></script>
 </body>
 
